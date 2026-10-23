@@ -1,0 +1,40 @@
+{
+  "tool": "Built-in image_gen.imagegen",
+  "assets": [
+    {
+      "file": "cover.png",
+      "prompt": "Use case: illustration-story. Asset: first cover illustration for a five-year-old child's offline storybook game called The Space Cat. Beautiful friendly polished painted picture-book art with soft textured gouache, warm cozy light, clean bold readable silhouettes. ONE small fluffy cream-and-ginger cat with big curious green eyes, pink nose, wearing a rounded transparent bubble space helmet and turquoise space suit with a small gold star patch and purple boots. Cat stands happily beside a little red-and-cream rounded rocket on a lavender moon, big friendly golden stars and a blue planet in the violet sky. Entire cat and rocket visible, cat as main focus taking about half the wide frame. Landscape 1536x1024, image fills canvas, no transparency, no text, letters, speech bubbles, logos, watermarks or UI. Gentle, cheerful, whimsical, no danger. This exact cat, outfit, palette and style will be preserved on subsequent story pages.",
+      "source": "Local generation path omitted from public provenance."
+    },
+    {
+      "file": "hop.png",
+      "prompt": "Use case: identity-preserve. Asset: illustration for an interactive children's picture storybook. Input is exact CHARACTER and STYLE reference. Preserve the same small fluffy cream-and-ginger kitten with big curious green eyes, pink nose, turquoise spacesuit with gold star patch, purple boots, and rounded clear bubble helmet (except sleeping in bed where helmet hangs beside bed). Same polished soft gouache picture-book painting, cozy light and bold readable shapes, lavender/teal/red/violet/gold palette. Landscape 1536x1024, full-bleed opaque illustration with no text, letters, speech bubbles, logos, watermark or UI. Only one cat. Main action must be obvious at thumbnail size. Scene: The cat can hop. Cat in the SAME helmet/suit/boots joyfully hopping a small safe hop above the lavender moon ground, all four paws visibly lifted, two curved little dust puffs under boots. Rocket small in background. Clearly hopping, bright energetic pose.",
+      "source": "Local generation path omitted from public provenance."
+    },
+    {
+      "file": "nap.png",
+      "prompt": "Use case: identity-preserve. Asset: illustration for an interactive children's picture storybook. Input is exact CHARACTER and STYLE reference. Preserve the same small fluffy cream-and-ginger kitten with big curious green eyes, pink nose, turquoise spacesuit with gold star patch, purple boots, and rounded clear bubble helmet (except sleeping in bed where helmet hangs beside bed). Same polished soft gouache picture-book painting, cozy light and bold readable shapes, lavender/teal/red/violet/gold palette. Landscape 1536x1024, full-bleed opaque illustration with no text, letters, speech bubbles, logos, watermark or UI. Only one cat. Main action must be obvious at thumbnail size. Scene: The cat can nap. Cat curled up peacefully taking a nap on a plush purple cushion beside its rocket in a cozy moon camp, SAME suit and bubble helmet, eyes gently closed, small folded blanket, friendly stars. Clearly asleep, restful horizontal pose.",
+      "source": "Local generation path omitted from public provenance."
+    },
+    {
+      "file": "moon.png",
+      "prompt": "Use case: identity-preserve. Asset: illustration for an interactive children's picture storybook. Input is exact CHARACTER and STYLE reference. Preserve the same small fluffy cream-and-ginger kitten with big curious green eyes, pink nose, turquoise spacesuit with gold star patch, purple boots, and rounded clear bubble helmet (except sleeping in bed where helmet hangs beside bed). Same polished soft gouache picture-book painting, cozy light and bold readable shapes, lavender/teal/red/violet/gold palette. Landscape 1536x1024, full-bleed opaque illustration with no text, letters, speech bubbles, logos, watermark or UI. Only one cat. Main action must be obvious at thumbnail size. Scene: The cat is on the moon. Wide landscape view of SAME cat standing proudly on a rounded lavender moon hill, huge blue planet and golden stars in violet sky, small rocket to one side. Clear moon surface, rounded craters, cat central, all boots visible.",
+      "source": "Local generation path omitted from public provenance."
+    },
+    {
+      "file": "star.png",
+      "prompt": "Use case: identity-preserve. Asset: illustration for an interactive children's picture storybook. Input is exact CHARACTER and STYLE reference. Preserve the same small fluffy cream-and-ginger kitten with big curious green eyes, pink nose, turquoise spacesuit with gold star patch, purple boots, and rounded clear bubble helmet (except sleeping in bed where helmet hangs beside bed). Same polished soft gouache picture-book painting, cozy light and bold readable shapes, lavender/teal/red/violet/gold palette. Landscape 1536x1024, full-bleed opaque illustration with no text, letters, speech bubbles, logos, watermark or UI. Only one cat. Main action must be obvious at thumbnail size. Scene: The cat is on a star. SAME cat happily sitting on a HUGE friendly five-point GOLDEN STAR floating like a soft magic platform in violet space, legs dangling gently, bubble helmet and turquoise suit. Lavender moon and blue planet small in background. Big star clearly under cat; whimsical safe fantasy.",
+      "source": "Local generation path omitted from public provenance."
+    },
+    {
+      "file": "red-bed.png",
+      "prompt": "Use case: identity-preserve. Asset: illustration for an interactive children's picture storybook. Input is exact CHARACTER and STYLE reference. Preserve the same small fluffy cream-and-ginger kitten with big curious green eyes, pink nose, turquoise spacesuit with gold star patch, purple boots, and rounded clear bubble helmet (except sleeping in bed where helmet hangs beside bed). Same polished soft gouache picture-book painting, cozy light and bold readable shapes, lavender/teal/red/violet/gold palette. Landscape 1536x1024, full-bleed opaque illustration with no text, letters, speech bubbles, logos, watermark or UI. Only one cat. Main action must be obvious at thumbnail size. Scene: The cat has a red bed. SAME cream ginger cat, green eyes, pink nose tucked into a very obviously BRIGHT RED bed with RED duvet and RED wooden frame inside its cozy rounded rocket cabin. Turquoise suit visible above red duvet, bubble helmet hanging safely on bedside hook. Purple slippers on floor. Porthole shows golden stars and blue planet. Bed dominates frame, calm bedtime scene.",
+      "source": "Local generation path omitted from public provenance."
+    },
+    {
+      "file": "blue-bed.png",
+      "prompt": "Use case: identity-preserve. Asset: illustration for an interactive children's picture storybook. Input is exact CHARACTER and STYLE reference. Preserve the same small fluffy cream-and-ginger kitten with big curious green eyes, pink nose, turquoise spacesuit with gold star patch, purple boots, and rounded clear bubble helmet (except sleeping in bed where helmet hangs beside bed). Same polished soft gouache picture-book painting, cozy light and bold readable shapes, lavender/teal/red/violet/gold palette. Landscape 1536x1024, full-bleed opaque illustration with no text, letters, speech bubbles, logos, watermark or UI. Only one cat. Main action must be obvious at thumbnail size. Scene: The cat has a blue bed. SAME cream ginger cat, green eyes, pink nose tucked into a very obviously BRIGHT BLUE bed with BLUE duvet and BLUE wooden frame inside its cozy rounded rocket cabin. Turquoise suit visible above blue duvet, bubble helmet hanging safely on bedside hook. Purple slippers on floor. Porthole shows golden stars and blue planet. Bed dominates frame, calm bedtime scene.",
+      "source": "Local generation path omitted from public provenance."
+    }
+  ]
+}

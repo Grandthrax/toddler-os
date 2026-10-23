@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+ <defs><linearGradient id="sky" x2=".4" y2="1"><stop stop-color="#749ba4"/><stop offset="1" stop-color="#d2d5b6"/></linearGradient><linearGradient id="ground" x2=".2" y2="1"><stop stop-color="#728f7f"/><stop offset="1" stop-color="#345f5d"/></linearGradient><g id="tree"><path d="M-8 0h16v260H-8Z" fill="#536d66"/><path d="m0-230 105 170H70L130 35H78l75 110h-306l75-110h-52l60-95h-35Z" fill="currentColor"/></g></defs>
+ <path fill="url(#sky)" d="M0 0h1600v1000H0z"/><circle cx="1060" cy="230" r="66" fill="#f2e5b8"/>
+ <path d="M0 660q400-210 800-45t800-35v420H0Z" fill="#8da99a"/><path d="M0 800q300-210 800-80t800-75v355H0Z" fill="url(#ground)"/>
+ <use href="#tree" transform="translate(1080 500) scale(.8)" color="#79988a"/><use href="#tree" transform="translate(1370 510) scale(1.3)" color="#476f69"/><use href="#tree" transform="translate(300 610) scale(1.25)" color="#527c74"/><use href="#tree" transform="translate(1220 680) scale(.75)" color="#345f5c"/><use href="#tree" transform="translate(75 710) scale(1.55)" color="#3b6762"/>
+ <path d="M710 1000q-60-140 130-235 125-55 72-90 135 36-27 120-130 80 60 205Z" fill="#a5ad8c" opacity=".65"/>
+ <g fill="#dcd8ad" opacity=".6"><circle cx="1060" cy="860" r="4"/><circle cx="1130" cy="913" r="3"/><circle cx="479" cy="840" r="4"/></g>
+</svg>

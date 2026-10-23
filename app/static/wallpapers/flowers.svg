@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+ <defs><linearGradient id="sky" x2=".5" y2="1"><stop stop-color="#c5afc8"/><stop offset="1" stop-color="#f2d4c5"/></linearGradient><linearGradient id="hill" x2=".3" y2="1"><stop stop-color="#90ac94"/><stop offset="1" stop-color="#4c7c72"/></linearGradient><g id="flower"><path d="M0 0q-15 85 7 177m-5-79q-56-56-68-26 13 42 68 26m1 30q53-70 67-38-10 43-67 38" fill="#64897a" stroke="#64897a" stroke-width="7"/><g fill="currentColor"><ellipse cy="-26" rx="18" ry="30"/><ellipse cy="-26" rx="18" ry="30" transform="rotate(72)"/><ellipse cy="-26" rx="18" ry="30" transform="rotate(144)"/><ellipse cy="-26" rx="18" ry="30" transform="rotate(216)"/><ellipse cy="-26" rx="18" ry="30" transform="rotate(288)"/></g><circle r="16" fill="#efd291"/></g></defs>
+ <path fill="url(#sky)" d="M0 0h1600v1000H0z"/><circle cx="1190" cy="225" r="65" fill="#ffebcf" opacity=".85"/>
+ <path d="M0 720c270-230 520-170 800-80s590-30 800-60v420H0Z" fill="#a7b5a0"/>
+ <path d="M0 830c300-110 560-60 780-105s500-100 820 90v185H0Z" fill="url(#hill)"/>
+ <use href="#flower" x="1130" y="695" color="#e8a6a4"/><use href="#flower" transform="translate(1300 765) scale(.8)" color="#f5d5bb"/><use href="#flower" transform="translate(985 815) scale(.65)" color="#cebad7"/><use href="#flower" transform="translate(240 820) scale(.7)" color="#f2c3af"/>
+ <g fill="#ecdec7" opacity=".65"><circle cx="490" cy="803" r="5"/><circle cx="560" cy="874" r="4"/><circle cx="800" cy="790" r="4"/><circle cx="1440" cy="900" r="6"/></g>
+ <path d="M0 960q400-90 800-10t800-10v60H0Z" fill="#3f6c65" opacity=".4"/>
+</svg>

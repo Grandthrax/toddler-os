@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+ <defs><linearGradient id="sky" x2=".6" y2="1"><stop stop-color="#7dadd0"/><stop offset=".65" stop-color="#b5d2dd"/><stop offset="1" stop-color="#e4e4d8"/></linearGradient><linearGradient id="hill1" x2=".8" y2="1"><stop stop-color="#9bbdbd"/><stop offset="1" stop-color="#729da8"/></linearGradient><linearGradient id="hill2" x2=".6" y2="1"><stop stop-color="#90b9a9"/><stop offset="1" stop-color="#628e8d"/></linearGradient><linearGradient id="hill3" x2=".2" y2="1"><stop stop-color="#668e9e"/><stop offset="1" stop-color="#406a84"/></linearGradient><radialGradient id="glow"><stop stop-color="#fff8dd" stop-opacity=".75"/><stop offset="1" stop-color="#fff8dd" stop-opacity="0"/></radialGradient></defs>
+ <path fill="url(#sky)" d="M0 0h1600v1000H0z"/><circle cx="1190" cy="210" r="310" fill="url(#glow)"/><circle cx="1190" cy="210" r="52" fill="#fff3cf" opacity=".8"/>
+ <path d="M0 590C210 590 330 360 580 410S920 690 1160 560s270-140 440-100v540H0Z" fill="url(#hill1)"/>
+ <path d="M0 780c220-250 440-210 670-130s360-65 580-50 250 100 350 120v280H0Z" fill="url(#hill2)"/>
+ <path d="M0 900c300-30 430-250 710-190s430 260 890 30v260H0Z" fill="url(#hill3)"/>
+ <path d="M0 1000v-65c260-10 430-65 600-54s410 120 1000-25v144Z" fill="#355b75" opacity=".35"/>
+</svg>

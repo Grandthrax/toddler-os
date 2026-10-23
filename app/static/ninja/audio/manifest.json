@@ -1,0 +1,629 @@
+{
+  "voice": "en_GB-cori-high",
+  "prompts": {
+    "welcome": {
+      "text": "Welcome to Ninja Maths. Tap the glowing mission to play.",
+      "sha256": "3f6c18cfe90b3e1bc6de5d02e672410bfe5882cda67db3dffeeeb5438edcc6b7"
+    },
+    "choice": {
+      "text": "How many crystals can you see? Tap the number.",
+      "sha256": "7966cb0f9459c858777b9c94cedf91d539daf9e4c2fb3e356df5817164a9942f"
+    },
+    "number": {
+      "text": "How many crystals can you see? Write the number, then tap the tick.",
+      "sha256": "0b00a9278dd963c31416652037cc87d909cbaf8d6f95edc7867798fe568b751e"
+    },
+    "match": {
+      "text": "How many crystals can you see? Drag the number to the gate, or tap a number, then the gate.",
+      "sha256": "1960990982a6fb90a7e8b48270e6e0d83253ead5b07469288c6c55c12abd5554"
+    },
+    "try-again": {
+      "text": "Have another go. Tap the helping hand if you would like some help.",
+      "sha256": "2af2f4b1fb1c14ebd69b6f1e06747c1f53199b56e6c6088a2a0b7112d9686e26"
+    },
+    "correct": {
+      "text": "Well done! A crystal is charged.",
+      "sha256": "787436fb1b4bda3783d5040568ebf382bd744962b29ea046011890533f81d6c4"
+    },
+    "reward": {
+      "text": "Mission complete! Choose an upgrade. Tap a picture to see it on your ninja. Then tap the big tick to keep it.",
+      "sha256": "1388516d55024056ceae432507126bcd53c00d17a5b832916eaef231590aa9f1"
+    },
+    "practice": {
+      "text": "Well done! You have finished this practice mission.",
+      "sha256": "9713bfdd03cccdcd6c9af488d0e8a555d2f71cbd5c1d79500ff6b4049f1fd9df"
+    },
+    "chapter-complete": {
+      "text": "You did it! All ten missions are complete. You are a sunrise ninja! You can play any mission again.",
+      "sha256": "ea6f90cba23dd15cd4175f0bf1e9f7b683e15b6e3607924b4858cd88f4c47a63"
+    },
+    "equipment": {
+      "text": "These are your upgrades. Tap a picture to wear it. You can wear a sword, armour and a power together.",
+      "sha256": "eb52d4a919859ceb9ec38e765b0d8298b655e8cc4f47c149bb5547133f6df417"
+    },
+    "home": {
+      "text": "Tap a glowing mission number to play. A tick means you have finished it. A padlock means it is waiting for you.",
+      "sha256": "eef7b92e48ad4822aabd763d8d138dad5e196992f7f1803c69098ee515216a43"
+    },
+    "preview-spark-sword": {
+      "text": "Ruby Katana. sword power 1. Tap the tick to choose this upgrade.",
+      "sha256": "96433a9dc98fe2c244c2a28122a9ead629d545169eed079c98966221ad3f0046"
+    },
+    "earned-spark-sword": {
+      "text": "You chose Ruby Katana. Your ninja is more powerful!",
+      "sha256": "b5a2891352c4e1731155bd7a472027d23917fca28ab2b1ee168187fbbd6ae8a9"
+    },
+    "preview-sword-2": {
+      "text": "Crystal Cleaver. sword power 2. Tap the tick to choose this upgrade.",
+      "sha256": "1cb09fc563d1a9344e8badb0ece9eebfee605bf7438222e8aaa128810b7342f6"
+    },
+    "earned-sword-2": {
+      "text": "You chose Crystal Cleaver. Your ninja is more powerful!",
+      "sha256": "2f0ef42fb924e1e0b89b89e327683df1137c29e8fc149b91b7beefcabdaa7095"
+    },
+    "preview-sword-3": {
+      "text": "Twin Storm Blades. sword power 3. Tap the tick to choose this upgrade.",
+      "sha256": "077f7ebd560b103352ef7bf2b7b0d3fc16add85c2e2630430fffc7947d70a9ce"
+    },
+    "earned-sword-3": {
+      "text": "You chose Twin Storm Blades. Your ninja is more powerful!",
+      "sha256": "eac1dfcac88fe058f33545eedd3297edf05911ed4609ff6c1177759d435eedde"
+    },
+    "preview-sword-4": {
+      "text": "Sunrise Greatsword. sword power 4. Tap the tick to choose this upgrade.",
+      "sha256": "d0461d3f0a811e44406ef5976807ed542ebcf115d1afd801dbac8d70aa05bb30"
+    },
+    "earned-sword-4": {
+      "text": "You chose Sunrise Greatsword. Your ninja is more powerful!",
+      "sha256": "d814d26d6d91ec3bad64200f41a2e135f2c7bbefa4df9ec3362ce4a44a491621"
+    },
+    "preview-golden-guard": {
+      "text": "Shadow Suit. armour power 1. Tap the tick to choose this upgrade.",
+      "sha256": "3215060c52672ec35078a0843fde950d67236dea53aecb5e7f2f433636d63927"
+    },
+    "earned-golden-guard": {
+      "text": "You chose Shadow Suit. Your ninja is more powerful!",
+      "sha256": "97262d1b6272157a732326f7d497a6bff63f37f1f3279ad4655a3fb8af1c2b75"
+    },
+    "preview-armour-2": {
+      "text": "Golden Guard. armour power 2. Tap the tick to choose this upgrade.",
+      "sha256": "0730abef0e745c7595f965ec78981de2297a8bc2888ad2ad8732505746cc64cf"
+    },
+    "earned-armour-2": {
+      "text": "You chose Golden Guard. Your ninja is more powerful!",
+      "sha256": "02c25bec7fca1e60f8cd26a07c125e91c191cb9a87298af53754c0247933052d"
+    },
+    "preview-armour-3": {
+      "text": "Storm Samurai. armour power 3. Tap the tick to choose this upgrade.",
+      "sha256": "ee4e3ce65a908fe24f53793aa5ae6c67789a117b02579a64f1dbc14952efd6ca"
+    },
+    "earned-armour-3": {
+      "text": "You chose Storm Samurai. Your ninja is more powerful!",
+      "sha256": "a18931fd907ba9c1d59a07c50bf57a83db4135a2c5856c4f883e38834a1d0dd4"
+    },
+    "preview-armour-4": {
+      "text": "Sunrise Champion. armour power 4. Tap the tick to choose this upgrade.",
+      "sha256": "54df8528030ff611a710ab8bb9c421e7ef813c4bb651ce89ae7982e90ce50fc5"
+    },
+    "earned-armour-4": {
+      "text": "You chose Sunrise Champion. Your ninja is more powerful!",
+      "sha256": "3f87bc724adfb83152d897335f118059617be437c5068ab973ac50f838fa398f"
+    },
+    "preview-sun-cloak": {
+      "text": "Sun Cloak. power power 1. Tap the tick to choose this upgrade.",
+      "sha256": "426e145b84404c79bb572de09b7488c85994dcd1db497a2f7920d7a69b17fa0d"
+    },
+    "earned-sun-cloak": {
+      "text": "You chose Sun Cloak. Your ninja is more powerful!",
+      "sha256": "4d82883e15807d1fcf7b62a2fe0e0cb40d7a5a9e711892fca34d9fc91839b3e5"
+    },
+    "preview-power-2": {
+      "text": "Lightning Halo. power power 2. Tap the tick to choose this upgrade.",
+      "sha256": "f15b130e3ac187caf8017fee8241fd3788569bffd04f2587b7c35f4d3d9efa70"
+    },
+    "earned-power-2": {
+      "text": "You chose Lightning Halo. Your ninja is more powerful!",
+      "sha256": "e3e0a9ec450ddd44a09e5321878bdc622f70883c5e341dbfe5ae22151d6eca26"
+    },
+    "preview-power-3": {
+      "text": "Golden Wings. power power 3. Tap the tick to choose this upgrade.",
+      "sha256": "3a6edf0e8e8584e55e9cf77589714035839776fb16e73aaaabcf0ce8e9a26a9c"
+    },
+    "earned-power-3": {
+      "text": "You chose Golden Wings. Your ninja is more powerful!",
+      "sha256": "ca51ea049912c402accb91b2aa3bff04dfabf9c697eae7c126e8b310f5d992f7"
+    },
+    "preview-power-4": {
+      "text": "Phoenix Flight. power power 4. Tap the tick to choose this upgrade.",
+      "sha256": "9a4056ce1af8a7e9c80af49d285daae3f2e11a38020580310c8b6f4e187e4c33"
+    },
+    "earned-power-4": {
+      "text": "You chose Phoenix Flight. Your ninja is more powerful!",
+      "sha256": "5b8a37c57fd1d9234e4ccd9e2ac74ab453e6f9d15c66205e24fda6624ff5ac8a"
+    },
+    "mission-1": {
+      "text": "Mission one. Open the dojo. Solve five puzzles to earn an upgrade.",
+      "sha256": "d9b0214d1971b2c5e66e82442d5b236bfe8052d931065ec746f51b60885e90f3"
+    },
+    "l1-q1": {
+      "text": "How many crystals can you see? Tap the number.",
+      "sha256": "7966cb0f9459c858777b9c94cedf91d539daf9e4c2fb3e356df5817164a9942f"
+    },
+    "l1-q1-help": {
+      "text": "Let's count together. one, two, three, four.",
+      "sha256": "1700715de6de5bc31844fd9f75d877449d5878227cebd874a76e7999b1997487"
+    },
+    "l1-q2": {
+      "text": "How many crystals can you see? Write the number, then tap the tick.",
+      "sha256": "0b00a9278dd963c31416652037cc87d909cbaf8d6f95edc7867798fe568b751e"
+    },
+    "l1-q2-help": {
+      "text": "Let's count together. one, two, three, four, five, six.",
+      "sha256": "201702a4dd15788f14c0e2de53bf8534da01e2f74a457f45fcb03fc2c956776d"
+    },
+    "l1-q3": {
+      "text": "How many crystals can you see? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "b26c0343209a3b2ccf41baee09c0388851025eb7276aef3bd515875024fe1899"
+    },
+    "l1-q3-help": {
+      "text": "Let's count together. one, two, three, four, five.",
+      "sha256": "1a152c70f64a57c660d256e68d8de3ecf64205d98122c38810c631f1ee572e09"
+    },
+    "l1-q4": {
+      "text": "How many crystals can you see? Write the number, then tap the tick.",
+      "sha256": "0b00a9278dd963c31416652037cc87d909cbaf8d6f95edc7867798fe568b751e"
+    },
+    "l1-q4-help": {
+      "text": "Let's count together. one, two, three, four, five, six, seven, eight.",
+      "sha256": "dfb01d785ba60e91ef9bb3b14919a090d301c9b279fb18b84573302e7da969ff"
+    },
+    "l1-q5": {
+      "text": "How many crystals can you see? Tap the number.",
+      "sha256": "7966cb0f9459c858777b9c94cedf91d539daf9e4c2fb3e356df5817164a9942f"
+    },
+    "l1-q5-help": {
+      "text": "Let's count together. one, two, three, four, five, six, seven, eight, nine, ten.",
+      "sha256": "5b5f9c35020f9e6480a7cf4ba54f73bfb55be901333d9d7bc04051ee6c690845"
+    },
+    "mission-2": {
+      "text": "Mission two. Sort the supplies. Solve five puzzles to earn an upgrade.",
+      "sha256": "0ba001a419f8bc416f40f7bcd33a2fe61064885bfb78b2fbcaae74504ce5a3c4"
+    },
+    "l2-q1": {
+      "text": "How many crystals can you see? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "b26c0343209a3b2ccf41baee09c0388851025eb7276aef3bd515875024fe1899"
+    },
+    "l2-q1-help": {
+      "text": "Let's count together. one, two, three, four, five.",
+      "sha256": "1a152c70f64a57c660d256e68d8de3ecf64205d98122c38810c631f1ee572e09"
+    },
+    "l2-q2": {
+      "text": "How many crystals can you see? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "b26c0343209a3b2ccf41baee09c0388851025eb7276aef3bd515875024fe1899"
+    },
+    "l2-q2-help": {
+      "text": "Let's count together. one, two, three, four, five, six, seven.",
+      "sha256": "433b09df7ddb1b5bf200b3382cef1f5c70a9d65999e2baecf09e87d0bf37a10a"
+    },
+    "l2-q3": {
+      "text": "How many crystals can you see? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "b26c0343209a3b2ccf41baee09c0388851025eb7276aef3bd515875024fe1899"
+    },
+    "l2-q3-help": {
+      "text": "Let's count together. one, two, three.",
+      "sha256": "3ca10f7329b34bf55e234a00eb3dc6b78030ccccddfc46e2c3da77bf89b4bc01"
+    },
+    "l2-q4": {
+      "text": "How many crystals can you see? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "b26c0343209a3b2ccf41baee09c0388851025eb7276aef3bd515875024fe1899"
+    },
+    "l2-q4-help": {
+      "text": "Let's count together. one, two, three, four, five, six, seven, eight, nine.",
+      "sha256": "1d9114f813d547f88e6dcacdba585cf4d1eea5c6618355551945ae7dfb6fb179"
+    },
+    "l2-q5": {
+      "text": "There are no crystals here. Which number means none? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "0900b5e83a87580f7c3371e8b2f389858f5ba51b1c34d441864895c57d50c2e3"
+    },
+    "l2-q5-help": {
+      "text": "Let's count together. No crystals. That means zero..",
+      "sha256": "bab5a43a58c7edf41868f69f1bb6ead20cae41b8ba4c5e575394ebf47bc37c8b"
+    },
+    "mission-3": {
+      "text": "Mission three. Balance the bridge. Solve five puzzles to earn an upgrade.",
+      "sha256": "257f510e686e00a84a4a54f668c0502b1f8044f3a2020de2267be38dfca9ce66"
+    },
+    "l3-q1": {
+      "text": "Which group has the most crystals? Tap a group.",
+      "sha256": "8a38aa1315c9dbfcde8bbbd950d83eb422d3452b8ca69b7326f7365e90977eba"
+    },
+    "l3-q1-help": {
+      "text": "Let's count the groups. Group one: one, two, three, four, five. Group two: one, two. Group three: one, two, three. Tap group one.",
+      "sha256": "ce076dbf196ae8f465bca8bf6490bbe14a817c029afa941158f8b58d7e625126"
+    },
+    "l3-q2": {
+      "text": "Which group has the fewest crystals? Tap a group.",
+      "sha256": "1ac9b99faf150fa4f26797d1849328b4d5b1b19b5fd3ffa4a50080d705adda98"
+    },
+    "l3-q2-help": {
+      "text": "Let's count the groups. Group one: one, two, three, four. Group two: one, two, three. Group three: one. Tap group three.",
+      "sha256": "aee4a1331652fa6cc271bf8d93c2565ec8663d050efef3d33414efcfa87cb714"
+    },
+    "l3-q3": {
+      "text": "Which group has the same number as the group at the top? There are four at the top. Tap a group.",
+      "sha256": "b9d8c05bb590b4c6e19cf33c48644f7608f4d52ed937d95c7fd589e54ebd5a87"
+    },
+    "l3-q3-help": {
+      "text": "Let's count the groups. Group one: one, two, three. Group two: one, two, three, four. Group three: one, two, three, four, five, six. Tap group two.",
+      "sha256": "36c81ecc9ec48506bb6b144fb5f039edeb1840d62dc2149f428d75824b68beb3"
+    },
+    "l3-q4": {
+      "text": "Which group has the most crystals? Tap a group.",
+      "sha256": "8a38aa1315c9dbfcde8bbbd950d83eb422d3452b8ca69b7326f7365e90977eba"
+    },
+    "l3-q4-help": {
+      "text": "Let's count the groups. Group one: one, two, three, four, five, six. Group two: one, two, three, four. Group three: one, two, three, four, five, six, seven, eight. Tap group three.",
+      "sha256": "3034cbbfd85fddb23d59bfeacf695012dd1b46bca01a309b34dad31974ce1dd7"
+    },
+    "l3-q5": {
+      "text": "Which group has the fewest crystals? Tap a group.",
+      "sha256": "1ac9b99faf150fa4f26797d1849328b4d5b1b19b5fd3ffa4a50080d705adda98"
+    },
+    "l3-q5-help": {
+      "text": "Let's count the groups. Group one: one, two, three, four, five. Group two: one, two, three, four, five, six, seven. Group three: one, two, three, four, five, six, seven, eight, nine. Tap group one.",
+      "sha256": "c0f98f92200417fb6522b812f2b16fd1ac595b3582f69bc8d5c2527620d97f20"
+    },
+    "mission-4": {
+      "text": "Mission four. Charge the blade. Solve five puzzles to earn an upgrade.",
+      "sha256": "369192c8986a2b85569a6c6f55ff8dce4205ee580a040296a705c5cefa46bb08"
+    },
+    "l4-q1": {
+      "text": "one crystals and one more. How many altogether? Tap the number.",
+      "sha256": "48f3b860caf3656c9384e02b946faf3262a440f8d09b31a97f8f2874514bca28"
+    },
+    "l4-q1-help": {
+      "text": "Count both groups together. one, two. There are two altogether.",
+      "sha256": "56ec9a8e3dfe8cc05ed91142474e6ea15bfaa5934f71bdf912b957ce0e83820f"
+    },
+    "l4-q2": {
+      "text": "one crystals and two more. How many altogether? Tap the number.",
+      "sha256": "a8d789668b6c134656c53f5843c9055708421b7a5be189d9a128b9c687280047"
+    },
+    "l4-q2-help": {
+      "text": "Count both groups together. one, two, three. There are three altogether.",
+      "sha256": "f9f38f91c380b768ccec0fb901c55f7861c3bb4879456d11c7a6c6db22d81c1b"
+    },
+    "l4-q3": {
+      "text": "two crystals and two more. How many altogether? Tap the number.",
+      "sha256": "48db3acd84cd6adf7ae93e84222524dcb86560d47ee4aefbe4899b989bf77282"
+    },
+    "l4-q3-help": {
+      "text": "Count both groups together. one, two, three, four. There are four altogether.",
+      "sha256": "cd851db65d44b54f2f5b506e00b2507ebe47e721a7575a377374205b92992713"
+    },
+    "l4-q4": {
+      "text": "three crystals and one more. How many altogether? Tap the number.",
+      "sha256": "1b5e7656f49e356be5707841ff4fb5e8bb711ea90e17b9beeb5193a174a5783a"
+    },
+    "l4-q4-help": {
+      "text": "Count both groups together. one, two, three, four. There are four altogether.",
+      "sha256": "cd851db65d44b54f2f5b506e00b2507ebe47e721a7575a377374205b92992713"
+    },
+    "l4-q5": {
+      "text": "two crystals and three more. How many altogether? Tap the number.",
+      "sha256": "8aa1b85411528f5d14386033afde9a26b8377a978bd4b509201005c4c5a361ad"
+    },
+    "l4-q5-help": {
+      "text": "Count both groups together. one, two, three, four, five. There are five altogether.",
+      "sha256": "03b806f5fd4af8f318f0fcbda6723641fac25b91585190ec42378c122e620799"
+    },
+    "mission-5": {
+      "text": "Mission five. Open the mountain gate. Solve five puzzles to earn an upgrade.",
+      "sha256": "4455401cf48da7807b025fedba04fc08eb9788658cdd65d98d9e351e03e48f8d"
+    },
+    "l5-q1": {
+      "text": "zero crystals and three more. How many altogether? Write the number, then tap the tick.",
+      "sha256": "d4e51adabf835c0bb6d132745f5b2f36f3c96945335d989de19ca55642f16b6b"
+    },
+    "l5-q1-help": {
+      "text": "Count both groups together. one, two, three. There are three altogether.",
+      "sha256": "f9f38f91c380b768ccec0fb901c55f7861c3bb4879456d11c7a6c6db22d81c1b"
+    },
+    "l5-q2": {
+      "text": "two crystals and one more. How many altogether? Write the number, then tap the tick.",
+      "sha256": "1ac685e68dcb0ebfb0e13f6a0be8b640951f87fc528102b0bc7ca7987fe63dea"
+    },
+    "l5-q2-help": {
+      "text": "Count both groups together. one, two, three. There are three altogether.",
+      "sha256": "f9f38f91c380b768ccec0fb901c55f7861c3bb4879456d11c7a6c6db22d81c1b"
+    },
+    "l5-q3": {
+      "text": "one crystals and four more. How many altogether? Write the number, then tap the tick.",
+      "sha256": "ce3dfac80a47c882c041d0bfa04cb910f8ab72d2cb31ba2b54eba070a2a3f071"
+    },
+    "l5-q3-help": {
+      "text": "Count both groups together. one, two, three, four, five. There are five altogether.",
+      "sha256": "03b806f5fd4af8f318f0fcbda6723641fac25b91585190ec42378c122e620799"
+    },
+    "l5-q4": {
+      "text": "three crystals and two more. How many altogether? Write the number, then tap the tick.",
+      "sha256": "a6030078a0077badd8e40aa631d6a3ca46f173a803ff7986fd3b7f8600f45758"
+    },
+    "l5-q4-help": {
+      "text": "Count both groups together. one, two, three, four, five. There are five altogether.",
+      "sha256": "03b806f5fd4af8f318f0fcbda6723641fac25b91585190ec42378c122e620799"
+    },
+    "l5-q5": {
+      "text": "two crystals and two more. How many altogether? Write the number, then tap the tick.",
+      "sha256": "7a5c8760a874a481a819855c4e074b2ab78438e775cce3b93e233b46930c83d9"
+    },
+    "l5-q5-help": {
+      "text": "Count both groups together. one, two, three, four. There are four altogether.",
+      "sha256": "cd851db65d44b54f2f5b506e00b2507ebe47e721a7575a377374205b92992713"
+    },
+    "mission-6": {
+      "text": "Mission six. Build the stepping stones. Solve five puzzles to earn an upgrade.",
+      "sha256": "d07f1ff7b6ca158b8f789084a0e72eeb2d8c95ade543f06d970f83de0c59938a"
+    },
+    "l6-q1": {
+      "text": "three crystals and three more. How many altogether? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "d03a99dbae02fb331c671333168b64d2a90e466cfa95501a5c61adc203357067"
+    },
+    "l6-q1-help": {
+      "text": "Count both groups together. one, two, three, four, five, six. There are six altogether.",
+      "sha256": "7028e0eb43423961403682a5ee4e9a79f7e47d18db085cbf0a374737c0c43f51"
+    },
+    "l6-q2": {
+      "text": "four crystals and three more. How many altogether? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "b2d951a213451b3f7e3cc588677911dd5173cdc6baa33aa02ec5618b32bc4fea"
+    },
+    "l6-q2-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven. There are seven altogether.",
+      "sha256": "d04f55078e93f6c0c5061f8a9ca353151eeac9310b5ce0cc3914811e2f8af922"
+    },
+    "l6-q3": {
+      "text": "five crystals and three more. How many altogether? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "1eb775f25c92496581da614e405a8d08105fd3a5f41a071ccd25a7e4795b8425"
+    },
+    "l6-q3-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight. There are eight altogether.",
+      "sha256": "550168ab57e60274a84767aa62a6724011ec1aa83f7cb917032a5c3e52d3e94b"
+    },
+    "l6-q4": {
+      "text": "four crystals and five more. How many altogether? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "c3d8cb35ffd16ded4dca8e820b0306b10a201c007eded68fd4b58732b8977471"
+    },
+    "l6-q4-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine. There are nine altogether.",
+      "sha256": "de7125c3284d4023023cd3c065c5353fe7b5f1b683216bbef639353019efc04f"
+    },
+    "l6-q5": {
+      "text": "five crystals and five more. How many altogether? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "3fd3a73b0074f099de5ec04892c6a5d32e3b6282aab1586e4d682f5b52c9b0cf"
+    },
+    "l6-q5-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten. There are ten altogether.",
+      "sha256": "9a575af4ff65096a1cadd18dcf84cc62110e210fb7fae9d49fea5c05a1812a78"
+    },
+    "mission-7": {
+      "text": "Mission seven. Find the missing crystal. Solve five puzzles to earn an upgrade.",
+      "sha256": "6e1aef9422fb265352e5016358b037abdcb8988f3800b62453bd50a94c13931b"
+    },
+    "l7-q1": {
+      "text": "You have one crystals. How many more do you need to make three? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "70f1d3a9286a9dc141fd3b6a265d670bee19f9f333844299b8d0987c4ed7714e"
+    },
+    "l7-q1-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two. You need two more.",
+      "sha256": "db9dcd44ce528953b2582c684ad98f29f425ecce8c84c561fdcf5fce6bdd876b"
+    },
+    "l7-q2": {
+      "text": "You have two crystals. How many more do you need to make four? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "492db0b7e7a7f57b9046213c124c6cfc73118b43fa336644ea4751d334c96909"
+    },
+    "l7-q2-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two. You need two more.",
+      "sha256": "db9dcd44ce528953b2582c684ad98f29f425ecce8c84c561fdcf5fce6bdd876b"
+    },
+    "l7-q3": {
+      "text": "You have one crystals. How many more do you need to make five? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "8ab7605bcc87b78fe695d686ada02b68cf22674f299f3d362488ba097e8d5266"
+    },
+    "l7-q3-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four. You need four more.",
+      "sha256": "9ee1bb9d2165c8bb7be1410132f0df3a5440713fbee1d22c7d359a6ea9f65207"
+    },
+    "l7-q4": {
+      "text": "You have three crystals. How many more do you need to make five? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "23eb1c6e7720267141b06533827f28653e0c07559c5812f6f28786860c5fb06e"
+    },
+    "l7-q4-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two. You need two more.",
+      "sha256": "db9dcd44ce528953b2582c684ad98f29f425ecce8c84c561fdcf5fce6bdd876b"
+    },
+    "l7-q5": {
+      "text": "You have four crystals. How many more do you need to make four? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "eb9621914d7ba4c55279d6affe5d81743e5da6b2d5ddfd4a6d081bc8816c24e6"
+    },
+    "l7-q5-help": {
+      "text": "The empty spaces show what is missing. Count them. No crystals. That means zero.. You need zero more.",
+      "sha256": "2aed9bb0d8cd175b0ecfdfcb873f93195af9f356b25c6772c888bd7aae432659"
+    },
+    "mission-8": {
+      "text": "Mission eight. Guard the dojo. Solve five puzzles to earn an upgrade.",
+      "sha256": "1bece7caf2df7785381037683148bc224c3a4b91db9c889fd7cc5212e76fb0b9"
+    },
+    "l8-q1": {
+      "text": "Start with three crystals. Take away one. How many are left? Tap the number.",
+      "sha256": "1a7d77c9ee86f16a61b297f40631b20be5cf4abcbfd9bcca15e49ff0d72593a9"
+    },
+    "l8-q1-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two. The answer is two.",
+      "sha256": "7ec763de14cee6838395f7d586259ba863388173c783ec9484357144a7474eb3"
+    },
+    "l8-q2": {
+      "text": "Start with four crystals. Take away two. How many are left? Write the number, then tap the tick.",
+      "sha256": "7e7e149c9b33cf6e44fb471ab3352cfb740daa51bc8ecf8efc23c95f3ff53b72"
+    },
+    "l8-q2-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two. The answer is two.",
+      "sha256": "7ec763de14cee6838395f7d586259ba863388173c783ec9484357144a7474eb3"
+    },
+    "l8-q3": {
+      "text": "Start with five crystals. Take away one. How many are left? Tap the number.",
+      "sha256": "dbec65125436bbfedd262242459c77aa3910881ade6a9a05bc55567096996aa4"
+    },
+    "l8-q3-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four. The answer is four.",
+      "sha256": "0f057c55d7a1d8512243004903a2a178860cc0604c4643c4d3e9832dac267fc7"
+    },
+    "l8-q4": {
+      "text": "Start with two crystals. Take away two. How many are left? Write the number, then tap the tick.",
+      "sha256": "0926ff42d2a20eca95e8f0e86866eda9cbf864e0d34da9ee1a91038dd3639f61"
+    },
+    "l8-q4-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. No crystals. That means zero.. The answer is zero.",
+      "sha256": "d1b1366930be0a39d7cdd0da75541ace1c5e8fe892811df9a57ad8b43138d9d1"
+    },
+    "l8-q5": {
+      "text": "Start with five crystals. Take away three. How many are left? Tap the number.",
+      "sha256": "88546bc1d0bdb535e50385bb257d34295ca5f50ac472b2d0e30044ed51bc35de"
+    },
+    "l8-q5-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two. The answer is two.",
+      "sha256": "7ec763de14cee6838395f7d586259ba863388173c783ec9484357144a7474eb3"
+    },
+    "mission-9": {
+      "text": "Mission nine. Power pairs. Solve five puzzles to earn an upgrade.",
+      "sha256": "f53a6b46eea3cc20887a17512ba249fc400e7554cfb01dbef52461f7594a8358"
+    },
+    "l9-q1": {
+      "text": "You have five crystals. How many more do you need to make ten? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "ed0a500d857f88d5075251b9a36ceba4c69c34c791ec5d6644a589a6a0793ff6"
+    },
+    "l9-q1-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four, five. You need five more.",
+      "sha256": "82a4f41d9bdbd7439b01ad0452292376dbd7969ed5be75f593029eab6e00bfbf"
+    },
+    "l9-q2": {
+      "text": "You have two crystals. How many more do you need to make ten? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "b68fe97b0ceea943f6df61297bbf0b7597371ccdb7ad8c78a71a287d0d2e105b"
+    },
+    "l9-q2-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four, five, six, seven, eight. You need eight more.",
+      "sha256": "fe1aaed7a3765482585aef10755404043388e7f3ccbd887ece8edcdd66c27fc3"
+    },
+    "l9-q3": {
+      "text": "You have seven crystals. How many more do you need to make ten? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "81a5473c85946272f67e0037d34e2fce603aba9da656a7d5b704257b47a34e8a"
+    },
+    "l9-q3-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three. You need three more.",
+      "sha256": "7bded1f082fab84450bc19f12b4ece7f05fa6377108045e18159666f726b8914"
+    },
+    "l9-q4": {
+      "text": "You have zero crystals. How many more do you need to make ten? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "9d868b128f58ee5528e9e42344f07ec7982a645adcd006b9977082508b921acb"
+    },
+    "l9-q4-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four, five, six, seven, eight, nine, ten. You need ten more.",
+      "sha256": "ebc4647e6043fea86960e411f72332aa3741e28b21aa63c398c0d4958c9caf17"
+    },
+    "l9-q5": {
+      "text": "You have nine crystals. How many more do you need to make ten? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "4eec2055f9c5baffc0401c0ce85f57adce8b2212bb789236164d8f900aaad9d2"
+    },
+    "l9-q5-help": {
+      "text": "The empty spaces show what is missing. Count them. one. You need one more.",
+      "sha256": "83d628c59ec85e281694abeb59c88b428383c75745b42df4e5e3dc09b1f6f394"
+    },
+    "mission-10": {
+      "text": "Mission ten. The dojo trial. Solve five puzzles to earn an upgrade.",
+      "sha256": "6240614b3f634877724368eed5c189c487c1d00204a3caec408ac440028af388"
+    },
+    "l10-q1": {
+      "text": "Which group has the most crystals? Tap a group.",
+      "sha256": "8a38aa1315c9dbfcde8bbbd950d83eb422d3452b8ca69b7326f7365e90977eba"
+    },
+    "l10-q1-help": {
+      "text": "Let's count the groups. Group one: one, two, three, four, five, six. Group two: one, two, three, four, five, six, seven, eight, nine. Group three: one, two, three, four, five, six, seven. Tap group two.",
+      "sha256": "1066a04445ef1a8508c4117808ebd4ec78cde4983f74c7552aa427eac5e50c98"
+    },
+    "l10-q2": {
+      "text": "four crystals and four more. How many altogether? Write the number, then tap the tick.",
+      "sha256": "913ff0736a249ab6e5c80655524b988872c451d6bfb49a8b54d1a529ad8f6ab6"
+    },
+    "l10-q2-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight. There are eight altogether.",
+      "sha256": "550168ab57e60274a84767aa62a6724011ec1aa83f7cb917032a5c3e52d3e94b"
+    },
+    "l10-q3": {
+      "text": "You have two crystals. How many more do you need to make five? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "cbb75ccffe601433f07ff695e9cef8b241b25a1409a7440323324756bd60eb21"
+    },
+    "l10-q3-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three. You need three more.",
+      "sha256": "7bded1f082fab84450bc19f12b4ece7f05fa6377108045e18159666f726b8914"
+    },
+    "l10-q4": {
+      "text": "Start with five crystals. Take away two. How many are left? Tap the number.",
+      "sha256": "7eb803240850a2f3da2f508ab926d088e7a8ecd896428d75f61aa8a5f0dd9271"
+    },
+    "l10-q4-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three. The answer is three.",
+      "sha256": "7a2e576c2b6ddef90cc5e5d44f6179c3deaa52436f41059b9dd2a8fbc3c8a408"
+    },
+    "l10-q5": {
+      "text": "You have six crystals. How many more do you need to make ten? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "6aedfbb63750e27e6968330d7e635436985aaa6a7da48d54dcc3466677dbacf1"
+    },
+    "l10-q5-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four. You need four more.",
+      "sha256": "9ee1bb9d2165c8bb7be1410132f0df3a5440713fbee1d22c7d359a6ea9f65207"
+    },
+    "help-0": {
+      "text": "Let's count together. No crystals. That means zero..",
+      "sha256": "bab5a43a58c7edf41868f69f1bb6ead20cae41b8ba4c5e575394ebf47bc37c8b"
+    },
+    "help-1": {
+      "text": "Let's count together. one.",
+      "sha256": "7fd318dbc93c776e2bd6209cf74aee78f70af9e4f1a7a755a11c7d41e88c60bc"
+    },
+    "help-2": {
+      "text": "Let's count together. one, two.",
+      "sha256": "0a3883abf8259282489ffb1f6c4fc744133cd8f893ad7d96f0b91a650e88a860"
+    },
+    "help-3": {
+      "text": "Let's count together. one, two, three.",
+      "sha256": "3ca10f7329b34bf55e234a00eb3dc6b78030ccccddfc46e2c3da77bf89b4bc01"
+    },
+    "help-4": {
+      "text": "Let's count together. one, two, three, four.",
+      "sha256": "1700715de6de5bc31844fd9f75d877449d5878227cebd874a76e7999b1997487"
+    },
+    "help-5": {
+      "text": "Let's count together. one, two, three, four, five.",
+      "sha256": "1a152c70f64a57c660d256e68d8de3ecf64205d98122c38810c631f1ee572e09"
+    },
+    "help-6": {
+      "text": "Let's count together. one, two, three, four, five, six.",
+      "sha256": "201702a4dd15788f14c0e2de53bf8534da01e2f74a457f45fcb03fc2c956776d"
+    },
+    "help-7": {
+      "text": "Let's count together. one, two, three, four, five, six, seven.",
+      "sha256": "433b09df7ddb1b5bf200b3382cef1f5c70a9d65999e2baecf09e87d0bf37a10a"
+    },
+    "help-8": {
+      "text": "Let's count together. one, two, three, four, five, six, seven, eight.",
+      "sha256": "dfb01d785ba60e91ef9bb3b14919a090d301c9b279fb18b84573302e7da969ff"
+    },
+    "help-9": {
+      "text": "Let's count together. one, two, three, four, five, six, seven, eight, nine.",
+      "sha256": "1d9114f813d547f88e6dcacdba585cf4d1eea5c6618355551945ae7dfb6fb179"
+    },
+    "help-10": {
+      "text": "Let's count together. one, two, three, four, five, six, seven, eight, nine, ten.",
+      "sha256": "5b5f9c35020f9e6480a7cf4ba54f73bfb55be901333d9d7bc04051ee6c690845"
+    }
+  }
+}

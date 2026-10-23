@@ -1,0 +1,23 @@
+{
+  "tool": "Built-in image_gen.imagegen",
+  "starter_file": "hero-starter.png",
+  "starter_prompt": "Use case: stylized-concept. Asset type: transparent full-body character sprite for Ninja Maths, a five-year-old's offline puzzle game. The attached reference is the future powered-up art direction ONLY. Create her STARTER form: one friendly blonde little girl aged about five with warm brown eyes and tousled shoulder-length golden-blonde hair, same heroic red-and-gold palette, no hood covering hair and no mask. Simple crimson training tunic with small gold edging, dark leggings, simple brown/red ninja boots, a cloth belt, one plain wooden practice sword held downward away from her body in her right hand. Left hand relaxed at hip. Confident gentle smile. Charming polished hand-painted storybook fantasy game illustration, appealing round child proportions, beautifully shaded, clear silhouette and crisp readable shapes. Full body, three-quarter view facing slightly right, standing stable feet on same baseline, centered with generous clear space around the whole body and sword. No wings, lightning, armour or elaborate power effects yet. True transparent background, no scenery, ground plane, UI, captions, text, watermark or additional characters. This will be shown at 220 to 350 pixels tall, so face and equipment must read clearly. Keep the complete sprite fully inside the frame.",
+  "variants": [
+    {
+      "id": "spark-sword",
+      "file": "hero-spark-sword.png",
+      "prompt": "Use case: identity-preserve. Asset type: transparent equipment-state sprite for Ninja Maths. Edit the attached starter character. Replace ONLY her plain wooden sword with a beautiful beginner's magical sword: a warm gold hilt and a clean ruby-red blade edged with soft golden sparks. The blade is the same length, downward direction and location. Give the sword a bright golden outline and a few readable tiny lightning curls. Leave her simple training outfit and everything else unchanged. Preserve her exact face, blonde hair, age, proportions, hand positions, full-body standing pose, camera, framing, scale and baseline. Keep the same beautiful hand-painted fantasy illustration style. Keep complete character and equipment entirely inside image. Genuine transparent background including around hair and new equipment, no scenery, ground plane, text, UI or watermark."
+    },
+    {
+      "id": "golden-guard",
+      "file": "hero-golden-guard.png",
+      "prompt": "Use case: identity-preserve. Asset type: transparent equipment-state sprite for Ninja Maths. Edit the attached starter character. Add ONLY a clearly visible red-and-gold protective armour upgrade over her existing tunic: small elegant gold shoulder guards, a fitted crimson padded chest guard with gold lightning emblem, and gold wrist guards. Still child-friendly light training armour, not large spiked armour. Keep the original plain wooden sword, original boots, hair, face and rest unchanged. Preserve her exact face, blonde hair, age, proportions, hand positions, full-body standing pose, camera, framing, scale and baseline. Keep the same beautiful hand-painted fantasy illustration style. Keep complete character and equipment entirely inside image. Genuine transparent background including around hair and new equipment, no scenery, ground plane, text, UI or watermark."
+    },
+    {
+      "id": "sun-cloak",
+      "file": "hero-sun-cloak.png",
+      "prompt": "Use case: identity-preserve. Asset type: transparent equipment-state sprite for Ninja Maths. Edit the attached starter character. Add ONLY a short flowing magical golden cape behind her shoulders, visible down both sides of her silhouette, with a warm gold clasp at the collar and small golden sparkles along its hem. This is a beginner's Sun Cloak power, no wings yet. Keep her simple red tunic, original plain wooden sword, boots, face and hair unchanged. Preserve her exact face, blonde hair, age, proportions, hand positions, full-body standing pose, camera, framing, scale and baseline. Keep the same beautiful hand-painted fantasy illustration style. Keep complete character and equipment entirely inside image. Genuine transparent background including around hair and new equipment, no scenery, ground plane, text, UI or watermark."
+    }
+  ],
+  "note": "The four original complete transparent illustrations keep a locked pose and identity. The chapter reuses these files unchanged in ninja-visuals.js, combining SVG sword and armour clips over starter/cloak bodies with original vector lightning, glints, sparks, wings and flight effects. The thirty equipment ranks do not represent thirty separately generated images."
+}

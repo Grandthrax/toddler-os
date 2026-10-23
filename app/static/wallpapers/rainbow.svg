@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+ <defs><linearGradient id="sky" x2=".3" y2="1"><stop stop-color="#9ab8cf"/><stop offset="1" stop-color="#e2dfd4"/></linearGradient><g id="cloud"><path d="M-110 0a45 45 0 0 1 75-34 65 65 0 0 1 125-8 50 50 0 0 1 75 42Z" fill="#f7f4e9"/></g></defs>
+ <path fill="url(#sky)" d="M0 0h1600v1000H0z"/>
+ <g fill="none" stroke-width="33" opacity=".85"><path d="M660 690a410 410 0 0 1 820 0" stroke="#db999b"/><path d="M693 690a377 377 0 0 1 754 0" stroke="#e5b28e"/><path d="M726 690a344 344 0 0 1 688 0" stroke="#e5d39b"/><path d="M759 690a311 311 0 0 1 622 0" stroke="#a2bda3"/><path d="M792 690a278 278 0 0 1 556 0" stroke="#8faebd"/><path d="M825 690a245 245 0 0 1 490 0" stroke="#b3a3c0"/></g>
+ <use href="#cloud" x="700" y="720"/><use href="#cloud" x="1435" y="720"/><use href="#cloud" transform="translate(425 260) scale(.7)" opacity=".55"/>
+ <path d="M0 825q280-150 580-35t1020-25v235H0Z" fill="#91b1a6"/><path d="M0 940q420-140 800-15t800-20v95H0Z" fill="#608c8b"/>
+</svg>
