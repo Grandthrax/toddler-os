@@ -11,8 +11,8 @@ licences or claim exclusive copyright in AI output.
 | Andika Regular | SIL International; SIL Open Font License 1.1. The font and required notice are in `app/static/fonts/`. [Upstream](https://github.com/google/fonts/tree/main/ofl/andika). |
 | Piper speech engine | Optional dependency, not vendored. [Piper source and GPLv3 licence](https://github.com/OHF-Voice/piper1-gpl). Other installed Python packages retain their own licences. |
 | Cori high British English voice | Optional external download, not bundled. [Model card](https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/cori/high/MODEL_CARD) describes a LibriVox public-domain training dataset. This is a statement about the dataset, not a separate explicit weight-licence grant. Review upstream terms for your use or redistribution. The downloader pins file hashes. |
-| Bundled maths and Space Cat audio | Synthesised locally using the Cori voice and project-authored text. Builders and text/hash/timing manifests are supplied. No school phonics recordings are included. |
-| Ninja and Space Cat PNG illustrations | Made using OpenAI image generation. Sanitised prompt manifests are supplied alongside the assets. Ninja art used a supplied fantasy character image as visual direction; that reference image is not included. |
+| Bundled maths and storybook audio | Synthesised locally using the Cori voice and project-authored text for The Space Cat and Luciana and Dad. Builders and text/hash/timing manifests are supplied, including the name pronunciation. No school phonics recordings are included. |
+| Ninja and storybook PNG illustrations | Made using OpenAI image generation, including The Space Cat and Luciana and Dad. Sanitised prompt manifests are supplied alongside the assets. Ninja art used a supplied fantasy character image as visual direction; that reference image is not included. |
 | Icons, wallpapers and dojo SVG | Original project-authored SVG artwork, distributed with its source. |
 
 The project does not bundle the optional voice model, Python package binaries,

@@ -16,7 +16,7 @@ Content Security Policy. This is a single-device app, not an internet server.
 
 `app/core.py` handles settings, versioned free writing and optional local speech.
 `app/ninja.py` and `ninja_content.py` handle maths missions and upgrades.
-`app/storybooks.py` defines the sample branching book and versioned page progress.
+`app/storybooks.py` defines the two sample branching books and versioned page progress.
 `app/static/` contains the frontend and bundled assets. There is no npm build or
 external CDN. The server's only optional runtime dependencies are for speech.
 

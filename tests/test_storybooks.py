@@ -75,7 +75,8 @@ class StorybookTests(unittest.TestCase):
         self.assertIsNone(self.book['pages'][0]['answer'])
         self.assertEqual(self.books.save(self.book['id'],0,body),self.book)
         with self.assertRaises(Problem):self.books.save(self.book['id'],1,body)
-        with self.assertRaises(Problem):self.books.save(self.book['id'],2,body)
+        other=self.books.create({'template':'luciana-and-dad'})
+        with self.assertRaises(Problem):self.books.save(other['id'],4,body)
 
     def test_old_copying_progress_and_revisions_survive_answer_column_migration(self):
         self.save(0,text='the spa')
@@ -87,7 +88,42 @@ class StorybookTests(unittest.TestCase):
         self.assertEqual(migrated['pages'][1]['answer'],'')
         with self.store.connect() as db:self.assertEqual(db.execute('SELECT text FROM storybook_revisions WHERE page=0 ORDER BY version DESC LIMIT 1').fetchone()[0],'the spa')
 
+    def test_luciana_has_four_choices_then_a_fixed_final_page_without_changing_space_cat(self):
+        original=self.book
+        self.book=self.books.create({'template':'luciana-and-dad'})
+        self.assertEqual(self.book['total'],5)
+        self.assertEqual(self.book['title'],'Luciana and Dad')
+        self.assertEqual([[c['answer'] for c in page['choices']] for page in self.book['pages']],
+                         [['mat','hat'],['cat','rat'],['drink','sock'],['sad','mad'],['dad was the best fun']])
+        self.assertTrue(self.book['pages'][0]['decision'])
+        self.assertFalse(self.book['pages'][4]['decision'])
+        self.assertIsNone(self.book['pages'][4]['answer'])
+        self.assertEqual(self.book['pages'][4]['choice'],'luciana-dad')
+        for index,answer in enumerate(('hat','rat','sock','mad')):
+            body={'answer':answer,'version':self.book['pages'][index]['version'],'finished':True}
+            self.book=self.books.save(self.book['id'],index,body)
+            self.assertTrue(self.book['pages'][index]['finished'])
+            self.assertEqual(self.book['pages'][index]['answer'],answer)
+            self.assertEqual(Storybooks(self.store).book(self.book['id']),self.book)
+        self.book=self.books.save(self.book['id'],4,{'version':0,'finished':True})
+        self.assertEqual(self.book['pages'][4]['text'],'dad was the best fun.')
+        self.assertTrue(self.book['completed'])
+        self.assertEqual(self.books.book(original['id']),original)
+        self.assertEqual(len(self.books.library()['templates']),2)
+        with self.assertRaises(Problem):self.books.save(original['id'],4,{'choice':'luciana-dad','text':'dad','version':0,'finished':False})
+        with self.assertRaises(Problem):self.books.save(self.book['id'],0,{'choice':'cover','text':'the space cat.','version':self.book['pages'][0]['version'],'finished':False})
 
+    def test_all_luciana_branch_combinations_use_their_own_images_and_sentences(self):
+        from itertools import product
+        for branch_ids in product(*[[item['id'] for item in choices] for choices in TEMPLATES['luciana-and-dad']['pages']]):
+            self.book=self.books.create({'template':'luciana-and-dad'})
+            for index,choice in enumerate(branch_ids):
+                page=self.book['pages'][index]
+                answer=next(item['answer'] for item in page['choices'] if item['id']==choice)
+                body={'version':page['version'],'finished':True}|({'answer':answer} if page['decision'] else {})
+                self.book=self.books.save(self.book['id'],index,body)
+            self.assertTrue(self.book['completed'])
+            self.assertEqual([p['choice'] for p in self.book['pages']],list(branch_ids))
 
     def test_lost_response_retry_is_idempotent_and_stale_edits_conflict(self):
         body=self.save(0,text='the ')
@@ -155,6 +191,9 @@ class StorybookTests(unittest.TestCase):
         with wave.open(str(folder/'page-moon.wav')) as audio:
             self.assertLess(audio.getnframes()/audio.getframerate(),3,'The moon page must be one continuous sentence')
         self.assertEqual(len(manifest['page-moon']['words']),6)
+        self.assertEqual(len(manifest['page-luciana-dad']['words']),5)
+        for name in ['word-luciana',*(key for key in manifest if key.startswith('page-luciana-') and key!='page-luciana-dad')]:
+            self.assertEqual(manifest[name]['pronunciations'],{'luciana':'luːsiˈænə'})
 
 
 class StorybookHTTPTests(unittest.TestCase):

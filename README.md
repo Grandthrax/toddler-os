@@ -19,6 +19,9 @@ accounts, adverts, analytics or cloud speech service.
 | **Ninja Maths** | Complete ten missions covering counting, comparison, addition, subtraction and making ten. Earn pictured sword, armour and power upgrades. |
 | **Backgrounds** | Choose a picture for their desktop. |
 
+Two illustrated sample books are included: **The Space Cat** and **Luciana and
+Dad**. Both have bundled spoken pages and matching pictures for each choice.
+
 ## Try it on your computer
 
 Install Python, then download this repository using **Code → Download ZIP** and
@@ -75,6 +78,11 @@ the matching picture appears, and the page reads aloud. Finish the choices to
 keep a complete picture book. You do not need to copy the whole sentence.
 
 ![The Space Cat page revealed after typing hop](docs/images/space-cat.png)
+
+**Luciana and Dad** has five pages: choose `mat` or `hat`, `cat` or `rat`, `drink`
+or `sock`, then `sad` or `mad`. The final page, “dad was the best fun”, reads
+automatically. Type just the chosen word on each choice page; the full sentence
+and matching picture appear afterwards. Luciana is pronounced “Loo-see-ANN-uh”.
 
 In **Ninja Maths**, start mission 1. Answer using the pictured choices, number
 input or matching activity. Help and another try are available. Finishing a

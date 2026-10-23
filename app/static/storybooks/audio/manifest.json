@@ -846,6 +846,370 @@
         ]
       ]
     },
+    "choose-luciana-0": {
+      "text": "What did Luciana sit on? Type mat or hat. Then press space or enter.",
+      "sha256": "fe9b29cdf5f639876f7bb0bea129aacc7cc15309d5a71d91fd217bfb5490f11e",
+      "words": [
+        [
+          0,
+          4,
+          0.03483,
+          0.17415
+        ],
+        [
+          5,
+          8,
+          0.19737,
+          0.31347
+        ],
+        [
+          9,
+          16,
+          0.33669,
+          0.76626
+        ],
+        [
+          17,
+          20,
+          0.8127,
+          0.96363
+        ],
+        [
+          21,
+          23,
+          1.02168,
+          1.25388
+        ],
+        [
+          25,
+          29,
+          1.5093,
+          1.79955
+        ],
+        [
+          30,
+          33,
+          1.84599,
+          2.15946
+        ],
+        [
+          34,
+          36,
+          2.18268,
+          2.26395
+        ],
+        [
+          37,
+          40,
+          2.322,
+          2.71673
+        ],
+        [
+          42,
+          46,
+          2.87927,
+          3.07664
+        ],
+        [
+          47,
+          52,
+          3.15791,
+          3.47138
+        ],
+        [
+          53,
+          58,
+          3.51782,
+          3.94739
+        ],
+        [
+          59,
+          61,
+          3.98222,
+          4.10993
+        ],
+        [
+          62,
+          67,
+          4.15637,
+          4.5395
+        ]
+      ],
+      "recipe": 2,
+      "pronunciations": {
+        "luciana": "lu\u02d0si\u02c8\u00e6n\u0259"
+      }
+    },
+    "choose-luciana-1": {
+      "text": "What did Luciana pat? Type cat or rat. Then press space or enter.",
+      "sha256": "e2dd46aefbdbf4f63223799d157eaa3eb83a99c45005b8125fee0915f177a45b",
+      "words": [
+        [
+          0,
+          4,
+          0.05805,
+          0.18576
+        ],
+        [
+          5,
+          8,
+          0.20898,
+          0.32508
+        ],
+        [
+          9,
+          16,
+          0.3483,
+          0.77787
+        ],
+        [
+          17,
+          20,
+          0.85914,
+          1.20744
+        ],
+        [
+          22,
+          26,
+          1.40481,
+          1.61379
+        ],
+        [
+          27,
+          30,
+          1.67184,
+          1.96209
+        ],
+        [
+          31,
+          33,
+          1.99692,
+          2.05497
+        ],
+        [
+          34,
+          37,
+          2.07819,
+          2.4381
+        ],
+        [
+          39,
+          43,
+          2.60063,
+          2.77478
+        ],
+        [
+          44,
+          49,
+          2.83283,
+          3.04181
+        ],
+        [
+          50,
+          55,
+          3.11147,
+          3.57587
+        ],
+        [
+          56,
+          58,
+          3.59909,
+          3.71519
+        ],
+        [
+          59,
+          64,
+          3.73841,
+          4.10993
+        ]
+      ],
+      "recipe": 2,
+      "pronunciations": {
+        "luciana": "lu\u02d0si\u02c8\u00e6n\u0259"
+      }
+    },
+    "choose-luciana-2": {
+      "text": "What did Luciana run to? Type drink or sock. Then press space or enter.",
+      "sha256": "935765fcb6b7b35889eb3a29e279680a2dde84f4884e84f74c0cb7c86e10bc33",
+      "words": [
+        [
+          0,
+          4,
+          0.04644,
+          0.16254
+        ],
+        [
+          5,
+          8,
+          0.18576,
+          0.27864
+        ],
+        [
+          9,
+          16,
+          0.31347,
+          0.66177
+        ],
+        [
+          17,
+          20,
+          0.71982,
+          0.98685
+        ],
+        [
+          21,
+          23,
+          1.0449,
+          1.36998
+        ],
+        [
+          25,
+          29,
+          1.61379,
+          1.89243
+        ],
+        [
+          30,
+          35,
+          1.93887,
+          2.26395
+        ],
+        [
+          36,
+          38,
+          2.29878,
+          2.39166
+        ],
+        [
+          39,
+          43,
+          2.49615,
+          2.80961
+        ],
+        [
+          45,
+          49,
+          3.11147,
+          3.34367
+        ],
+        [
+          50,
+          55,
+          3.40172,
+          3.68036
+        ],
+        [
+          56,
+          61,
+          3.73841,
+          4.15637
+        ],
+        [
+          62,
+          64,
+          4.17959,
+          4.27247
+        ],
+        [
+          65,
+          70,
+          4.29569,
+          4.64399
+        ]
+      ],
+      "recipe": 2,
+      "pronunciations": {
+        "luciana": "lu\u02d0si\u02c8\u00e6n\u0259"
+      }
+    },
+    "choose-luciana-3": {
+      "text": "How did Luciana feel? Type sad or mad. Then press space or enter.",
+      "sha256": "a9cb0fa6c880c044203a868ccd2d46d8c143f079411ef21f81ec352f7d1d4a6b",
+      "words": [
+        [
+          0,
+          3,
+          0.05805,
+          0.17415
+        ],
+        [
+          4,
+          7,
+          0.19737,
+          0.32508
+        ],
+        [
+          8,
+          15,
+          0.35991,
+          0.76626
+        ],
+        [
+          16,
+          20,
+          0.85914,
+          1.19583
+        ],
+        [
+          22,
+          26,
+          1.46286,
+          1.68345
+        ],
+        [
+          27,
+          30,
+          1.78794,
+          2.18268
+        ],
+        [
+          31,
+          33,
+          2.2059,
+          2.322
+        ],
+        [
+          34,
+          37,
+          2.35683,
+          2.798
+        ],
+        [
+          39,
+          43,
+          2.9141,
+          3.07664
+        ],
+        [
+          44,
+          49,
+          3.16952,
+          3.42494
+        ],
+        [
+          50,
+          55,
+          3.45977,
+          3.80807
+        ],
+        [
+          56,
+          58,
+          3.83129,
+          3.93578
+        ],
+        [
+          59,
+          64,
+          4.00544,
+          4.35374
+        ]
+      ],
+      "recipe": 2,
+      "pronunciations": {
+        "luciana": "lu\u02d0si\u02c8\u00e6n\u0259"
+      }
+    },
     "page-cover": {
       "text": "the space cat.",
       "sha256": "753bd23263f0b99a378fc19e5c140249f3946128f1c458d35e1eb1000f673c10",
@@ -1101,6 +1465,327 @@
           22,
           0.91719,
           1.2771
+        ]
+      ],
+      "recipe": 2
+    },
+    "page-luciana-mat": {
+      "text": "luciana sat on the mat.",
+      "sha256": "2000ceef054c68dd0216ec28c951abdb00439a83657973ab427e1ce5e1080d45",
+      "words": [
+        [
+          0,
+          7,
+          0.05805,
+          0.56889
+        ],
+        [
+          8,
+          11,
+          0.59211,
+          0.87075
+        ],
+        [
+          12,
+          14,
+          0.90558,
+          1.01007
+        ],
+        [
+          15,
+          18,
+          1.01007,
+          1.06812
+        ],
+        [
+          19,
+          22,
+          1.10295,
+          1.5093
+        ]
+      ],
+      "recipe": 2,
+      "pronunciations": {
+        "luciana": "lu\u02d0si\u02c8\u00e6n\u0259"
+      }
+    },
+    "page-luciana-hat": {
+      "text": "luciana sat on the hat.",
+      "sha256": "c6b786ef412757b7203a98c89087e0dec214511f3a232111e9b1a0f4b5619882",
+      "words": [
+        [
+          0,
+          7,
+          0.06966,
+          0.51084
+        ],
+        [
+          8,
+          11,
+          0.55728,
+          0.88236
+        ],
+        [
+          12,
+          14,
+          0.91719,
+          1.02168
+        ],
+        [
+          15,
+          18,
+          1.02168,
+          1.07973
+        ],
+        [
+          19,
+          22,
+          1.12617,
+          1.52091
+        ]
+      ],
+      "recipe": 2,
+      "pronunciations": {
+        "luciana": "lu\u02d0si\u02c8\u00e6n\u0259"
+      }
+    },
+    "page-luciana-cat": {
+      "text": "luciana pat the cat.",
+      "sha256": "699912b0b0847f8ebdef699ce82cbf444bedec80f5e77f982cc8f46ece1ee517",
+      "words": [
+        [
+          0,
+          7,
+          0.05805,
+          0.54567
+        ],
+        [
+          8,
+          11,
+          0.59211,
+          0.82431
+        ],
+        [
+          12,
+          15,
+          0.84753,
+          0.91719
+        ],
+        [
+          16,
+          19,
+          0.95202,
+          1.34676
+        ]
+      ],
+      "recipe": 2,
+      "pronunciations": {
+        "luciana": "lu\u02d0si\u02c8\u00e6n\u0259"
+      }
+    },
+    "page-luciana-rat": {
+      "text": "luciana pat the rat.",
+      "sha256": "bba2d48b7f9a29eb0e4794ca101a7566211c4a760b8aa07578022c5a26a8438b",
+      "words": [
+        [
+          0,
+          7,
+          0.06966,
+          0.52245
+        ],
+        [
+          8,
+          11,
+          0.55728,
+          0.75465
+        ],
+        [
+          12,
+          15,
+          0.77787,
+          0.83592
+        ],
+        [
+          16,
+          19,
+          0.88236,
+          1.21905
+        ]
+      ],
+      "recipe": 2,
+      "pronunciations": {
+        "luciana": "lu\u02d0si\u02c8\u00e6n\u0259"
+      }
+    },
+    "page-luciana-drink": {
+      "text": "luciana ran to the drink.",
+      "sha256": "1ec1a2fff86ebae2c895a00a26f09ced600a3278e0e9b97bee4712b43a4423fb",
+      "words": [
+        [
+          0,
+          7,
+          0.03483,
+          0.41796
+        ],
+        [
+          8,
+          11,
+          0.48762,
+          0.8127
+        ],
+        [
+          12,
+          14,
+          0.84753,
+          0.94041
+        ],
+        [
+          15,
+          18,
+          0.96363,
+          1.01007
+        ],
+        [
+          19,
+          24,
+          1.0449,
+          1.46286
+        ]
+      ],
+      "recipe": 2,
+      "pronunciations": {
+        "luciana": "lu\u02d0si\u02c8\u00e6n\u0259"
+      }
+    },
+    "page-luciana-sock": {
+      "text": "luciana ran to the sock.",
+      "sha256": "16965779b695192513632793efc65ad7a4023f097c7c0e1ba4db9875f7721ab6",
+      "words": [
+        [
+          0,
+          7,
+          0.02322,
+          0.45279
+        ],
+        [
+          8,
+          11,
+          0.49923,
+          0.74304
+        ],
+        [
+          12,
+          14,
+          0.78948,
+          0.87075
+        ],
+        [
+          15,
+          18,
+          0.90558,
+          0.96363
+        ],
+        [
+          19,
+          23,
+          1.02168,
+          1.38159
+        ]
+      ],
+      "recipe": 2,
+      "pronunciations": {
+        "luciana": "lu\u02d0si\u02c8\u00e6n\u0259"
+      }
+    },
+    "page-luciana-sad": {
+      "text": "luciana was sad.",
+      "sha256": "fbba98145403dcd4e07caf7cbb4e2b65e7e98f0f52da10169a52f547f05ba86a",
+      "words": [
+        [
+          0,
+          7,
+          0.03483,
+          0.45279
+        ],
+        [
+          8,
+          11,
+          0.49923,
+          0.62694
+        ],
+        [
+          12,
+          15,
+          0.6966,
+          1.161
+        ]
+      ],
+      "recipe": 2,
+      "pronunciations": {
+        "luciana": "lu\u02d0si\u02c8\u00e6n\u0259"
+      }
+    },
+    "page-luciana-mad": {
+      "text": "luciana was mad.",
+      "sha256": "bc8ca82d5390299f9a4e95c6aadd491f993f087fa013536fb1db373c2e6e376d",
+      "words": [
+        [
+          0,
+          7,
+          0.05805,
+          0.56889
+        ],
+        [
+          8,
+          11,
+          0.61533,
+          0.71982
+        ],
+        [
+          12,
+          15,
+          0.78948,
+          1.28871
+        ]
+      ],
+      "recipe": 2,
+      "pronunciations": {
+        "luciana": "lu\u02d0si\u02c8\u00e6n\u0259"
+      }
+    },
+    "page-luciana-dad": {
+      "text": "dad was the best fun.",
+      "sha256": "b8efca2e1ab00c3c0ebf3c01f57ad3e249d87e4ddb96088ff176ab798ecdb0a9",
+      "words": [
+        [
+          0,
+          3,
+          0.06966,
+          0.42957
+        ],
+        [
+          4,
+          7,
+          0.4644,
+          0.5805
+        ],
+        [
+          8,
+          11,
+          0.5805,
+          0.67338
+        ],
+        [
+          12,
+          16,
+          0.6966,
+          0.97524
+        ],
+        [
+          17,
+          20,
+          1.02168,
+          1.41642
         ]
       ],
       "recipe": 2
@@ -1388,6 +2073,313 @@
       "source_samples": [
         15068,
         20003
+      ]
+    },
+    "word-luciana": {
+      "text": "luciana",
+      "sha256": "888c977988527b4a966aba8f62fa17fd0c4f386822ee823ccb2fb9179316fc07",
+      "words": [
+        [
+          0,
+          7,
+          0.10503,
+          0.61587
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-mat",
+      "source_word": 0,
+      "source_samples": [
+        287,
+        12835
+      ],
+      "pronunciations": {
+        "luciana": "lu\u02d0si\u02c8\u00e6n\u0259"
+      }
+    },
+    "word-sat": {
+      "text": "sat",
+      "sha256": "7875f218efa48633170df683635c7bca73516afa52db81377f411fb04c423d4b",
+      "words": [
+        [
+          0,
+          3,
+          0.09646,
+          0.42154
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-hat",
+      "source_word": 1,
+      "source_samples": [
+        11484,
+        20003
+      ]
+    },
+    "word-mat": {
+      "text": "mat",
+      "sha256": "477680329058a14d7937daf86fd2290aefffa4cbf57852c17c4bc33e22ccf55c",
+      "words": [
+        [
+          0,
+          3,
+          0.08485,
+          0.4912
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-mat",
+      "source_word": 4,
+      "source_samples": [
+        23772,
+        34492
+      ]
+    },
+    "word-hat": {
+      "text": "hat",
+      "sha256": "76a6eef14deb773f12c782bf34e39fabaf86288fdf7eb1a4ad2af786e6cc57a0",
+      "words": [
+        [
+          0,
+          3,
+          0.09646,
+          0.4912
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-hat",
+      "source_word": 4,
+      "source_samples": [
+        24028,
+        34748
+      ]
+    },
+    "word-pat": {
+      "text": "pat",
+      "sha256": "7454dee41c6fe04a5b6ef12c5a6ab99c5b66cef0369f80effcce89e0f40b5131",
+      "words": [
+        [
+          0,
+          3,
+          0.09646,
+          0.32866
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-cat",
+      "source_word": 1,
+      "source_samples": [
+        12252,
+        18467
+      ]
+    },
+    "word-rat": {
+      "text": "rat",
+      "sha256": "8606fe1aef7b6e170d8aff4cfb949c2d3f8458640c1c600f7b4c71523bc23d20",
+      "words": [
+        [
+          0,
+          3,
+          0.09646,
+          0.43315
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-rat",
+      "source_word": 3,
+      "source_samples": [
+        18652,
+        28092
+      ]
+    },
+    "word-ran": {
+      "text": "ran",
+      "sha256": "20a360f2bac4c44d48855db570cdd523700c458fa56c11c7ed386700e74e6724",
+      "words": [
+        [
+          0,
+          3,
+          0.10503,
+          0.43011
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-drink",
+      "source_word": 1,
+      "source_samples": [
+        9759,
+        18467
+      ]
+    },
+    "word-to": {
+      "text": "to",
+      "sha256": "d1eb8e0d9ae96e030d6492bb8d12e0f9a7b211baed54e66acbe4b7e0f92c99c9",
+      "words": [
+        [
+          0,
+          2,
+          0.08485,
+          0.17773
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-drink",
+      "source_word": 2,
+      "source_samples": [
+        18140,
+        21027
+      ]
+    },
+    "word-drink": {
+      "text": "drink",
+      "sha256": "4a3ff72b8dc446547da74ca3a7955bcd30a6d18a3300c6cf7720b4a77636f889",
+      "words": [
+        [
+          0,
+          5,
+          0.08485,
+          0.50281
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-drink",
+      "source_word": 4,
+      "source_samples": [
+        22492,
+        33468
+      ]
+    },
+    "word-sock": {
+      "text": "sock",
+      "sha256": "caa4b4b62c203172ba7edfd5347c0d32ec93f0305cc6c321657ebf74a32d298a",
+      "words": [
+        [
+          0,
+          4,
+          0.10504,
+          0.46495
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-sock",
+      "source_word": 4,
+      "source_samples": [
+        21535,
+        31676
+      ]
+    },
+    "word-was": {
+      "text": "was",
+      "sha256": "b917cc47ff5e114bca8ab23e85884dea8bd62bb0b3e022a5d7e2804878f840c9",
+      "words": [
+        [
+          0,
+          3,
+          0.09646,
+          0.22417
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-sad",
+      "source_word": 1,
+      "source_samples": [
+        10204,
+        15036
+      ]
+    },
+    "word-sad": {
+      "text": "sad",
+      "sha256": "57ca547e6ed3ae5322e159039dc23a7f2fcd14c8d525d04552283bcbc9fa68e2",
+      "words": [
+        [
+          0,
+          3,
+          0.10504,
+          0.56944
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-sad",
+      "source_word": 2,
+      "source_samples": [
+        14367,
+        26812
+      ]
+    },
+    "word-mad": {
+      "text": "mad",
+      "sha256": "e423de5abf749d9c78e36a24b9976d9681be9720bfbaaed488e9e2cd9edfb227",
+      "words": [
+        [
+          0,
+          3,
+          0.10504,
+          0.60427
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-mad",
+      "source_word": 2,
+      "source_samples": [
+        16415,
+        29628
+      ]
+    },
+    "word-dad": {
+      "text": "dad",
+      "sha256": "c434b7065792fa81fe620c0f88685c592dde41c1c21cad0d1a444433ee87ad43",
+      "words": [
+        [
+          0,
+          3,
+          0.10503,
+          0.46494
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-dad",
+      "source_word": 0,
+      "source_samples": [
+        543,
+        10019
+      ]
+    },
+    "word-best": {
+      "text": "best",
+      "sha256": "25f6166cc2d320a88ddac9d5f605d023160b8918973d413b7e16e9f51218181a",
+      "words": [
+        [
+          0,
+          4,
+          0.07324,
+          0.35188
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-dad",
+      "source_word": 3,
+      "source_samples": [
+        15068,
+        22307
+      ]
+    },
+    "word-fun": {
+      "text": "fun",
+      "sha256": "045bae9c91a286de2e44123ff5964c3efea13193c9f7b5b5e2c01c7f2be68df8",
+      "words": [
+        [
+          0,
+          3,
+          0.09646,
+          0.4912
+        ]
+      ],
+      "recipe": 2,
+      "source_page": "page-luciana-dad",
+      "source_word": 4,
+      "source_samples": [
+        21724,
+        32444
       ]
     }
   }

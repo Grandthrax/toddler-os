@@ -19,7 +19,23 @@ STEMS = ('the space cat.', 'the cat can …', 'the cat is on …', 'the cat has 
 TEMPLATE = {"id":"space-cat","title":"The Space Cat","image":"/storybooks/cover.png","pages":PAGES,
             "description":"A little cat. A very big adventure.","stems":STEMS,
             "instructions":(None,'choose-1','choose-2','choose-3')}
-TEMPLATES = {'space-cat': TEMPLATE}
+LUCIANA_PAGES = [
+    [option('luciana-mat','luciana sat on the mat.','luciana/mat','mat'),
+     option('luciana-hat','luciana sat on the hat.','luciana/hat','hat')],
+    [option('luciana-cat','luciana pat the cat.','luciana/cat','cat'),
+     option('luciana-rat','luciana pat the rat.','luciana/rat','rat')],
+    [option('luciana-drink','luciana ran to the drink.','luciana/drink','drink'),
+     option('luciana-sock','luciana ran to the sock.','luciana/sock','sock')],
+    [option('luciana-sad','luciana was sad.','luciana/sad','sad'),
+     option('luciana-mad','luciana was mad.','luciana/mad','mad')],
+    [option('luciana-dad','dad was the best fun.','luciana/dad','dad was the best fun')],
+]
+TEMPLATES = {'space-cat':TEMPLATE,'luciana-and-dad':{
+    'id':'luciana-and-dad','title':'Luciana and Dad','image':'/storybooks/luciana/dad.png',
+    'description':'A little adventure. A happy ending with Dad.','pages':LUCIANA_PAGES,
+    'stems':('luciana sat on the …','luciana pat the …','luciana ran to the …','luciana was …','dad was the best fun.'),
+    'instructions':tuple('choose-luciana-'+str(index) for index in range(4))+(None,),
+}}
 
 
 def matches(text, target):
@@ -36,6 +52,12 @@ def prompts():
             "finished":"You made your own book! Tap the speaker to hear it, or turn the pages.",
             "help":"Type one of the words above. Look at the glowing letter. You can use backspace to change a letter.",
             "conflict":"Your book has newer saved words. Your typing is safe here too. Ask a grown-up to help you choose which words to keep."}
+    for index,text in enumerate((
+        'What did Luciana sit on? Type mat or hat. Then press space or enter.',
+        'What did Luciana pat? Type cat or rat. Then press space or enter.',
+        'What did Luciana run to? Type drink or sock. Then press space or enter.',
+        'How did Luciana feel? Type sad or mad. Then press space or enter.',
+    )):result['choose-luciana-'+str(index)]=text
     for template in TEMPLATES.values():
         for choices in template['pages']:
             for choice in choices:

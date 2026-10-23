@@ -16,11 +16,11 @@ from core import Speech, word_timings
 from storybooks import prompts
 
 RECIPE=2
-NAME_PRONUNCIATIONS = {}
+NAME_PRONUNCIATIONS={'luciana':'luːsiˈænə'}  # Parent: Loo-see-ANN-uh.
 
 
 def spoken_text(text):
-    return text
+    return re.sub(r'\bluciana\b',lambda match:'[['+NAME_PRONUNCIATIONS['luciana']+']]',text,flags=re.I)
 
 
 def render_prompt(speech,text):

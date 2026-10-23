@@ -1,6 +1,6 @@
 # Offline sound setup
 
-The bundled maths and Space Cat recordings work without additional packages.
+The bundled maths, Space Cat and Luciana and Dad recordings work without additional packages.
 Reading new writing uses Piper on this computer. Letter feedback uses your own
 recorded sounds. Neither uses an online speech API or browser speech synthesis.
 
