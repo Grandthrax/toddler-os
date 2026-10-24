@@ -16,7 +16,11 @@ Content Security Policy. This is a single-device app, not an internet server.
 
 `app/core.py` handles settings, versioned free writing and optional local speech.
 `app/ninja.py` and `ninja_content.py` handle maths missions and upgrades.
-`app/storybooks.py` defines the two sample branching books and versioned page progress.
+`app/storybooks.py` defines the sample branching books and versioned page progress.
+`app/bookdash_content.py` supplies the licensed Book Dash editions and attribution:
+two typed adaptations, one original narrated reader, and one wordless original.
+Picture-only pages have no story audio prompt. Contractions remain single spoken
+tokens so reading highlights and word-click feedback agree.
 `app/static/` contains the frontend and bundled assets. There is no npm build or
 external CDN. The server's only optional runtime dependencies are for speech.
 

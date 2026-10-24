@@ -30,7 +30,7 @@
     audio.onerror=()=>status('Sound needs a retry',true);
     audio.play().then(()=>{if(timings.length)highlight();}).catch(error=>{if(error.name!=='AbortError')status('Tap the speaker to hear it',true);});
   }
-  function say(id,options={}){stop();play('/storybooks/audio/'+id+'.wav',{...options,timings:state.manifest?.prompts[id]?.words||[]});}
+  function say(id,options={}){stop();const prompt=state.manifest?.prompts[id];if(!prompt){options.done?.();return;}play('/storybooks/audio/'+id+'.wav',{...options,timings:prompt.words||[]});}
   function letterSound(letter){stop();if(state.settings?.phonics_enabled&&state.settings.phonics_available.includes(letter))play('/phonics/'+letter);}
   async function sayWord(word,done=()=>{}){
     word=word.toLowerCase().replace(/[^a-z]/g,'');if(!word||word.length>40)return;
@@ -50,7 +50,7 @@
     const bookId=state.book.id,index=state.index,snapshot={...(state.newFlow?{answer:state.typed}:{choice:state.choice,text:state.typed}),
       version:page().version,finished:page().finished&&(decision()?state.typed===page().answer:matches()),...overrides};
     if(Object.keys(snapshot).filter(name=>name!=='version').every(name=>page()[name]===snapshot[name])){forget();status();return true;}
-    remember();status('Saving…');root.setAttribute('aria-busy','true');
+    remember();status('Saving…');setBusy(true);
     const operation=(async()=>{
       try{
         const result=await request('/'+bookId+'/pages/'+index,snapshot,'PUT');
@@ -64,7 +64,7 @@
         if(error.status===409&&error.detail.book){state.conflict={text:state.typed,choice:state.choice,newFlow:state.newFlow};state.book=error.detail.book;say('conflict');render();}
         else{status('Save needs a retry',true);showError();}
         return false;
-      }finally{root.setAttribute('aria-busy','false');}
+      }finally{setBusy(false);}
     })();
     state.pending=operation;const result=await operation;state.pending=null;return result;
   }
@@ -79,11 +79,11 @@
   async function finishFixed(){
     if(state.pending)return state.pending;
     const current=page(),body={version:current.version,finished:true};
-    root.setAttribute('aria-busy','true');
+    setBusy(true);
     const operation=(async()=>{
       try{state.book=await request('/'+state.book.id+'/pages/'+state.index,body,'PUT');state.error='';render();focus();say('page-'+page().choice);return true;}
       catch(error){if(error.status===409&&error.detail.book)state.book=error.detail.book;state.error='Your page needs a retry. Your saved book is safe.';showError();return false;}
-      finally{root.setAttribute('aria-busy','false');}
+      finally{setBusy(false);}
     })();
     state.pending=operation;const result=await operation;state.pending=null;return result;
   }
@@ -109,9 +109,23 @@
     }catch{}
     render();focus();say(state.conflict?'conflict':current.instruction);
   }
+  function setBusy(busy){root.setAttribute('aria-busy',String(busy));root.querySelectorAll('[data-action=continue-story]').forEach(button=>{button.disabled=busy;});}
   function header(){return `<header class="sb-bar"><div class="sb-brand"><img src="/storybooks.svg" alt=""><strong>Storybooks</strong></div><nav aria-label="Storybooks"><button class="sb-small" data-action="home" aria-label="Bookshelf">${icon('book')}<span>My books</span></button><button class="sb-round" data-action="help" aria-label="Hear what to do">${icon('sound')}</button><button class="sb-round" data-action="stop" aria-label="Stop reading">${icon('stop')}</button></nav></header>`;}
   const dots=(done,total)=>`<span class="sb-dots" aria-label="${done} of ${total} pages">${'●'.repeat(done)}${'○'.repeat(total-done)}${done===total?icon('check'):''}</span>`;
-  function home(){return `<div class="sb-home"><div class="sb-intro"><div><h1>My storybooks</h1><p>Type a word. See the picture. Hear your story.</p></div><button class="sb-round" data-action="welcome" aria-label="Hear about making a book">${icon('sound')}</button></div><div class="sb-template-grid">${state.library.templates.map(template=>`<button class="sb-new-book" data-action="new" data-template="${escape(template.id)}"><img src="${template.image}" alt="${escape(template.title)}"><span><strong>${escape(template.title)}</strong><small>${escape(template.description)}</small><span class="sb-primary">${icon('plus')}Make a book</span></span></button>`).join('')}</div>${state.library.books.length?`<h2 class="sb-shelf-title">Your books</h2><div class="sb-shelf">${state.library.books.map(book=>`<button class="sb-book-card" data-book="${book.id}"><img src="${book.image}" alt=""><span><strong>${escape(book.title)}</strong>${dots(book.done,book.total)}</span></button>`).join('')}</div>`:''}</div>`;}
+  const readingEdition=()=>['original','wordless'].includes(state.book?.edition);
+  const endPrompt=()=>state.book?.edition==='wordless'?'picture-finished':readingEdition()?'read-finished':'finished';
+  function templateCard(template){
+    const reading=['original','wordless'].includes(template.edition);
+    return `<button class="sb-new-book" data-action="new" data-template="${escape(template.id)}"><img src="${template.image}" alt="${escape(template.title)}"><span><strong>${escape(template.title.replace(' · My story',''))}</strong><small>${escape(template.description)}</small><span class="sb-primary">${icon(reading?'book':'pencil')}${reading?template.edition==='wordless'?'Look and tell':'Read a book':'Make a book'}</span>${template.licensed?'<img class="sb-publisher-mark" src="/storybooks/bookdash/book-dash-logo.png" alt="Book Dash">':''}</span></button>`;
+  }
+  function credits(){
+    const credit=state.book?.credits;if(!credit)return '';
+    return `<details class="sb-credits"><summary><img src="/storybooks/bookdash/book-dash-logo.png" alt="Book Dash"><span>Book credits · ${escape(credit.license)}</span></summary><p>Originally published by Book Dash. Created by ${credit.creators.map(escape).join('; ')}.</p><p>${escape(credit.changes)}</p><p>Original: ${escape(credit.source)}<br>Licence: ${escape(credit.license_url)}</p><p>No endorsement by the original creators is implied.</p></details>`;
+  }
+  function home(){
+    const templates=state.library.templates;
+    return `<div class="sb-home"><div class="sb-intro"><div><h1>My storybooks</h1><p>Make a story, read a book, or tell a picture story.</p></div><button class="sb-round" data-action="welcome" aria-label="Hear about the books">${icon('sound')}</button></div><div class="sb-template-grid">${templates.map(templateCard).join('')}</div>${state.library.books.length?`<h2 class="sb-shelf-title">Your books</h2><div class="sb-shelf">${state.library.books.map(book=>`<button class="sb-book-card" data-book="${book.id}"><img src="${book.image}" alt=""><span><strong>${escape(book.title)}</strong>${dots(book.done,book.total)}</span></button>`).join('')}</div>`:''}</div>`;
+  }
   function pageHead(){return `<div class="sb-page-head"><h1>${escape(state.book.title)}</h1><div class="sb-page-count">${state.index+1} / ${state.book.total}${dots(state.book.done,state.book.total)}</div></div>`;}
   function conflict(){return state.conflict?`<div class="sb-conflict" role="alert"><p>This page has newer saved words. Your typing is safe too.</p><button data-action="keep-draft">${icon('pencil')}Keep my typing</button><button data-action="keep-saved">${icon('book')}Use saved words</button></div>`:'';}
   function writer(){return decisionWriter();}
@@ -120,8 +134,11 @@
     return `${pageHead()}${conflict()}<div class="sb-spread sb-decision"><div class="sb-illustration"><img src="${previous?.image||state.book.image}" alt="${escape(previous?.target||state.book.title)}"><div class="sb-context-caption"><span>${escape(previous?.target||state.book.title)}</span>${previous?`<button class="sb-round" data-action="hear-context" aria-label="Hear the story so far">${icon('sound')}</button>`:''}</div></div><div class="sb-writing-page"><div class="sb-copy-head"><span class="sb-copy-label">What happens next?</span><button class="sb-round" data-action="help" aria-label="Hear your word choices">${icon('sound')}</button></div><h2 class="sb-choice-stem">${escape(page().stem)}</h2><div class="sb-word-options" aria-label="Words you can type">${page().choices.map(item=>`<div class="sb-word-option" data-option="${item.answer}"><strong>${item.answer}</strong><button class="sb-round" data-hear-word="${item.answer}" aria-label="Hear ${item.answer}">${icon('sound')}</button></div>`).join('')}</div><label class="sr-only" for="sb-writing">Type one of the word choices</label><textarea id="sb-writing" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="500" ${state.conflict?'disabled':''} placeholder="Type a word…">${escape(state.typed)}</textarea><div class="sb-matching" role="status"></div><div class="sb-letter-keys" aria-label="Letters for your choices">${letters.map(letter=>`<button data-letter="${letter}" aria-label="Write ${letter}">${letter}</button>`).join('')}</div><div class="sb-editing-keys"><button data-action="space">${icon('space')}Space</button><button data-action="backspace" aria-label="Backspace">${icon('backspace')}</button><button data-action="enter" aria-label="Enter. Reveal your choice">${icon('enter')}Enter</button></div><div class="sb-write-footer"><button class="sb-small" data-action="back" ${state.index===0?'disabled':''} aria-label="Previous page">${icon('arrow')}<span>Back</span></button><button class="sb-primary" data-action="next" aria-label="Reveal your story choice">${icon('check')}</button></div></div></div>`;
   }
   function reader(){
-    const current=page();
-    return `${pageHead()}<div class="sb-spread sb-read-spread"><div class="sb-illustration"><img src="${current.image}" alt="${escape(current.target)}"></div><div class="sb-read-page"><div class="sb-copy-label">My own storybook</div><div class="sb-read-text">${(current.target.match(/[a-z]+|[^a-z]+/gi)||[]).map(part=>/[a-z]/i.test(part)?`<button data-read-word="${escape(part.toLowerCase())}" aria-label="Hear ${escape(part)}">${escape(part)}</button>`:escape(part)).join('')}</div><div class="sb-read-controls">${state.view==='reveal'?`<button class="sb-round" data-action="read-page" aria-label="Hear this page">${icon('sound')}</button><button class="sb-primary" data-action="continue-story" aria-label="${state.book.completed?'Finish your book':'Choose what happens next'}">${icon('arrow')}<span>${state.book.completed?'My book':'Next page'}</span></button>`:`<button class="sb-round" data-action="read-back" ${state.index===0?'disabled':''} aria-label="Previous page">${icon('undo')}</button><button class="sb-primary" data-action="read-page" aria-label="Read this page">${icon('sound')}<span>Read to me</span></button><button class="sb-round" data-action="read-next" ${state.index===state.book.total-1?'disabled':''} aria-label="Next page">${icon('arrow')}</button>`}</div>${current.decision?`<button class="sb-small" data-action="edit">${icon('pencil')}Change my word</button>`:''}<p class="sb-saved-note">Tap any word to hear it.</p></div></div><div class="sb-book-finish">${state.book.completed?`<span>You made a book!</span><button class="sb-small" data-action="read-all">${icon('sound')}Read my book</button>`:'<span>Your words made this happen.</span>'}</div>`;
+    const current=page(),hasText=!!current.target,reading=readingEdition();
+    const tokens=current.target.match(/[a-z]+(?:['’–-][a-z]+)*|[^a-z]+/gi)||[];
+    const text=tokens.map(part=>/[a-z]/i.test(part)?`<button data-read-word="${escape(part.toLowerCase())}" aria-label="Hear ${escape(part)}">${escape(part)}</button>`:escape(part)).join('');
+    const label=reading?state.book.edition==='wordless'?'A picture story':'Original story':'My own storybook';
+    return `${pageHead()}<div class="sb-spread sb-read-spread ${!hasText?'sb-picture-only':''}"><div class="sb-illustration"><img src="${current.image}" alt="${escape(current.target||state.book.title+' — picture '+(state.index+1))}"></div><div class="sb-read-page"><div class="sb-copy-label">${label}</div>${hasText?`<div class="sb-read-text">${text}</div>`:'<p class="sb-picture-invitation">Look at the picture.<br>Tell your story.</p>'}<div class="sb-read-controls">${state.view==='reveal'?`${hasText?`<button class="sb-round" data-action="read-page" aria-label="Hear this page">${icon('sound')}</button>`:''}<button class="sb-primary" data-action="continue-story" aria-label="${state.book.completed?'Finish the book':'Next page'}">${icon('arrow')}<span>${state.book.completed?'My book':'Next page'}</span></button>`:`<button class="sb-round" data-action="read-back" ${state.index===0?'disabled':''} aria-label="Previous page">${icon('undo')}</button>${hasText?`<button class="sb-primary" data-action="read-page" aria-label="Read this page">${icon('sound')}<span>Read to me</span></button>`:''}<button class="sb-round" data-action="read-next" ${state.index===state.book.total-1?'disabled':''} aria-label="Next page">${icon('arrow')}</button>`}</div>${current.decision?`<button class="sb-small" data-action="edit">${icon('pencil')}Change my word</button>`:''}${hasText?'<p class="sb-saved-note">Tap any word to hear it.</p>':''}</div></div><div class="sb-book-finish">${state.book.completed?`<span>${reading?'Your book is on the shelf.':'You made a book!'}</span>${state.book.pages.some(p=>p.target)?`<button class="sb-small" data-action="read-all">${icon('sound')}Read my book</button>`:''}`:`<span>${reading?'Turn the page when you are ready.':'Your words made this happen.'}</span>`}</div>`;
   }
   function updateCopy(){
     if(decision()){
@@ -138,7 +155,9 @@
   }
   function render(){
     if(!state.library){root.innerHTML=`<p class="sb-loading">Opening your bookshelf…</p>`;return;}
-    root.innerHTML=header()+`<section class="sb-stage">${state.view==='home'?home():['read','reveal'].includes(state.view)?reader():writer()}</section><div class="sb-save" role="status">Saved on this computer</div>`;
+    root.classList.toggle('sb-licensed',!!state.book?.credits);
+    root.innerHTML=header()+`<section class="sb-stage">${state.view==='home'?home():['read','reveal'].includes(state.view)?reader():writer()}${credits()}</section><div class="sb-save" role="status">Saved on this computer</div>`;
+    setBusy(root.getAttribute('aria-busy')==='true');
     if(state.error)showError();
     root.querySelectorAll('[data-action]').forEach(button=>button.onclick=()=>act(button.dataset.action,button.dataset.template));
     root.querySelectorAll('[data-book]').forEach(button=>button.onclick=()=>navigate(()=>loadBook(button.dataset.book)));
@@ -160,7 +179,7 @@
   async function navigate(callback){if(state.working)return;state.working=true;try{await callback();}catch{state.error='Your book needs a moment. Your typing is still safe.';showError();}finally{state.working=false;}}
   function focus(){if(state.active)($('#sb-writing')||$('[data-action=continue-story]')||$('[data-action=new]')||$('button'))?.focus({preventScroll:true});}
   async function act(name,template){
-    if(name==='stop'){stop();return;}if(name==='help'){say(state.conflict?'conflict':state.view==='write'?page().instruction:state.view==='read'?'finished':'welcome');return;}
+    if(name==='stop'){stop();return;}if(name==='help'){say(state.conflict?'conflict':state.view==='write'?page().instruction:state.view==='read'?endPrompt():'welcome');return;}
     if(name==='hear-context'){say('page-'+state.book.pages[state.index-1].choice);return;}
     if(name==='welcome'){say('welcome');return;}if(name==='hear-page'){say('page-'+state.choice);return;}
     if(name==='space'){insert(' ');return;}if(name==='period'){insert('.');return;}
@@ -178,7 +197,7 @@
         state.view='reveal';state.choice=page().choice;render();focus();say('page-'+page().choice);return;
       }
       if(name==='continue-story'){
-        stop();if(!page().finished){if(!(await finishFixed()))return;}if(state.book.completed){state.view='read';state.index=0;render();say('finished');}
+        stop();if(!page().finished){if(!(await finishFixed()))return;}if(state.book.completed){state.view='read';state.index=0;render();say(endPrompt());}
         else{state.index=state.book.pages.findIndex(item=>!item.finished);await loadPage();}focus();return;
       }
       if(!(await save()))return;stop();

@@ -1,6 +1,8 @@
 # Offline sound setup
 
-The bundled maths, Space Cat and Luciana and Dad recordings work without additional packages.
+The bundled maths and storybook recordings work without additional packages.
+This includes the Book Dash adaptations and original Come Back, Cat! reader.
+The original Where’s That Cat? is wordless and has no added story narration.
 Reading new writing uses Piper on this computer. Letter feedback uses your own
 recorded sounds. Neither uses an online speech API or browser speech synthesis.
 

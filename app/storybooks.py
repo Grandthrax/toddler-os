@@ -2,7 +2,8 @@
 import re
 import uuid
 
-from core import Problem, Store, now
+from core import Problem, Store, now, WORDS
+from bookdash_content import TEMPLATES as BOOK_DASH_TEMPLATES, PROMPTS as BOOK_DASH_PROMPTS
 
 
 def option(identifier, text, image, answer):
@@ -36,6 +37,7 @@ TEMPLATES = {'space-cat':TEMPLATE,'luciana-and-dad':{
     'stems':('luciana sat on the …','luciana pat the …','luciana ran to the …','luciana was …','dad was the best fun.'),
     'instructions':tuple('choose-luciana-'+str(index) for index in range(4))+(None,),
 }}
+TEMPLATES.update(BOOK_DASH_TEMPLATES)
 
 
 def matches(text, target):
@@ -43,7 +45,7 @@ def matches(text, target):
 
 
 def prompts():
-    result={"welcome":"Make your own storybook. Type a word to choose what happens next. Your picture will appear and I will read the page. Then choose what happens next.",
+    result={"welcome":"Choose a book to make, read, or look through. To make a book, type a word to choose what happens next. Your picture will appear and I will read the page.",
             "choose":"What happens next? Type one of the words. Press space or enter to see your picture and hear the next page.",
             "choose-1":"What can the cat do? Type hop or nap. Then press space or enter.",
             "choose-2":"Where does the cat go? Type moon or star. Then press space or enter.",
@@ -58,11 +60,15 @@ def prompts():
         'What did Luciana run to? Type drink or sock. Then press space or enter.',
         'How did Luciana feel? Type sad or mad. Then press space or enter.',
     )):result['choose-luciana-'+str(index)]=text
+    result.update(BOOK_DASH_PROMPTS)
     for template in TEMPLATES.values():
         for choices in template['pages']:
             for choice in choices:
-                result["page-"+choice["id"]]=choice["text"]
-                for word in re.findall(r"[a-z]+",choice["text"]):result["word-"+word]=word
+                if choice['text'].strip():
+                    result["page-"+choice["id"]]=choice["text"]
+                for match in WORDS.finditer(choice['text']):
+                    word=match.group(0).lower()
+                    result['word-'+re.sub('[^a-z]','',word)]=word
     return result
 
 
@@ -103,8 +109,10 @@ class Storybooks:
             books=[]
             for row in db.execute('SELECT id,created,updated FROM storybook_books ORDER BY updated DESC,id'):
                 book=self.book(row['id'],db)
-                books.append({k:book[k] for k in ('id','title','image','created','updated','completed','done','total')})
-            return {"templates":[{k:template[k] for k in ('id','title','image','description')} for template in TEMPLATES.values()],"books":books}
+                books.append({k:book[k] for k in ('id','title','image','created','updated','completed','done','total','edition')})
+            return {"templates":[{k:template[k] for k in ('id','title','image','description')} |
+                                 {'edition':template.get('edition','make'),'licensed':bool(template.get('credits'))}
+                                 for template in TEMPLATES.values()],"books":books}
 
     def book(self, identifier, db=None):
         identifier=Store.identifier(identifier)
@@ -124,6 +132,7 @@ class Storybooks:
             pages.append(page)
         done=sum(page['finished'] for page in pages)
         return dict(row)|{"title":template['title'],"image":template['image'],"pages":pages,
+                          'edition':template.get('edition','make'),'credits':template.get('credits'),
                           "done":done,"total":len(template['pages']),"completed":done==len(template['pages'])}
 
     def create(self, body):

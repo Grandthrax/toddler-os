@@ -1,0 +1,140 @@
+{
+  "license": "CC-BY-4.0",
+  "assets": [
+    {
+      "file": "come-01.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "98d11d98d00c120e8d0e1ee740dd5e4c2f19e6238c586da15ad5780212dda69d"
+    },
+    {
+      "file": "come-02.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "daf491eac53eb7407185face3166571a6dc1d3026625d4f2eef179288fb97f08"
+    },
+    {
+      "file": "come-03.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "424f535bbccb109a5002ae51fc59d278c46392850cafc8404123ed8246a46953"
+    },
+    {
+      "file": "come-04.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "991f88338241a059cdadd64acc9a085bbe2865323ff3c9f76f82927a3907f09a"
+    },
+    {
+      "file": "come-05.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "ae8ba52703821e07b5efdc631f5ca5e5b3af3596388525e522454335221dff23"
+    },
+    {
+      "file": "come-06.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "73ca1d57bc0629537d0f36552d49e00388aa8afc110fa61004b2f44f2048adc0"
+    },
+    {
+      "file": "come-07.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "3c84009090b04d37ba1994c5920b098b430846c22572ab5ed6f7ef9ff6633809"
+    },
+    {
+      "file": "come-08.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "4b8c330b6a9a8c249cf5727ba02879b43ffbc6d187b512b9149c8871a6344437"
+    },
+    {
+      "file": "come-09.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "7d81bfcd36db7e4b73df6a350aaadc5524f294ca2870c23699eced79376eab65"
+    },
+    {
+      "file": "come-10.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "e7fcac5dbe31f2b65efae302aa224c97772352c41c41d4f33c7ce389b0451cda"
+    },
+    {
+      "file": "come-11.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "669a92acf29f0335d7480071d0db63ddb5620408f3015db94f1a2404d71a5545"
+    },
+    {
+      "file": "come-12.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "1a26d6d32b25ab787e644ccf3b9d4aab04e9c2fbe4d8cc09f5db73cc5e3c1992"
+    },
+    {
+      "file": "book-dash-logo.png",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "f17d0f4f44db79e3a2170beb549c194828519332627794d9e1d4377aa5c4dc6b"
+    },
+    {
+      "file": "where-cover.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "8ad891fba65e72a0a8390f8b275ff7f917f618aef5c5c1aab3b2c726a26e4080"
+    },
+    {
+      "file": "where-page4.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "c3ee2f09bbeb6f0de7463b1630ba32a724e83afcb0726d773a4872060698126e"
+    },
+    {
+      "file": "where-page5.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "50ca6273bd5ac723632e61dd52ee15ff25a97a95290b0a86ecced27e81271948"
+    },
+    {
+      "file": "where-page6.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "3a216b7f21fd39a4592d7beb12e470aa127764e65105756133f90010e3595d9c"
+    },
+    {
+      "file": "where-page7.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "f92b0b58260c993b7e0d4e2e813a5d4485e0e21b5e7fe160cdde2716c2190373"
+    },
+    {
+      "file": "where-page8.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "2190f3e8cec1ed5efd97a4ba13147174c066f099d9ed2053a2e1f4305da6d823"
+    },
+    {
+      "file": "where-page9.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "e9e61a0cd0e8371d24a2c3dd39ed48b814a2a6e3e9580a78c413d0d2b05aff44"
+    },
+    {
+      "file": "where-page10.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "141c6a4b7733ff4ce7a4496ac5a2689565ad7fefadeadb71c9fb0517b005ffa6"
+    },
+    {
+      "file": "where-page11.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "4b0305b3597334cc81733806bc1b590552345977340473489fbf73ecf51814e7"
+    },
+    {
+      "file": "where-page12.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "dd2fda568c23e6ec8e01d7f20960e011a09a14d1bf1025da3ace33edc4ee92fa"
+    },
+    {
+      "file": "where-page13.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "3d4602059ea2749774eee9758ccb4985b10a70c4bd5366488754e2307622b884"
+    },
+    {
+      "file": "where-page14.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "072ea6c1ae8328ac25621d4993e5aa57bad73a972e8c2749fbec1928de4c5439"
+    },
+    {
+      "file": "where-page15.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "20ba3a9fed4ff7aceb9a90ec9e9cf99398a42b9cbf2cff45b644804f52023de9"
+    },
+    {
+      "file": "come-cover.jpg",
+      "url": "Local generation path omitted from public provenance.",
+      "sha256": "18a46655d7c703a31a6c02c4f44e0d4e5a827a6878f4514dd3a0064686d0f468"
+    }
+  ]
+}
