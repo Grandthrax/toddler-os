@@ -67,3 +67,41 @@
 .ninja-power-pips i.empty{background:transparent;border:1px solid #ad8b51;opacity:.55}.ninja-power-pips i.filled{background:#d4a04d}.ninja-upgrade-card.maxed{opacity:.68;filter:none;cursor:default;border-color:#9ca56c}.ninja-upgrade-card.maxed .ninja-upgrade-category{background:#e8edcf}
 .ninja-ten-frame.frame-columns-3{--frame-columns:3}.ninja-ten-frame.frame-columns-4{--frame-columns:4}.ninja-ten-frame.frame-columns-5{--frame-columns:5}
 @media(min-width:1050px){.kind-number .ninja-ten-frame{grid-template-columns:repeat(var(--frame-columns,5),39px)}}
+/* Chapter two: villains and the persistent trophy room. */
+.ninja-map-enemy{width:55px;height:66px;object-fit:contain}.ninja-chapter-map{max-height:510px;overflow:auto}.ninja-encounter{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto 10px;padding:7px 20px;background:#e8e0ef;border-radius:20px}.ninja-encounter>img{width:80px;height:96px}.ninja-shields{display:flex;font-size:30px;color:#8a6cbb;gap:7px}.ninja-shields .broken{opacity:.18}.ninja-battle{text-align:center;position:relative}.ninja-boss{display:block;width:230px;height:260px;margin:8px auto}.ninja-finishers{display:flex;justify-content:center;gap:20px;margin:20px 0}.ninja-finishers>button{width:125px;height:120px;background:#fff6d7;border:3px solid #d4b570;border-radius:24px;box-shadow:0 7px 0 #ad8a51;cursor:pointer}.ninja-finishers svg{width:76px;height:76px}.ninja-finishers button:focus-visible{outline:5px solid #7453a2;outline-offset:5px}.ninja-trophy-shelves{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin:22px 0}.ninja-trophy{position:relative;display:flex;flex-direction:column;align-items:center;background:#fff6dd;border:2px solid #d2b571;border-bottom:12px solid #947356;border-radius:15px;padding:10px;min-height:150px}.ninja-trophy img{width:100%;max-height:140px}.ninja-trophy>svg{width:35px;height:35px}.ninja-trophy.waiting{opacity:.45;background:#dfdcd7}.ninja-victory-effect{font-size:50px;color:#d5a83d}.ninja-victory-effect svg{width:65px;height:65px}.ninja-battle>.ninja-primary{margin:10px}.ninja-trophy-room h1{font-size:30px}@media(prefers-reduced-motion:no-preference){.ninja-victory-effect{animation:ninja-victory .8s ease-out}@keyframes ninja-victory{from{transform:scale(.2) rotate(-35deg);opacity:0}to{transform:scale(1);opacity:1}}}@media(max-width:700px){.ninja-trophy-shelves{grid-template-columns:repeat(2,minmax(0,1fr))}.ninja-finishers{gap:9px}.ninja-finishers>button{width:88px;height:90px}.ninja-finishers svg{width:58px;height:58px}.ninja-boss{height:210px;width:180px}.ninja-encounter{padding:5px}.ninja-encounter>img{width:55px;height:66px}}
+.ninja-map-chapter{grid-column:1/-1;font-size:18px;text-align:left;color:#755674;margin:12px 0}.ninja-strike-move{position:absolute;left:18%;top:160px;width:120px;height:120px;z-index:2}.ninja-strike-move svg{width:100%;height:100%}@media(prefers-reduced-motion:no-preference){.ninja-strike-move{animation:ninja-move .65s ease-in forwards}.ninja-struck{animation:ninja-defeated 1.2s ease-in forwards}@keyframes ninja-move{to{left:55%;transform:rotate(35deg) scale(1.3)}}@keyframes ninja-defeated{45%{transform:translateX(0);opacity:1}to{transform:translateX(120px) rotate(35deg) scale(.45);opacity:0}}}
+/* Finishing moves have distinct, readable choreography before the trophy reveal. */
+.ninja-fight-scene{height:430px;position:relative;overflow:hidden;margin:25px auto;max-width:760px;border-radius:32px;background:radial-gradient(ellipse at 50% 80%,#f5dfb2 0,#f3ead9 46%,#ede5f0 100%)}
+.ninja-fighter{position:absolute;left:4%;bottom:38px;width:35%;height:340px;z-index:2;transform-origin:50% 90%}
+.ninja-fighter>.ninja-character{width:100%;height:100%;max-width:none;max-height:none}
+.ninja-foe{position:absolute;right:9%;bottom:43px;width:26%;height:260px;object-fit:contain;z-index:2;transform-origin:50% 95%}
+.ninja-finisher-effect{position:absolute;left:28%;bottom:140px;width:110px;height:110px;z-index:4;opacity:0}
+.ninja-finisher-effect svg{width:100%;height:100%}
+.ninja-impact{position:absolute;right:14%;bottom:135px;font-size:125px;line-height:1;color:#ffd65d;text-shadow:0 0 20px #fff4bf;z-index:5;opacity:0}
+.ninja-fight-ground{position:absolute;left:5%;right:5%;height:20px;bottom:32px;border-radius:50%;background:#78685122}
+.ninja-sword-arc{position:absolute;left:32%;bottom:110px;width:230px;height:190px;border:15px solid transparent;border-top-color:#ffda78;border-right-color:#fff2c1;border-radius:50%;opacity:0;z-index:3;filter:drop-shadow(0 0 8px #efb449)}
+@media(prefers-reduced-motion:no-preference){
+ .ninja-strike .ninja-impact{animation:ninja-impact-pop 3.2s both}
+ .move-sword .ninja-fighter{animation:ninja-sword-lunge 3.2s both}
+ .move-sword .ninja-finisher-effect{animation:ninja-sword-sweep 3.2s both}
+ .move-sword .ninja-sword-arc{animation:ninja-sword-trail 3.2s both}
+ .move-shield .ninja-fighter{animation:ninja-shield-brace 3.2s both}
+ .move-shield .ninja-finisher-effect{animation:ninja-shield-bounce 3.2s both}
+ .move-lightning .ninja-fighter{animation:ninja-cast 3.2s both}
+ .move-lightning .ninja-finisher-effect{left:auto;right:13%;bottom:auto;top:15px;width:135px;height:240px;animation:ninja-lightning-strike 3.2s both}
+ .move-sword .ninja-foe{animation:ninja-sword-retreat 3.2s both}
+ .move-shield .ninja-foe{animation:ninja-shield-tumble 3.2s both}
+ .move-lightning .ninja-foe{animation:ninja-magic-shrink 3.2s both}
+}
+@keyframes ninja-impact-pop{0%,32%,62%,100%{opacity:0;transform:scale(.3)}42%{opacity:1;transform:scale(1.15)}52%{opacity:1;transform:scale(.8)}}
+@keyframes ninja-sword-lunge{0%,15%,100%{transform:translateX(0)}35%,48%{transform:translateX(65px) rotate(9deg)}65%{transform:translateX(20px)}}
+@keyframes ninja-sword-sweep{0%,20%{opacity:0;transform:translate(0,-60px) rotate(-110deg)}29%{opacity:1}45%{opacity:1;transform:translate(195px,20px) rotate(55deg)}60%,100%{opacity:0;transform:translate(230px,40px) rotate(90deg)}}
+@keyframes ninja-sword-trail{0%,28%,60%,100%{opacity:0}35%,46%{opacity:1;transform:rotate(35deg)}}
+@keyframes ninja-shield-brace{0%,20%,100%{transform:translateX(0)}32%,55%{transform:translateX(35px) rotate(-8deg)}}
+@keyframes ninja-shield-bounce{0%,17%{opacity:0;transform:translateX(0) scale(.6)}25%{opacity:1}43%{opacity:1;transform:translateX(220px) scale(1.25) rotate(18deg)}65%{opacity:1;transform:translateX(40px) scale(1) rotate(-12deg)}85%,100%{opacity:0;transform:translateX(0) scale(.6)}}
+@keyframes ninja-cast{0%,10%,100%{transform:scale(1)}25%,40%{transform:scale(1.06) translateY(-10px);filter:drop-shadow(0 0 15px #ffd76d)}}
+@keyframes ninja-lightning-strike{0%,25%{opacity:0;transform:translateY(-220px) scale(.7)}38%,48%{opacity:1;transform:translateY(55px) scale(1.1)}65%,100%{opacity:0;transform:translateY(75px) scale(.5)}}
+@keyframes ninja-sword-retreat{0%,43%{transform:translateX(0);opacity:1}58%{transform:translateX(35px) rotate(12deg);opacity:1}85%,100%{transform:translateX(160px) rotate(18deg);opacity:0}}
+@keyframes ninja-shield-tumble{0%,43%{transform:translate(0) rotate(0);opacity:1}60%{transform:translate(55px,-50px) rotate(50deg);opacity:1}90%,100%{transform:translate(180px,40px) rotate(120deg);opacity:0}}
+@keyframes ninja-magic-shrink{0%,38%{transform:scale(1);opacity:1}48%,55%{transform:scale(.95);filter:drop-shadow(0 0 20px #ffd75b);opacity:1}88%,100%{transform:scale(.1) translateY(-90px);opacity:0}}
+@media(max-width:700px){.ninja-fight-scene{height:310px}.ninja-fighter{width:40%;left:0;height:240px}.ninja-foe{height:190px;width:30%;right:7%}.ninja-finisher-effect{width:75px;height:75px;bottom:110px;left:20%}.ninja-sword-arc{width:120px;height:100px;left:29%;border-width:10px}.move-lightning .ninja-finisher-effect{width:90px;height:180px;right:10%}}

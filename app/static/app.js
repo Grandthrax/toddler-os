@@ -6,7 +6,7 @@ const state = {settings:null, story:null, acknowledged:'', savePromise:null, tim
   words:[], highlighted:null, highlightFrame:null, pointer:null,
   bookOpen:false, opening:false, windowDrag:null, backgroundsOpen:false,
   activeApp:null, desktopRestore:null, desktopPreferences:null, wallpaperSaving:false,
-  archivedView:false, libraryBusy:false, ninjaOpen:false, storybooksOpen:false, windowOrder:[]};
+  archivedView:false, libraryBusy:false, ninjaOpen:false, storybooksOpen:false, mouseOpen:false, windowOrder:[]};
 const apps={book:{window:'book-window',titlebar:'window-titlebar',maximise:'window-maximise',name:'The Book',
     launch:launchBook,focus:focusBookContent,pause:stopReading},
   backgrounds:{window:'backgrounds-window',titlebar:'backgrounds-titlebar',maximise:'backgrounds-maximise',name:'Backgrounds',
@@ -14,7 +14,9 @@ const apps={book:{window:'book-window',titlebar:'window-titlebar',maximise:'wind
   ninja:{window:'ninja-window',titlebar:'ninja-titlebar',maximise:'ninja-maximise',name:'Ninja Maths',
     launch:launchNinja,focus:()=>window.NinjaMaths.focus(),pause:()=>window.NinjaMaths.pause(),activate:()=>window.NinjaMaths.activate()},
   storybooks:{window:'storybooks-window',titlebar:'storybooks-titlebar',maximise:'storybooks-maximise',name:'Storybooks',
-    launch:launchStorybooks,focus:()=>window.Storybooks.focus(),pause:()=>window.Storybooks.pause(),activate:()=>window.Storybooks.activate()}};
+    launch:launchStorybooks,focus:()=>window.Storybooks.focus(),pause:()=>window.Storybooks.pause(),activate:()=>window.Storybooks.activate()},
+  mouse:{window:'mouse-window',titlebar:'mouse-titlebar',maximise:'mouse-maximise',name:'Mouse Missions',
+    launch:launchMouse,focus:()=>window.MouseMissions.focus(),pause:()=>window.MouseMissions.pause(),activate:()=>window.MouseMissions.activate()}};
 const editing = " \n.,!?'–-";
 const alphabet='abcdefghijklmnopqrstuvwxyz';
 const icon = name => `<svg aria-hidden="true"><use href="#icon-${name}"/></svg>`;
@@ -214,6 +216,18 @@ function hideNinja(close=false) {
   if(close) {state.ninjaOpen=false;$('taskbar-ninja').classList.remove('running');}
   focusRemainingApp();if(!state.activeApp) $('desktop-ninja').focus();
 }
+async function launchMouse() {
+  closeStartMenu();state.desktopRestore=null;
+  const refresh=!state.mouseOpen;state.mouseOpen=true;
+  $('mouse-window').hidden=false;$('taskbar-mouse').classList.add('running');activateApp('mouse');
+  await window.MouseMissions.open(refresh);
+}
+async function hideMouse(close=false) {
+  if(!(await window.MouseMissions.beforeHide())) {notice('Keep your programme open until it is saved.');return;}
+  window.MouseMissions.pause();$('mouse-window').hidden=true;
+  if(close) {state.mouseOpen=false;$('taskbar-mouse').classList.remove('running');}
+  focusRemainingApp();if(!state.activeApp) $('desktop-mouse').focus();
+}
 async function launchStorybooks() {
   closeStartMenu();state.desktopRestore=null;
   const refresh=!state.storybooksOpen;state.storybooksOpen=true;
@@ -227,6 +241,7 @@ async function hideStorybooks(close=false) {
   focusRemainingApp();if(!state.activeApp) $('desktop-storybooks').focus();
 }
 async function showDesktop() {
+  if(!(await window.MouseMissions.beforeHide())) {notice('Your mouse programme needs to save first.');return;}
   if(!(await window.Storybooks.beforeHide())) {notice('Your storybook needs to save first.');return;}
   if(!window.NinjaMaths.canHide()) {notice('Your mission is saving. Just a moment.');return;}
   closeStartMenu();stopReading();
@@ -548,6 +563,8 @@ $('start-book').onclick=()=>launchBook().catch(showError);
 $('start-backgrounds').onclick=launchBackgrounds;
 $('start-ninja').onclick=()=>launchNinja().catch(showError);
 $('start-storybooks').onclick=()=>launchStorybooks().catch(showError);
+$('start-mouse').onclick=()=>launchMouse().catch(showError);
+$('taskbar-mouse').onclick=()=>{if(state.activeApp==='mouse')hideMouse().catch(showError);else launchMouse().catch(showError);};
 $('taskbar-storybooks').onclick=()=>{if(state.activeApp==='storybooks')hideStorybooks();else launchStorybooks().catch(showError);};
 $('taskbar-book').onclick=()=>{
   if(state.activeApp==='book') desktop().catch(showError);else launchBook().catch(showError);
@@ -572,6 +589,9 @@ $('ninja-maximise').onclick=()=>maximiseApp('ninja');
 $('storybooks-minimise').onclick=()=>hideStorybooks();
 $('storybooks-close').onclick=()=>hideStorybooks(true);
 $('storybooks-maximise').onclick=()=>maximiseApp('storybooks');
+$('mouse-minimise').onclick=()=>hideMouse().catch(showError);
+$('mouse-close').onclick=()=>hideMouse(true).catch(showError);
+$('mouse-maximise').onclick=()=>maximiseApp('mouse');
 $('show-desktop').onclick=()=>showDesktop().catch(showError);
 $('desktop-view').addEventListener('click',e=>{
   if(!e.target.closest('.desktop-icon,.book-window,.taskbar,.start-menu')) {
@@ -669,4 +689,9 @@ async function start() {
   catch(error) {$('desktop-view').hidden=true;$('loading-view').hidden=false;showError(error);}
 }
 $('retry').onclick=start;
-start();
+window.ChildLockHooks={
+  save:async()=>{await Promise.allSettled([saveNow(),window.Storybooks.beforeHide(),window.MouseMissions.beforeHide()]);},
+  pause:()=>{stopReading();window.NinjaMaths.pause();window.Storybooks.pause();window.MouseMissions.pause();},
+  resume:()=>{if(state.activeApp)apps[state.activeApp].activate?.();}
+};
+window.ChildLock.ready.then(start);

@@ -141,6 +141,22 @@
       "text": "You chose Phoenix Flight. Your ninja is more powerful!",
       "sha256": "5b8a37c57fd1d9234e4ccd9e2ac74ab453e6f9d15c66205e24fda6624ff5ac8a"
     },
+    "battle": {
+      "text": "You broke the villain's magic shield! Choose your finishing move. Tap the sword, shield or lightning.",
+      "sha256": "787e7fb02fdaf461e4d8597181af6a4db071a4d4e21a7b2d1551b14b8d672eec"
+    },
+    "victory": {
+      "text": "You won! Your trophy is safe in your trophy room. The next villain is waiting.",
+      "sha256": "e3e060e05673ab2b6a7f5ad50edd6aef2ff2dfea90b74d8cfc1aae6f7aa9aaab"
+    },
+    "trophies": {
+      "text": "Your trophy room. Tap a trophy to hear who you defeated.",
+      "sha256": "741a18544cd76e11f402a79fe37d402097c11d1efc301ca4cb6440803f9469e7"
+    },
+    "campaign-complete": {
+      "text": "You defeated all ten villains! Your trophy room is full. You are a mighty maths ninja!",
+      "sha256": "4e34cc9060abfbc4e2947abfaaf659615b1450f4c9fe786d404afed369ce4214"
+    },
     "mission-1": {
       "text": "Mission one. Open the dojo. Solve five puzzles to earn an upgrade.",
       "sha256": "d9b0214d1971b2c5e66e82442d5b236bfe8052d931065ec746f51b60885e90f3"
@@ -580,6 +596,486 @@
     "l10-q5-help": {
       "text": "The empty spaces show what is missing. Count them. one, two, three, four. You need four more.",
       "sha256": "9ee1bb9d2165c8bb7be1410132f0df3a5440713fbee1d22c7d359a6ea9f65207"
+    },
+    "mission-11": {
+      "text": "Mission eleven. Moss Goblin. Solve five puzzles to break the villain's magic shield.",
+      "sha256": "72f12b0ed33a7e732eb86bd40ad5fe2893c8902890b603ac17cb6c3bfdd47fa5"
+    },
+    "trophy-11": {
+      "text": "You defeated the Moss Goblin. Your trophy is Goblin ears.",
+      "sha256": "4ea6c2064a080ce877575a2bbe0a6804ed80f0f63a719e1af14f923803956d0e"
+    },
+    "l11-q1": {
+      "text": "How many crystals can you see? Tap the number.",
+      "sha256": "7966cb0f9459c858777b9c94cedf91d539daf9e4c2fb3e356df5817164a9942f"
+    },
+    "l11-q1-help": {
+      "text": "Let's count together. one, two, three, four, five, six, seven, eight, nine, ten, eleven.",
+      "sha256": "04a68d19cbee2e8acd99b4b1728d6a8bec9073f26a3a71d9c4ac4f60b325084d"
+    },
+    "l11-q2": {
+      "text": "How many crystals can you see? Write the number, then tap the tick.",
+      "sha256": "0b00a9278dd963c31416652037cc87d909cbaf8d6f95edc7867798fe568b751e"
+    },
+    "l11-q2-help": {
+      "text": "Let's count together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve.",
+      "sha256": "9bd5fe9a3f50d7808df6ce0aee787d7ecd83816c945e497d6763e72b79cde2e3"
+    },
+    "l11-q3": {
+      "text": "How many crystals can you see? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "b26c0343209a3b2ccf41baee09c0388851025eb7276aef3bd515875024fe1899"
+    },
+    "l11-q3-help": {
+      "text": "Let's count together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen.",
+      "sha256": "6007c2bf18cc65386db4bdcc01d2cc64ac14c54cc47ecfe04c7f1ac4057648ae"
+    },
+    "l11-q4": {
+      "text": "How many crystals can you see? Write the number, then tap the tick.",
+      "sha256": "0b00a9278dd963c31416652037cc87d909cbaf8d6f95edc7867798fe568b751e"
+    },
+    "l11-q4-help": {
+      "text": "Let's count together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen.",
+      "sha256": "59f45d70f5efe38644e7cdd6ca70eddc714a2546404c5bcb89e3f018616ae348"
+    },
+    "l11-q5": {
+      "text": "How many crystals can you see? Tap the number.",
+      "sha256": "7966cb0f9459c858777b9c94cedf91d539daf9e4c2fb3e356df5817164a9942f"
+    },
+    "l11-q5-help": {
+      "text": "Let's count together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen.",
+      "sha256": "5f8785de05adc5c6515e844f3ba894bb02897de5e9798f02377f2f30385d759e"
+    },
+    "mission-12": {
+      "text": "Mission twelve. Iron Goblin. Solve five puzzles to break the villain's magic shield.",
+      "sha256": "723d5baca941a3f02f91a1d543642ba4b4ebb57fdd2bde8217e066d07bbd95a5"
+    },
+    "trophy-12": {
+      "text": "You defeated the Iron Goblin. Your trophy is Goblin helmet.",
+      "sha256": "0b4648219f6f9553130e530d6d2ac00f651d8b491afae4c43fcf92852aafda56"
+    },
+    "l12-q1": {
+      "text": "six crystals and five more. How many altogether? Tap the number.",
+      "sha256": "59dff80359b0b3285da1a7f5a6ca2bc1dc06f47d0fb44448885c3d63b95db273"
+    },
+    "l12-q1-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven. There are eleven altogether.",
+      "sha256": "16a1d16389e75c9fe763fa48e973d3970ae11b5a7c3d97de0f846cad7669f1be"
+    },
+    "l12-q2": {
+      "text": "seven crystals and five more. How many altogether? Write the number, then tap the tick.",
+      "sha256": "65abf7f41810aba370a39bb09864793d090fa3a5929ab9df0f78926989c8062c"
+    },
+    "l12-q2-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve. There are twelve altogether.",
+      "sha256": "e6f59c566a639034e0b6589b8549773a1b77d3ee384e211241600cfba5400abc"
+    },
+    "l12-q3": {
+      "text": "eight crystals and four more. How many altogether? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "a3ed252cb27b5de6a95d8bee8dbd32f0ab71621014836e9255392867e4bcc72f"
+    },
+    "l12-q3-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve. There are twelve altogether.",
+      "sha256": "e6f59c566a639034e0b6589b8549773a1b77d3ee384e211241600cfba5400abc"
+    },
+    "l12-q4": {
+      "text": "nine crystals and four more. How many altogether? Tap the number.",
+      "sha256": "8bfcdb57771ea0671f80b8eee7ee4ad3505339b1e7f2a2ee07881be50a0452a3"
+    },
+    "l12-q4-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen. There are thirteen altogether.",
+      "sha256": "6f5f5d20d30dd9f98e86dd4f88953a53d1ce311c10717b8eeda7e7453da87d61"
+    },
+    "l12-q5": {
+      "text": "eight crystals and six more. How many altogether? Write the number, then tap the tick.",
+      "sha256": "38af38ceb15d99ed2301a776ce850200519d0336aaf5985199d53fcefb02dd71"
+    },
+    "l12-q5-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen. There are fourteen altogether.",
+      "sha256": "e9c38f3229df3e78a051196bb7cf35f4e180c98ad51aa521fdf954f47657f41d"
+    },
+    "mission-13": {
+      "text": "Mission thirteen. Orc Scout. Solve five puzzles to break the villain's magic shield.",
+      "sha256": "aeabdd535f438f6b7519d4c757a91305eeb6e13c2d199ccc4f0c029ed461e637"
+    },
+    "trophy-13": {
+      "text": "You defeated the Orc Scout. Your trophy is Orc tusks.",
+      "sha256": "3ac9acbb393f2307c2b76ba5b1ae2fa8773ea38911f8418d1bd305a3f83e8ff4"
+    },
+    "l13-q1": {
+      "text": "Start with twelve crystals. Take away two. How many are left? Tap the number.",
+      "sha256": "97afe49cc7ce07182ed4211727cb9b23a7b5fc1b67d9eb5c9b24f971826a027b"
+    },
+    "l13-q1-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven, eight, nine, ten. The answer is ten.",
+      "sha256": "8c93e28fda725287c29b9dc4f97b00cdbf7fb955db40711c217ee87c335a0565"
+    },
+    "l13-q2": {
+      "text": "Start with thirteen crystals. Take away three. How many are left? Tap the number.",
+      "sha256": "4c97f312cb419c1ae3b1ffe7d2569d0eac3a6f73253c2675dd5015ece8d13556"
+    },
+    "l13-q2-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven, eight, nine, ten. The answer is ten.",
+      "sha256": "8c93e28fda725287c29b9dc4f97b00cdbf7fb955db40711c217ee87c335a0565"
+    },
+    "l13-q3": {
+      "text": "Start with fourteen crystals. Take away two. How many are left? Tap the number.",
+      "sha256": "5f0594725b9f41a5b7fee15d140781f2096b68ee1d4bf8b57dcece51c3ad4095"
+    },
+    "l13-q3-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve. The answer is twelve.",
+      "sha256": "dacd774a251fc05e5f27efe36e2cb43ef20a2b228f977151c570c03e0ec7923a"
+    },
+    "l13-q4": {
+      "text": "Start with fifteen crystals. Take away four. How many are left? Tap the number.",
+      "sha256": "7d1596211e26aed0166ca31c143e6b6ed9d5761f914bec716343c84892359cd3"
+    },
+    "l13-q4-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven, eight, nine, ten, eleven. The answer is eleven.",
+      "sha256": "a059f6440dd797702fe29600d8e479041350ae9fd31f6eb7105379397303cd1d"
+    },
+    "l13-q5": {
+      "text": "Start with fifteen crystals. Take away six. How many are left? Tap the number.",
+      "sha256": "3f1d771e56aa9c77d9ef40fe09c60bf30f1503431bae623143cf8f692d43c0fb"
+    },
+    "l13-q5-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven, eight, nine. The answer is nine.",
+      "sha256": "df7414ce15eb1fb98d7652f1efb7928756b5c6b1aa81ef4917695157aae521d5"
+    },
+    "mission-14": {
+      "text": "Mission fourteen. Orc Captain. Solve five puzzles to break the villain's magic shield.",
+      "sha256": "304b3552fb9c5cfd21a4620e3ef9c6ac255b49145641654965484660cdea0ae4"
+    },
+    "trophy-14": {
+      "text": "You defeated the Orc Captain. Your trophy is Captain's shield.",
+      "sha256": "eccc9e4575e30bb89aca4c1469c708ddadf73c7ff64c4b66bb6a4d51488b1822"
+    },
+    "l14-q1": {
+      "text": "You have eight crystals. How many more do you need to make twelve? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "9316bd667fa9c151c91dffbeea3d80b20270544d00f09926ec48d3242d7f2fe3"
+    },
+    "l14-q1-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four. You need four more.",
+      "sha256": "9ee1bb9d2165c8bb7be1410132f0df3a5440713fbee1d22c7d359a6ea9f65207"
+    },
+    "l14-q2": {
+      "text": "You have nine crystals. How many more do you need to make fourteen? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "257d65fe9067254f1130e3f386cde45b3644935c089ac0d35af8b4c836fcd385"
+    },
+    "l14-q2-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four, five. You need five more.",
+      "sha256": "82a4f41d9bdbd7439b01ad0452292376dbd7969ed5be75f593029eab6e00bfbf"
+    },
+    "l14-q3": {
+      "text": "You have seven crystals. How many more do you need to make thirteen? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "6854b6c0072051d84cf5b75c98202618c0e98ede7d843f484ffa35aa36a29659"
+    },
+    "l14-q3-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four, five, six. You need six more.",
+      "sha256": "e1e8d90ac9b947e33dcf6338b1bcd442f904de7e52bfaf5081f16bc8da2f469a"
+    },
+    "l14-q4": {
+      "text": "You have ten crystals. How many more do you need to make fifteen? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "4a87f831a4ed83f7d67107396899b85bed495f88c1650eff2624c6445c2f61df"
+    },
+    "l14-q4-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four, five. You need five more.",
+      "sha256": "82a4f41d9bdbd7439b01ad0452292376dbd7969ed5be75f593029eab6e00bfbf"
+    },
+    "l14-q5": {
+      "text": "You have six crystals. How many more do you need to make fifteen? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "7b89feec649200c215eb8fb650117cc7f7b91153e21e15518acfda30371216af"
+    },
+    "l14-q5-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four, five, six, seven, eight, nine. You need nine more.",
+      "sha256": "fe8d073b54fae01647b0b1db91713062b65f8470f76b18a6e8ab5e2d1527d5e2"
+    },
+    "mission-15": {
+      "text": "Mission fifteen. Bridge Troll. Solve five puzzles to break the villain's magic shield.",
+      "sha256": "fc27ea26eb4a88e3abf70c678b2c447568f7f4dbf79de534d6bcd6f251a1155d"
+    },
+    "trophy-15": {
+      "text": "You defeated the Bridge Troll. Your trophy is Troll club.",
+      "sha256": "e714d94ecefaf10e329557710dbd0ce7ac0ea6649da243c8301e8e5f2fb267c7"
+    },
+    "l15-q1": {
+      "text": "eight crystals and seven more. How many altogether? Write the number, then tap the tick.",
+      "sha256": "4f6c6ce384d9a1ce5da77ce0600c1936b046f1e05241429ac0e23d9af979dade"
+    },
+    "l15-q1-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen. There are fifteen altogether.",
+      "sha256": "82251aca8c7a2cf93321a3ab5b1ec0e013ef979abc6b189ec6b7c76e2dcb86cc"
+    },
+    "l15-q2": {
+      "text": "nine crystals and seven more. How many altogether? Write the number, then tap the tick.",
+      "sha256": "57dd301dca588a54eaec793e84bafdf6185d0d2ed0bf6755f5e22ece7f187924"
+    },
+    "l15-q2-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen. There are sixteen altogether.",
+      "sha256": "9616df349bee136b71bb58431e39cd7e5a69350f6c1c51ad770057790e1d964d"
+    },
+    "l15-q3": {
+      "text": "eight crystals and eight more. How many altogether? Write the number, then tap the tick.",
+      "sha256": "6e8d32c61305a3753a4064cfb4a212dab300c45698bc236bd23cdee833f32b88"
+    },
+    "l15-q3-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen. There are sixteen altogether.",
+      "sha256": "9616df349bee136b71bb58431e39cd7e5a69350f6c1c51ad770057790e1d964d"
+    },
+    "l15-q4": {
+      "text": "nine crystals and eight more. How many altogether? Write the number, then tap the tick.",
+      "sha256": "3dc6255a6b803c446f28a9de4f688126baedb194f91c485772d58f8626daf52d"
+    },
+    "l15-q4-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen. There are seventeen altogether.",
+      "sha256": "1e1fde8e32d1c3e55c5822bfa12fd5001dc9f6178ea04efa7af408a3a6b50a53"
+    },
+    "l15-q5": {
+      "text": "ten crystals and eight more. How many altogether? Write the number, then tap the tick.",
+      "sha256": "23529e43f1f9c4c1918d12170204307fc364bea8515e220c8dda80ac9c8c689b"
+    },
+    "l15-q5-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen. There are eighteen altogether.",
+      "sha256": "d17af5449ecde3154c133efd8fb82f2ebe0bf06d66fcd7f5471c2cc16b842db8"
+    },
+    "mission-16": {
+      "text": "Mission sixteen. Stone Golem. Solve five puzzles to break the villain's magic shield.",
+      "sha256": "55966cea4dae3d7c3fc1632af54fbda885ed75829a77648f692c61058a428612"
+    },
+    "trophy-16": {
+      "text": "You defeated the Stone Golem. Your trophy is Golem crystal.",
+      "sha256": "086a366e54902a8f08bcf8aab918f380160f9e26351fea37f5f72741d2ca233f"
+    },
+    "l16-q1": {
+      "text": "Start with sixteen crystals. Take away five. How many are left? Tap the number.",
+      "sha256": "bef03189a7beaeca6f42c8986c81a8acc62a25f9a58b60a8de6ab9ab025de9a8"
+    },
+    "l16-q1-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven, eight, nine, ten, eleven. The answer is eleven.",
+      "sha256": "a059f6440dd797702fe29600d8e479041350ae9fd31f6eb7105379397303cd1d"
+    },
+    "l16-q2": {
+      "text": "Start with seventeen crystals. Take away six. How many are left? Write the number, then tap the tick.",
+      "sha256": "ad5f57e99ea6d617b9ee8a1ed674ff3c19b81c35d4ac1b648ec6b63c0f5bb0e1"
+    },
+    "l16-q2-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven, eight, nine, ten, eleven. The answer is eleven.",
+      "sha256": "a059f6440dd797702fe29600d8e479041350ae9fd31f6eb7105379397303cd1d"
+    },
+    "l16-q3": {
+      "text": "Start with eighteen crystals. Take away four. How many are left? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "9b1a127668c261a80e83c1dbbd93d969ec1be1d21618c21a7d3d529fa947af47"
+    },
+    "l16-q3-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen. The answer is fourteen.",
+      "sha256": "f8215817236fc1e3ed3d4df8f25a46c96a2846b88e3fe2266d61c0e307579e07"
+    },
+    "l16-q4": {
+      "text": "Start with eighteen crystals. Take away nine. How many are left? Tap the number.",
+      "sha256": "882d6d1921cb3cf0d1e7b49a5e729e96711915b367b1696a163ef12e000950f9"
+    },
+    "l16-q4-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven, eight, nine. The answer is nine.",
+      "sha256": "df7414ce15eb1fb98d7652f1efb7928756b5c6b1aa81ef4917695157aae521d5"
+    },
+    "l16-q5": {
+      "text": "Start with nineteen crystals. Take away seven. How many are left? Write the number, then tap the tick.",
+      "sha256": "acab0defb0d33e7331846d282254572895541f5c35c73f719e6961c897c1f3de"
+    },
+    "l16-q5-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve. The answer is twelve.",
+      "sha256": "dacd774a251fc05e5f27efe36e2cb43ef20a2b228f977151c570c03e0ec7923a"
+    },
+    "mission-17": {
+      "text": "Mission seventeen. Shadow Knight. Solve five puzzles to break the villain's magic shield.",
+      "sha256": "225c670b9e879de8417c57e1e9ce249ad1379101964383d00c59dba4757a8b8c"
+    },
+    "trophy-17": {
+      "text": "You defeated the Shadow Knight. Your trophy is Knight's crest.",
+      "sha256": "a546d932837105535cc5ae122848737aa923fcf14809a0132f8c28c2392682c8"
+    },
+    "l17-q1": {
+      "text": "nine crystals and nine more. How many altogether? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "5303aaf6d4b0c4555a616b474284673f813ed66f1a7858e8e3d720b9a00e6412"
+    },
+    "l17-q1-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen. There are eighteen altogether.",
+      "sha256": "d17af5449ecde3154c133efd8fb82f2ebe0bf06d66fcd7f5471c2cc16b842db8"
+    },
+    "l17-q2": {
+      "text": "ten crystals and nine more. How many altogether? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "ba7aacadb7747ec8ee52b1d46c2c4286c099bf381203e94874e46ab7b1e2bcb7"
+    },
+    "l17-q2-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen. There are nineteen altogether.",
+      "sha256": "98e0cbb693b173e7b99f059f5f8dd8d02f9cb7620fe4c911f443c18b93b1c1a4"
+    },
+    "l17-q3": {
+      "text": "eleven crystals and eight more. How many altogether? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "dcb54c8c68f9ce43a237d838e9df504b16879c937ceeec3fff13c9f2ce5f487c"
+    },
+    "l17-q3-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen. There are nineteen altogether.",
+      "sha256": "98e0cbb693b173e7b99f059f5f8dd8d02f9cb7620fe4c911f443c18b93b1c1a4"
+    },
+    "l17-q4": {
+      "text": "twelve crystals and seven more. How many altogether? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "10d80a0cd42a0d07f2b65651fad8aa11858fc901e74f741bda35ab7ee285756c"
+    },
+    "l17-q4-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen. There are nineteen altogether.",
+      "sha256": "98e0cbb693b173e7b99f059f5f8dd8d02f9cb7620fe4c911f443c18b93b1c1a4"
+    },
+    "l17-q5": {
+      "text": "thirteen crystals and seven more. How many altogether? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "54377404f2ff65f7c9b694e723f57a1f61faeb77ef0380eed57f922e2e4bde5f"
+    },
+    "l17-q5-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty. There are twenty altogether.",
+      "sha256": "774733183ab64c3b0aaec666544737d1a8c5ea408d642484c3b35437d948a36d"
+    },
+    "mission-18": {
+      "text": "Mission eighteen. Ice Giant. Solve five puzzles to break the villain's magic shield.",
+      "sha256": "f1ffb17603b358e15ae6eb79e7ba6e33165afa6cdadf9c0e9113664bca26eaf8"
+    },
+    "trophy-18": {
+      "text": "You defeated the Ice Giant. Your trophy is Ice crown.",
+      "sha256": "5d24b3477c77fbaabc6db3b6aff1a5ef2d0853459b002bebc569cd579da61933"
+    },
+    "l18-q1": {
+      "text": "Start with twenty crystals. Take away five. How many are left? Write the number, then tap the tick.",
+      "sha256": "fb432407aef130073dcba490025b5ecb216d10b20477bd0dc7c5de5856864195"
+    },
+    "l18-q1-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen. The answer is fifteen.",
+      "sha256": "dfad030dc68bc376fc4bb674beabc2f92582fcfbc58d967beeaa5a1194c1f60d"
+    },
+    "l18-q2": {
+      "text": "Start with twenty crystals. Take away eight. How many are left? Write the number, then tap the tick.",
+      "sha256": "67a1295994824b4e07084b29284fdccaf9cfd7e692d9a2ebb05e30702d168617"
+    },
+    "l18-q2-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve. The answer is twelve.",
+      "sha256": "dacd774a251fc05e5f27efe36e2cb43ef20a2b228f977151c570c03e0ec7923a"
+    },
+    "l18-q3": {
+      "text": "Start with nineteen crystals. Take away nine. How many are left? Write the number, then tap the tick.",
+      "sha256": "61ea8b9ca95580d680849f589b15b65c2819f4493cb5219515e2fadf899df74b"
+    },
+    "l18-q3-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven, eight, nine, ten. The answer is ten.",
+      "sha256": "8c93e28fda725287c29b9dc4f97b00cdbf7fb955db40711c217ee87c335a0565"
+    },
+    "l18-q4": {
+      "text": "Start with eighteen crystals. Take away eleven. How many are left? Write the number, then tap the tick.",
+      "sha256": "c6c7903ae350df7956712cac431ac172aa3ed7e957f3d9d60455f7e0aa674576"
+    },
+    "l18-q4-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven. The answer is seven.",
+      "sha256": "834a2d473226eb27a3e8550a26566da04e883fd09eaa7bfe751ec2e810ffcd49"
+    },
+    "l18-q5": {
+      "text": "Start with twenty crystals. Take away twelve. How many are left? Write the number, then tap the tick.",
+      "sha256": "734a231b84b107846aeacb6e5dcf367783ba810146edeef1d1df8b06b0b5bc55"
+    },
+    "l18-q5-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven, eight. The answer is eight.",
+      "sha256": "1bc70e42c2356428c93adeeb52618d1a46cb4e5e2c6c3517a0e3399f693bdc81"
+    },
+    "mission-19": {
+      "text": "Mission nineteen. Fire Ogre. Solve five puzzles to break the villain's magic shield.",
+      "sha256": "68dd7a3bb9c2309e1affc167e80191a43862668972edacf7e75fcb019930933f"
+    },
+    "trophy-19": {
+      "text": "You defeated the Fire Ogre. Your trophy is Ogre gauntlet.",
+      "sha256": "648eb24c97e3ae130f7df3a61d5d5368af82c7aeafee826a6c205cb036a29e08"
+    },
+    "l19-q1": {
+      "text": "You have ten crystals. How many more do you need to make twenty? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "38fe9a2cfe72d7662684029867e0751fd9d57383e951de13352b3384ab9ff098"
+    },
+    "l19-q1-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four, five, six, seven, eight, nine, ten. You need ten more.",
+      "sha256": "ebc4647e6043fea86960e411f72332aa3741e28b21aa63c398c0d4958c9caf17"
+    },
+    "l19-q2": {
+      "text": "You have twelve crystals. How many more do you need to make twenty? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "79a5c223733b3ce5425650418fcd2774393053e0bad03abdad535cab2b17e7e9"
+    },
+    "l19-q2-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four, five, six, seven, eight. You need eight more.",
+      "sha256": "fe1aaed7a3765482585aef10755404043388e7f3ccbd887ece8edcdd66c27fc3"
+    },
+    "l19-q3": {
+      "text": "You have seven crystals. How many more do you need to make twenty? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "2a30c0d567e74d7619e0fa9dffeb064affd3f89b54798c568cd25a9a6386b271"
+    },
+    "l19-q3-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen. You need thirteen more.",
+      "sha256": "87dafb300557dc21863aa4e707debb4c4638c7c611b16cb7898bbda10baf7fc6"
+    },
+    "l19-q4": {
+      "text": "You have fifteen crystals. How many more do you need to make twenty? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "8ac00d51c8fcc7c566bfd53738f8fa6138d871b5630952e604cdb57f2095167f"
+    },
+    "l19-q4-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four, five. You need five more.",
+      "sha256": "82a4f41d9bdbd7439b01ad0452292376dbd7969ed5be75f593029eab6e00bfbf"
+    },
+    "l19-q5": {
+      "text": "You have six crystals. How many more do you need to make twenty? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "faf6f3060bc06c09bebaec3b87dffefea3f6eb5aa666e09cd0358c9de15d597c"
+    },
+    "l19-q5-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen. You need fourteen more.",
+      "sha256": "38ae605438017bbfa59aad94a50b5a3e73e3c4a7da492c32fb9ba6c1425a1f5d"
+    },
+    "mission-20": {
+      "text": "Mission twenty. Storm Dragon. Solve five puzzles to break the villain's magic shield.",
+      "sha256": "11ff5c307d668befb76840e5f51ee4b0de68b80c86e190e6215bd09026efc177"
+    },
+    "trophy-20": {
+      "text": "You defeated the Storm Dragon. Your trophy is Dragon scale.",
+      "sha256": "a6cb7501f56a3e8ef32b7d1f68b8fa5d515e8cbbf2586d28ac316c075694dc44"
+    },
+    "l20-q1": {
+      "text": "How many crystals can you see? Write the number, then tap the tick.",
+      "sha256": "0b00a9278dd963c31416652037cc87d909cbaf8d6f95edc7867798fe568b751e"
+    },
+    "l20-q1-help": {
+      "text": "Let's count together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty.",
+      "sha256": "422d32e746c8b44081bb7b7de01ae421239c94c3b532d7793e92f5bf4c733436"
+    },
+    "l20-q2": {
+      "text": "eight crystals and twelve more. How many altogether? Tap the number.",
+      "sha256": "3e20b0d67e6cdbae2c012729b438dee1cd1cca591d8954401517de91ca411c26"
+    },
+    "l20-q2-help": {
+      "text": "Count both groups together. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty. There are twenty altogether.",
+      "sha256": "774733183ab64c3b0aaec666544737d1a8c5ea408d642484c3b35437d948a36d"
+    },
+    "l20-q3": {
+      "text": "You have seven crystals. How many more do you need to make nineteen? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "da89378225545c770dbc8edc8f0044023da72d797f7b896f81059eee47808901"
+    },
+    "l20-q3-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve. You need twelve more.",
+      "sha256": "164fed2ca7353201fd3762782957757c21bc698c81c2cd52b26a2dfe877a08d7"
+    },
+    "l20-q4": {
+      "text": "Start with twenty crystals. Take away thirteen. How many are left? Write the number, then tap the tick.",
+      "sha256": "a78717d2652aaf2a427458dc2f3312be313616f722f87e398e067e2b53c781a8"
+    },
+    "l20-q4-help": {
+      "text": "The crossed out crystals have gone. Count the crystals left. one, two, three, four, five, six, seven. The answer is seven.",
+      "sha256": "834a2d473226eb27a3e8550a26566da04e883fd09eaa7bfe751ec2e810ffcd49"
+    },
+    "l20-q5": {
+      "text": "You have nine crystals. How many more do you need to make twenty? Drag the number to the gate, or tap the number, then the gate.",
+      "sha256": "6efd5004e21ccaeab30741c5c468151ea46992a2bffbd3b81b2532f2b4776445"
+    },
+    "l20-q5-help": {
+      "text": "The empty spaces show what is missing. Count them. one, two, three, four, five, six, seven, eight, nine, ten, eleven. You need eleven more.",
+      "sha256": "cc20f2789050d56ad02c50964530b13bcbe8987832ae94fda7cc38909ab5a157"
     },
     "help-0": {
       "text": "Let's count together. No crystals. That means zero..",

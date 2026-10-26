@@ -10,18 +10,23 @@ it is not a separate Linux distribution.
 This is an early application preview. It runs locally, saves locally and has no
 accounts, adverts, analytics or cloud speech service.
 
-![Toddler OS desktop with four learning apps](docs/images/desktop.png)
+![Toddler OS desktop](docs/images/desktop.png)
 
 | App | What children do |
 | --- | --- |
 | **The Book** | Write stories, hear letter recordings, read words and sentences, and put old stories away without deleting them. |
 | **Storybooks** | Type a word such as `hop` or `nap` to choose the next page of an illustrated book. The picture appears and the page reads aloud. |
-| **Ninja Maths** | Complete ten missions covering counting, comparison, addition, subtraction and making ten. Earn pictured sword, armour and power upgrades. |
+| **Ninja Maths** | Complete 20 missions: number training, then ten villains with animated finishing moves and trophies. Earn and combine sword, armour and power upgrades. |
+| **Mouse Missions** | Programme a mouse through 45 mazes, practise turns and debugging, then learn if/otherwise. Earn mouse equipment along the way. |
 | **Backgrounds** | Choose a picture for their desktop. |
 
 Four illustrated stories are included: **The Space Cat**, **Luciana and Dad**,
 **Come Back, Cat!** and **Where’s That Cat?**. The two Book Dash titles have
 separate original reading/picture editions and typed-choice adaptations.
+
+Optional child unlock words, a moon screensaver and a separate local parent
+settings page are included. They do not replace OS account or kiosk restrictions.
+See [Mouse Missions](docs/MOUSE-MISSIONS.md) and [unlock settings](docs/SCREEN-LOCK.md).
 
 ## Try it on your computer
 
