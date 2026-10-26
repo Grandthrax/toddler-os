@@ -12,6 +12,8 @@ from urllib.parse import parse_qs, unquote, urlsplit
 from core import ALPHABET, ORDER, SOURCE, MAX_TEXT, Problem, Settings, Speech, Store
 from ninja import NinjaGame
 from storybooks import Storybooks
+from screen_lock import ScreenLock, COOKIE
+from mouse import MouseGame
 
 STATIC = Path(__file__).resolve().parent / "static"
 
@@ -19,11 +21,13 @@ STATIC = Path(__file__).resolve().parent / "static"
 class Application(ThreadingHTTPServer):
     daemon_threads = True
 
-    def __init__(self, port, data, settings=None, model=None, phonics=None):
+    def __init__(self, port, data, settings=None, model=None, phonics=None, lock_settings=None):
+        self.screen_lock = ScreenLock(lock_settings or Path(data) / 'lock-settings.json')
         self.settings = Settings(settings or Path(data) / "settings.json")
         self.settings.load()
         self.store = Store(data, self.settings)
         self.ninja = NinjaGame(self.store)
+        self.mouse = MouseGame(self.store)
         self.storybooks = Storybooks(self.store)
         self.speech = Speech(model)
         self.phonics = Path(phonics or STATIC / "phonics/custom").resolve()
@@ -69,6 +73,9 @@ class Handler(BaseHTTPRequestHandler):
                 raise Problem("Open this app directly to make changes.", 403)
             if self.headers.get("X-Little-Pages") != "1" or self.headers.get("Content-Type", "").split(";")[0] != "application/json":
                 raise Problem("That request is not enabled.", 403)
+        path = unquote(urlsplit(self.path).path)
+        if path.startswith('/api/') and path not in ('/api/lock/status', '/api/lock/unlock', '/api/lock/lock'):
+            self.server.screen_lock.require(self.headers.get('Cookie'))
 
     def body(self):
         try:
@@ -110,7 +117,9 @@ class Handler(BaseHTTPRequestHandler):
 
     def get(self, path):
         app = self.server
-        if path == "/api/settings":
+        if path == '/api/lock/status':
+            self.respond(app.screen_lock.status(self.headers.get('Cookie')))
+        elif path == "/api/settings":
             self.respond(app.settings.load() | {"programme": "Read Write Inc. — Set 1 order",
                          "sequence": ORDER, "source": SOURCE, "max_text": MAX_TEXT,
                          "keyboard_letters": list(ALPHABET),
@@ -125,6 +134,10 @@ class Handler(BaseHTTPRequestHandler):
             self.respond(app.store.desktop())
         elif path == "/api/ninja":
             self.respond(app.ninja.state())
+        elif path == '/api/mouse':
+            self.respond(app.mouse.state())
+        elif match := re.fullmatch(r'/api/mouse/levels/([0-9]+)',path):
+            self.respond(app.mouse.level(int(match[1])))
         elif path == "/api/storybooks":
             self.respond(app.storybooks.library())
         elif match := re.fullmatch(r"/api/storybooks/([a-f0-9-]+)", path):
@@ -160,12 +173,24 @@ class Handler(BaseHTTPRequestHandler):
 
     def change(self, path, body):
         app = self.server
-        if path == "/api/storybooks" and self.command == "POST":
+        if path == '/api/lock/unlock' and self.command == 'POST':
+            if set(body) != {'password'}:
+                raise Problem('Type your password to unlock.')
+            token, status = app.screen_lock.unlock(body['password'])
+            self.respond(status, headers={'Set-Cookie': f'{COOKIE}={token}; Path=/; HttpOnly; SameSite=Strict'})
+        elif path in ('/api/lock/lock', '/api/lock/activity') and self.command == 'POST':
+            if body:
+                raise Problem('That lock request could not be read.')
+            action = app.screen_lock.lock if path.endswith('/lock') else app.screen_lock.activity
+            self.respond(action(self.headers.get('Cookie')))
+        elif path in ('/api/mouse/draft','/api/mouse/run','/api/mouse/complete','/api/mouse/reward','/api/mouse/equip') and self.command=='POST':
+            self.respond(getattr(app.mouse,path.rsplit('/',1)[1])(body))
+        elif path == "/api/storybooks" and self.command == "POST":
             self.respond(app.storybooks.create(body),201)
         elif match := re.fullmatch(r"/api/storybooks/([a-f0-9-]+)/pages/([0-9]+)",path):
             if self.command != 'PUT':raise Problem('That action is not enabled.',405)
             self.respond(app.storybooks.save(match[1],int(match[2]),body))
-        elif path in ("/api/ninja/start", "/api/ninja/answer", "/api/ninja/help", "/api/ninja/reward", "/api/ninja/equip") and self.command == "POST":
+        elif path in ("/api/ninja/start", "/api/ninja/answer", "/api/ninja/help", "/api/ninja/reward", "/api/ninja/equip", "/api/ninja/defeat") and self.command == "POST":
             action = path.rsplit("/", 1)[1]
             if action == "start":
                 if set(body) - {"level"} or ("level" in body and body["level"] is None):
@@ -210,8 +235,9 @@ def main():
     parser.add_argument("--settings", type=Path)
     parser.add_argument("--model", type=Path)
     parser.add_argument("--phonics-dir", type=Path)
+    parser.add_argument('--lock-settings', type=Path)
     args = parser.parse_args()
-    app = Application(args.port, args.data_dir, args.settings, args.model, args.phonics_dir)
+    app = Application(args.port, args.data_dir, args.settings, args.model, args.phonics_dir, args.lock_settings)
     print(f"Toddler OS: http://127.0.0.1:{app.server_port} (loopback only)", flush=True)
     try:
         app.serve_forever()

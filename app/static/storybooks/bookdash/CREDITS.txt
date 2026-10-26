@@ -1,0 +1,42 @@
+BOOK DASH BOOKS — CC BY 4.0
+
+Originally published by Book Dash. Original books can be read for free at
+https://bookdash.org . These books and illustrations retain their Creative
+Commons Attribution 4.0 International licence, independently of the app code.
+https://creativecommons.org/licenses/by/4.0/
+The full licence is supplied as CC-BY-4.0.txt in this directory.
+
+COME BACK, CAT!
+Nicola Rijsdijk — writer
+Karen Lilje — illustrator
+Sam Scarborough — designer
+https://bookdash.org/books/come-back-cat/
+Illustrations/text also supplied by Book Dash's official ebook repository:
+https://bookdash.github.io/bookdash-books/come-back-cat/en/
+
+Reading edition: original English text and illustrations preserved. Digital page
+layout, locally synthesised narration and word highlighting added. Original
+picture-only spreads remain without narration.
+My story edition: new shortened five-page typed-choice text by Toddler OS;
+illustrations reused in a different selection/order. New narration added.
+
+WHERE'S THAT CAT?
+Sam Wilson — writer
+Thea de Klerk — illustrator
+Louis Greenberg — editor
+Chenél Ferreira — designer
+https://bookdash.org/books/wheres-that-cat/
+
+Look and tell edition: original wordless story illustrations preserved in sequence;
+digital navigation added. No invented story text or narration in this edition.
+My story edition: new five-page typed-choice text by Toddler OS, inspired by the
+original wordless story. Illustrations reused in a new selection/order. New
+narration added. The new text is an adaptation, not Book Dash's original text.
+
+All downloaded image bytes are preserved. See download-manifest.json for the
+exact original URLs and SHA256 hashes. CSS fits the complete images inside the
+page; it does not crop or alter the source artwork. No endorsement by Book Dash
+or the original creators is implied. Their logo is included for attribution.
+
+The new Book Dash story adaptations and corresponding narration are offered under
+CC BY 4.0. Other application material retains its separately stated licence.

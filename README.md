@@ -10,17 +10,23 @@ it is not a separate Linux distribution.
 This is an early application preview. It runs locally, saves locally and has no
 accounts, adverts, analytics or cloud speech service.
 
-![Toddler OS desktop with four learning apps](docs/images/desktop.png)
+![Toddler OS desktop](docs/images/desktop.png)
 
 | App | What children do |
 | --- | --- |
 | **The Book** | Write stories, hear letter recordings, read words and sentences, and put old stories away without deleting them. |
 | **Storybooks** | Type a word such as `hop` or `nap` to choose the next page of an illustrated book. The picture appears and the page reads aloud. |
-| **Ninja Maths** | Complete ten missions covering counting, comparison, addition, subtraction and making ten. Earn pictured sword, armour and power upgrades. |
+| **Ninja Maths** | Complete 20 missions: number training, then ten villains with animated finishing moves and trophies. Earn and combine sword, armour and power upgrades. |
+| **Mouse Missions** | Programme a mouse through 45 mazes, practise turns and debugging, then learn if/otherwise. Earn mouse equipment along the way. |
 | **Backgrounds** | Choose a picture for their desktop. |
 
-Two illustrated sample books are included: **The Space Cat** and **Luciana and
-Dad**. Both have bundled spoken pages and matching pictures for each choice.
+Four illustrated stories are included: **The Space Cat**, **Luciana and Dad**,
+**Come Back, Cat!** and **Where’s That Cat?**. The two Book Dash titles have
+separate original reading/picture editions and typed-choice adaptations.
+
+Optional child unlock words, a moon screensaver and a separate local parent
+settings page are included. They do not replace OS account or kiosk restrictions.
+See [Mouse Missions](docs/MOUSE-MISSIONS.md) and [unlock settings](docs/SCREEN-LOCK.md).
 
 ## Try it on your computer
 
@@ -83,6 +89,18 @@ keep a complete picture book. You do not need to copy the whole sentence.
 or `sock`, then `sad` or `mad`. The final page, “dad was the best fun”, reads
 automatically. Type just the chosen word on each choice page; the full sentence
 and matching picture appear afterwards. Luciana is pronounced “Loo-see-ANN-uh”.
+
+The Book Dash adaptations offer short choices such as `sit/run`, `sock/snail`,
+`cat/car` and `bug/dad`. Each choice reveals the matching original illustration
+and reads our new sentence. These are credited adaptations, with some supported
+words beyond the first phonics sounds.
+
+Choose the **book-icon tiles** to read or look. **Come Back, Cat!** preserves the original text with
+offline narration and word highlighting. **Where’s That Cat?** preserves the
+wordless original: turn its pages and tell your own story aloud. No typing or
+invented narration is required. The complete illustrations are fitted inside the
+page. Book Dash credits, licence and adaptation notices are available in each
+edition. See [the book credits](app/static/storybooks/bookdash/CREDITS.txt).
 
 In **Ninja Maths**, start mission 1. Answer using the pictured choices, number
 input or matching activity. Help and another try are available. Finishing a

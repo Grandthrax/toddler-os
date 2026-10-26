@@ -41,7 +41,7 @@
       const result=await request(path,body);game.data=result.state||result;done?.(result);
     } catch(error) {
       if(error.status===409 && error.detail.state) {
-        game.data=error.detail.state;game.view=game.data.stage==='reward'?'reward':'home';
+        game.data=error.detail.state;game.view=game.data.stage==='battle'?'battle':game.data.stage==='reward'?'reward':'home';
         if(path==='/answer') clearPending(body);
         game.error='Your saved progress is back. Continue your mission.';
       } else {
@@ -51,7 +51,7 @@
     } finally {game.busy=false;render();if(game.active) focus();}
   }
   function startMission(level=null) {
-    update('/start',level===null?{}:{level},()=>{resetQuestion();game.view=game.data.stage==='reward'?'reward':'play';speak(game.data.stage==='reward'?'reward':[`mission-${game.data.level}`,questionAudio()]);});
+    update('/start',level===null?{}:{level},()=>{resetQuestion();game.view=game.data.stage==='battle'?'battle':game.data.stage==='reward'?'reward':'play';speak(game.data.stage==='battle'?'battle':game.data.stage==='reward'?'reward':[`mission-${game.data.level}`,questionAudio()]);});
   }
   const questionAudio=()=>game.data.question?.audio||game.data.question?.kind;
   function answer(number) {
@@ -74,9 +74,9 @@
   }
   function continueMission() {
     resetQuestion();
-    game.view=game.data.stage==='reward'?'reward':game.data.stage==='complete'?'complete':'play';
+    game.view=game.data.stage==='battle'?'battle':game.data.stage==='reward'?'reward':game.data.stage==='complete'?'complete':'play';
     game.preview=null;render();focus();
-    if(game.view==='reward') speak('reward');else if(game.view==='play') speak(questionAudio());else speak(game.data.chapter_complete?'chapter-complete':'practice');
+    if(game.view==='battle') speak('battle');else if(game.view==='reward') speak('reward');else if(game.view==='play') speak(questionAudio());else speak(game.data.chapter_complete?'chapter-complete':'practice');
   }
   const itemFor=id=>game.data?.catalog.find(item=>item.id===id);
   const characterName=id=>itemFor(id)?.name||'Training outfit';
@@ -87,11 +87,11 @@
     return `<aside class="ninja-hero-panel"><div class="ninja-rank"><span class="ninja-rank-star">✦</span><strong class="ninja-big-level" aria-label="Ninja level ${level}">${level}</strong></div><div class="ninja-character-stage"><span class="ninja-sun" aria-hidden="true"></span>${avatar(loadout,'ninja-main-character','Your blonde ninja with her earned equipment')}<span class="ninja-character-shadow" aria-hidden="true"></span></div><div class="ninja-outfit-label ninja-loadout">${['sword','armour','power'].map(branch=>`<span class="${loadout[branch]?'earned':'unearned'}" title="${branch} power ${loadout[branch]}">${icon(branch)}${pips(loadout[branch])}</span>`).join('')}</div></aside>`;
   }
   function header() {
-    return `<header class="ninja-header"><div class="ninja-brand"><img src="/ninja-maths.svg" width="43" height="43" alt=""><div><strong>NINJA MATHS</strong><span>Little numbers. Mighty adventures.</span></div></div><nav aria-label="Ninja Maths"><button class="ninja-small-button" data-action="home" data-safe title="Missions">${symbol('home')}<span>Missions</span></button><button class="ninja-small-button" data-action="equipment" title="Your equipment">${symbol('book')}<span>Your ninja</span></button><button class="ninja-small-button ninja-audio-toggle" data-action="sound" data-safe aria-label="${game.muted?'Turn game sound on':'Mute game sound'}" aria-pressed="${!game.muted}">${symbol(game.muted?'stop':'sound')}</button></nav></header>`;
+    return `<header class="ninja-header"><div class="ninja-brand"><img src="/ninja-maths.svg" width="43" height="43" alt=""><div><strong>NINJA MATHS</strong><span>Little numbers. Mighty adventures.</span></div></div><nav aria-label="Ninja Maths"><button class="ninja-small-button" data-action="home" data-safe title="Missions">${symbol('home')}<span>Missions</span></button><button class="ninja-small-button" data-action="equipment" title="Your equipment">${symbol('book')}<span>Your ninja</span></button><button class="ninja-small-button" data-action="trophies" aria-label="Trophy room">${icon('trophy')}<span>Trophies</span></button><button class="ninja-small-button ninja-audio-toggle" data-action="sound" data-safe aria-label="${game.muted?'Turn game sound on':'Mute game sound'}" aria-pressed="${!game.muted}">${symbol(game.muted?'stop':'sound')}</button></nav></header>`;
   }
   function missionHome() {
     const pending=game.data.stage==='reward',resume=game.data.stage==='question';
-    return `<div class="ninja-mission-home"><div class="ninja-home-heading"><h1>${game.data.chapter_complete?'Sunrise ninja!':'Choose a mission'}</h1><button class="ninja-hear" data-action="hear-home" aria-label="Hear how to choose a mission">${symbol('sound')}</button></div><div class="ninja-level-path ninja-chapter-map">${game.data.levels.map(level=>`<button class="ninja-map-level ${level.status}" data-level="${level.id}" ${level.status==='locked'?'disabled':''} aria-label="Mission ${level.id}: ${escape(level.name)}. ${level.status}"><span class="ninja-map-number">${level.id}</span>${icon(level.status==='locked'?'lock':level.icon)}${level.status==='completed'?`<span class="ninja-map-tick">${icon('check')}</span>`:level.status==='active'?`<span class="ninja-map-dots">${'●'.repeat(level.solved)}${'○'.repeat(5-level.solved)}</span>`:''}</button>`).join('')}</div><button class="ninja-primary ninja-icon-primary" data-action="start" data-autofocus aria-label="${pending?'Choose your upgrade':resume?'Continue mission':'Start next mission'}">${icon(pending?'trophy':'play')}<span>${pending?'Choose!':resume?'Continue':'Play'}</span>${icon('arrow')}</button></div>`;
+    return `<div class="ninja-mission-home"><div class="ninja-home-heading"><h1>${game.data.campaign_complete?'Mighty maths ninja!':'Choose a mission'}</h1><button class="ninja-hear" data-action="hear-home" aria-label="Hear how to choose a mission">${symbol('sound')}</button></div><div class="ninja-level-path ninja-chapter-map">${game.data.levels.map((level,index)=>`${index===0?'<h2 class="ninja-map-chapter">1–10 · Training</h2>':index===10?'<h2 class="ninja-map-chapter">11–20 · Villains</h2>':''}<button class="ninja-map-level ${level.status}" data-level="${level.id}" ${level.status==='locked'?'disabled':''} aria-label="Mission ${level.id}: ${escape(level.name)}. ${level.status}"><span class="ninja-map-number">${level.id}</span>${level.villain&&level.status!=='locked'?`<img class="ninja-map-enemy" src="${level.villain.image}" alt="">`:icon(level.status==='locked'?'lock':level.icon)}${level.status==='completed'?`<span class="ninja-map-tick">${icon('check')}</span>`:level.status==='active'?`<span class="ninja-map-dots">${'●'.repeat(level.solved)}${'○'.repeat(5-level.solved)}</span>`:''}</button>`).join('')}</div><button class="ninja-primary ninja-icon-primary" data-action="start" data-autofocus aria-label="${pending?'Choose your upgrade':resume?'Continue mission':'Start next mission'}">${icon(pending?'trophy':'play')}<span>${pending?'Choose!':resume?'Continue':'Play'}</span>${icon('arrow')}</button></div>`;
   }
   function progress() {
     return `<div class="ninja-mission-progress"><span class="ninja-mission-number">${icon(game.data.levels[game.data.level-1].icon)}<strong>${game.data.level}</strong></span><div class="ninja-progress-crystals" aria-label="${game.data.solved} of 5 puzzles solved">${Array.from({length:5},(_,i)=>crystal(0,i<game.data.solved)).join('')}</div></div>`;
@@ -120,7 +120,7 @@
       controls=`<div class="ninja-answer-choices" role="group" aria-label="Answer choices">${q.choices.map((n,i)=>`<button class="ninja-answer-choice ${game.picked===n?'picked':''}" data-answer="${n}" ${q.kind==='match'?'draggable="true"':''} aria-pressed="${game.picked===n}" ${i===0?'data-autofocus':''}>${n}</button>`).join('')}</div>`;
       if(q.kind==='match') controls+=`<button class="ninja-drop-zone ${game.picked!==null?'ready':''}" data-action="drop" aria-label="Dojo gate answer target"><span>${game.picked===null?'?':game.picked}</span>${icon('arrow')}${icon('gate')}</button>`;
     }
-    return `${progress()}<div class="ninja-puzzle kind-${q.kind} task-${q.task}"><div class="ninja-puzzle-heading"><h1>${title}</h1><button class="ninja-hear" data-action="hear" aria-label="Hear the question">${symbol('sound')}</button></div><p id="ninja-puzzle-hint" class="ninja-puzzle-hint ${game.wrong?'try-again':''}" role="status">${hint}</p><div class="ninja-activity">${board}<div class="ninja-controls">${controls}</div></div><div class="ninja-puzzle-foot"><button class="ninja-help" data-action="help" aria-label="Count with me">${icon('hand')}${symbol('sound')}</button></div></div>`;
+    return `${encounter()}${progress()}<div class="ninja-puzzle kind-${q.kind} task-${q.task}"><div class="ninja-puzzle-heading"><h1>${title}</h1><button class="ninja-hear" data-action="hear" aria-label="Hear the question">${symbol('sound')}</button></div><p id="ninja-puzzle-hint" class="ninja-puzzle-hint ${game.wrong?'try-again':''}" role="status">${hint}</p><div class="ninja-activity">${board}<div class="ninja-controls">${controls}</div></div><div class="ninja-puzzle-foot"><button class="ninja-help" data-action="help" aria-label="Count with me">${icon('hand')}${symbol('sound')}</button></div></div>`;
   }
   function feedback() {
     const final=game.data.stage!=='question';
@@ -138,17 +138,46 @@
     return `<div class="ninja-reward"><div class="ninja-reward-heading">${icon('trophy')}<h1>Choose!</h1><button class="ninja-hear" data-action="hear-reward" aria-label="Hear how to choose an upgrade">${symbol('sound')}</button></div><div class="ninja-upgrade-choices" role="group" aria-label="Upgrade paths. A tick means a completed path.">${cards}</div><button class="ninja-primary ninja-choose-upgrade ninja-icon-primary" data-action="choose" ${!game.preview?'disabled':''} aria-label="Keep this upgrade">${icon('check')}</button></div>`;
   }
   function complete() {
-    return `<div class="ninja-complete"><div class="ninja-success-star" aria-hidden="true">${game.data.chapter_complete?'🏆':'✦'}</div><h1>${game.data.chapter_complete?'Sunrise ninja!':'More powerful!'}</h1><div class="ninja-earned-icons">${icon(itemFor(game.data.reward)?.branch||'trophy')}${icon('check')}</div><button class="ninja-primary ninja-icon-primary" data-action="${game.data.chapter_complete?'home':'next-level'}" data-autofocus aria-label="${game.data.chapter_complete?'Back to missions':'Play next mission'}">${icon(game.data.chapter_complete?'trophy':'play')}${!game.data.chapter_complete?`<span>${Math.min(10,game.data.completed_level+1)}</span>`:''}${icon('arrow')}</button><button class="ninja-text-button" data-action="home" aria-label="Back to missions">${symbol('home')}</button></div>`;
+    return `<div class="ninja-complete"><div class="ninja-success-star" aria-hidden="true">${game.data.chapter_complete?'🏆':'✦'}</div><h1>${game.data.chapter_complete?'Sunrise ninja!':'More powerful!'}</h1><div class="ninja-earned-icons">${icon(itemFor(game.data.reward)?.branch||'trophy')}${icon('check')}</div><button class="ninja-primary ninja-icon-primary" data-action="${game.data.chapter_complete?'home':'next-level'}" data-autofocus aria-label="${game.data.chapter_complete?'Back to missions':'Play next mission'}">${icon(game.data.chapter_complete?'trophy':'play')}${!game.data.chapter_complete?`<span>${Math.min(20,game.data.completed_level+1)}</span>`:''}${icon('arrow')}</button><button class="ninja-text-button" data-action="home" aria-label="Back to missions">${symbol('home')}</button></div>`;
   }
   function equipment() {
     return `<div class="ninja-equipment"><div class="ninja-home-heading"><h1>Your ninja</h1><button class="ninja-hear" data-action="hear-equipment" aria-label="Hear about your equipment">${symbol('sound')}</button></div><div class="ninja-owned-items">${game.data.owned.map(id=>{const item=itemFor(id),outfit=item?{...game.data.loadout,[item.branch]:item.rank}:{sword:0,armour:0,power:0},selected=item?game.data.loadout[item.branch]===item.rank:Object.values(game.data.loadout).every(n=>n===0);return `<button data-equip="${id}" class="ninja-owned ${selected?'selected':''}" aria-label="Wear ${escape(characterName(id))}" aria-pressed="${selected}"><div class="ninja-owned-picture">${avatar(outfit,'',escape(characterName(id)))}</div><div class="ninja-owned-category">${icon(item?.branch||'shirt')}${pips(item?.rank||0)}</div>${selected?symbol('check'):''}</button>`;}).join('')}</div><button class="ninja-primary ninja-icon-primary" data-action="home" data-autofocus aria-label="Back to missions">${icon('arrow')}</button></div>`;
+  }
+  function encounter() {
+    if(!game.data.villain) return '';
+    return `<div class="ninja-encounter"><img src="${game.data.villain.image}" alt="${escape(game.data.villain.name)}"><div><strong>${escape(game.data.villain.name)}</strong><div class="ninja-shields" aria-label="${5-game.data.solved} shields left">${Array.from({length:5},(_,i)=>`<span class="${i<game.data.solved?'broken':''}">⬡</span>`).join('')}</div></div></div>`;
+  }
+  function battle() {
+    return `<div class="ninja-battle"><h1>Choose your finishing move!</h1><button class="ninja-hear" data-action="hear-battle" aria-label="Hear your choices">${symbol('sound')}</button><img class="ninja-boss" src="${game.data.villain.image}" alt="${escape(game.data.villain.name)}"><div class="ninja-finishers">${game.data.defeats.map(move=>`<button data-defeat="${move.id}" aria-label="${escape(move.name)}">${moveIcon(move.id)}</button>`).join('')}</div></div>`;
+  }
+  function moveIcon(method) {
+    if(method==='sword') return icon('sword');
+    return `<svg viewBox="0 0 100 100" aria-hidden="true">${method==='shield'?'<path d="M50 8 87 22v30Q85 78 50 93 15 78 13 52V22Z" fill="#7e9bb6" stroke="#53677f" stroke-width="6"/><path d="M50 17v65M22 35h56" stroke="#fff3b8" stroke-width="7"/>':'<path d="M58 5 18 56h28l-9 39 46-57H55Z" fill="#ffd54f" stroke="#a67731" stroke-width="5" stroke-linejoin="round"/>'}</svg>`;
+  }
+  function strike() {
+    const name=game.data.defeats.find(move=>move.id===game.finisher).name;
+    return `<div class="ninja-battle ninja-strike move-${game.finisher}" role="status" aria-label="${escape(name)} defeats ${escape(game.data.villain.name)}"><h1>${escape(name)}!</h1><div class="ninja-fight-scene"><div class="ninja-fighter">${avatar(game.data.loadout,'','Your ninja performs the finishing move')}</div><div class="ninja-finisher-effect" aria-hidden="true">${moveIcon(game.finisher)}</div><div class="ninja-sword-arc" aria-hidden="true"></div><div class="ninja-impact" aria-hidden="true">✦</div><img class="ninja-foe" src="${game.data.villain.image}" alt="${escape(game.data.villain.name)} defeated"><div class="ninja-fight-ground" aria-hidden="true"></div></div></div>`;
+  }
+  function playFinisher(method) {
+    stopAudio();game.finisher=method;game.finisherToken=crypto.randomUUID();
+    const token=game.finisherToken;
+    game.view=matchMedia('(prefers-reduced-motion: reduce)').matches?'victory':'strike';
+    if(game.view==='victory') speak(game.data.campaign_complete?'campaign-complete':'victory');
+    else setTimeout(()=>{if(game.view==='strike'&&game.finisherToken===token){game.view='victory';render();focus();speak(game.data.campaign_complete?'campaign-complete':'victory');}},3300);
+  }
+  function victory() {
+    const trophy=game.data.trophies.find(t=>t.level===game.data.level);
+    return `<div class="ninja-battle ninja-victory"><div class="ninja-victory-effect" aria-hidden="true">${moveIcon(game.finisher)} ✦</div><h1>${game.data.campaign_complete?'All villains defeated!':'Villain defeated!'}</h1><button class="ninja-hear" data-action="replay-move" aria-label="Watch your finishing move again">${symbol('undo')}</button><img class="ninja-boss" src="${trophy.trophy_image}" alt="${escape(trophy.trophy)}"><button class="ninja-primary" data-action="trophies" aria-label="See your trophy room">${icon('trophy')}</button>${!game.data.campaign_complete?`<button class="ninja-primary" data-action="next-level" aria-label="Next villain">${game.data.level+1}${icon('arrow')}</button>`:''}</div>`;
+  }
+  function trophies() {
+    return `<div class="ninja-trophy-room"><h1>Your trophies</h1><div class="ninja-trophy-shelves">${game.data.levels.filter(l=>l.villain).map(level=>{const trophy=game.data.trophies.find(t=>t.level===level.id);return `<${trophy?'button':'div'} class="ninja-trophy ${trophy?'collected':'waiting'}" ${trophy?`data-trophy="${level.id}" aria-label="${escape(trophy.trophy)}, from ${escape(trophy.name)}"`:`aria-label="Trophy ${level.id}, not collected"`}><strong>${level.id}</strong>${trophy?`<img src="${trophy.trophy_image}" alt="">${moveIcon(trophy.method)}`:icon('lock')}</${trophy?'button':'div'}>`;}).join('')}</div><button class="ninja-primary" data-action="home" aria-label="Back to missions">${icon('arrow')}</button></div>`;
   }
   function render() {
     if(!game.data) {
       root.innerHTML=`<div class="ninja-loading"><img src="/ninja-maths.svg" width="70" height="70" alt=""><p>${game.error||'Getting your mission ready…'}</p>${game.error?'<button class="ninja-primary" data-action="reload">Try again</button>':''}</div>`;
       $('[data-action=reload]')?.addEventListener('click',()=>open(true));return;
     }
-    const content=game.view==='reward'?rewards():game.view==='play'?puzzle():game.view==='feedback'?feedback():game.view==='complete'?complete():game.view==='equipment'?equipment():missionHome();
+    const content=game.view==='strike'?strike():game.view==='battle'?battle():game.view==='victory'?victory():game.view==='trophies'?trophies():game.view==='reward'?rewards():game.view==='play'?puzzle():game.view==='feedback'?feedback():game.view==='complete'?complete():game.view==='equipment'?equipment():missionHome();
     root.innerHTML=`${header()}${game.error?`<div class="ninja-error" role="alert"><span>${escape(game.error)}</span><button data-action="retry">Try again</button></div>`:''}<div class="ninja-layout">${hero()}<section class="ninja-content" aria-label="Ninja Maths mission">${content}</section></div><div class="ninja-save-indicator" role="status">${game.busy?'Saving…':game.retry?'Save needs a retry':'Progress saved on this computer'}</div>`;
     root.setAttribute('aria-busy',String(game.busy));
     if(game.busy) root.querySelectorAll('button:not([data-safe]),input').forEach(el=>el.disabled=true);
@@ -172,21 +201,26 @@
     });
     root.querySelectorAll('[data-preview]').forEach(button=>button.onclick=()=>{game.preview=button.dataset.preview;render();$(`[data-preview="${game.preview}"]`)?.focus();speak('preview-'+game.preview);});
     root.querySelectorAll('[data-equip]').forEach(button=>button.onclick=()=>update('/equip',{upgrade:button.dataset.equip}));
+    root.querySelectorAll('[data-defeat]').forEach(button=>button.onclick=()=>{const method=button.dataset.defeat;update('/defeat',{level:game.data.battle_level,method},()=>{playFinisher(method);});});
+    root.querySelectorAll('[data-trophy]').forEach(button=>button.onclick=()=>speak('trophy-'+button.dataset.trophy));
     root.querySelectorAll('[data-digit]').forEach(button=>button.onclick=()=>{
       if(game.typed.length<2) game.typed+=button.dataset.digit;storeDraft();$('#ninja-answer').value=game.typed;$('#ninja-answer').focus();
     });
     $('#ninja-answer')?.addEventListener('input',event=>{game.typed=event.target.value.replace(/\D/g,'').slice(0,2);event.target.value=game.typed;storeDraft();});
-    $('#ninja-number-form')?.addEventListener('submit',event=>{event.preventDefault();if(/^\d{1,2}$/.test(game.typed)&&Number(game.typed)<=10) answer(Number(game.typed));else {$('#ninja-answer').focus();$('#ninja-puzzle-hint').textContent='Choose a number from 0 to 10.';}});
+    $('#ninja-number-form')?.addEventListener('submit',event=>{event.preventDefault();if(/^\d{1,2}$/.test(game.typed)&&Number(game.typed)<=(game.data.level<=10?10:20)) answer(Number(game.typed));else {$('#ninja-answer').focus();$('#ninja-puzzle-hint').textContent='Choose a number from 0 to 20.';}});
   }
   function action(name) {
     if(name==='sound') {game.muted=!game.muted;stopAudio();try {localStorage.setItem('ninja-maths-muted',String(game.muted));}catch{}render();return;}
     if(game.busy) return;
     if(name==='home') {stopAudio();game.view='home';game.feedback=null;render();focus();}
+    else if(name==='trophies') {stopAudio();game.view='trophies';render();focus();speak('trophies');}
     else if(name==='equipment') {stopAudio();game.view='equipment';render();focus();}
     else if(name==='start') startMission();
-    else if(name==='next-level') startMission(Math.min(10,game.data.completed_level+1));
+    else if(name==='next-level') startMission(Math.min(20,game.data.completed_level+1));
     else if(name==='continue') continueMission();
     else if(name==='help') help();
+    else if(name==='replay-move') {playFinisher(game.finisher||game.data.trophies.find(t=>t.level===game.data.level).method);render();focus();}
+    else if(name==='hear-battle') speak('battle');
     else if(name==='hear') speak(questionAudio());
     else if(name==='hear-home') speak('home');
     else if(name==='hear-reward') speak('reward');
@@ -209,7 +243,7 @@
         try {const reply=await request('/answer',pending);game.data=reply.state;clearPending(pending);}
         catch(error) {if(error.status===409&&error.detail.state){game.data=error.detail.state;clearPending(pending);}else throw error;}
       }
-      game.view=game.data.stage==='reward'?'reward':'home';game.preview=null;resetQuestion();
+      game.view=game.data.stage==='battle'?'battle':game.data.stage==='reward'?'reward':'home';game.preview=null;resetQuestion();
       for(const src of ['/ninja/gear-v2/body-'+game.data.loadout.armour+'.png',...game.data.upgrades.map(item=>item.image)]) {const img=new Image();img.src=src;}
     } catch {game.error='Your mission needs a moment. Your saved progress is still here.';}
     finally {game.busy=false;render();if(game.active) focus();}

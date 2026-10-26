@@ -54,14 +54,44 @@ def questions_for(level, run_id):
     for index, original in enumerate(LEVELS[level-1]["questions"]):
         q = original.copy();correct = expected(q)
         if q["kind"] != "groups":
-            candidates = [n for n in range(max(0,correct-3),min(10,correct+3)+1) if n != correct]
+            candidates = [n for n in range(max(0,correct-3),min(10 if level<=10 else 20,correct+3)+1) if n != correct]
             q["choices"] = [correct, *rng.sample(candidates, 2)]
             rng.shuffle(q["choices"])
         q.update(id=f"{run_id}:{index}", audio=f"l{level}-q{index+1}", help_audio=f"l{level}-q{index+1}-help")
         result.append(q)
     return result
 
-WORDS = ("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten")
+VILLAINS = [
+    ("Moss Goblin", "Goblin ears"), ("Iron Goblin", "Goblin helmet"),
+    ("Orc Scout", "Orc tusks"), ("Orc Captain", "Captain's shield"),
+    ("Bridge Troll", "Troll club"), ("Stone Golem", "Golem crystal"),
+    ("Shadow Knight", "Knight's crest"), ("Ice Giant", "Ice crown"),
+    ("Fire Ogre", "Ogre gauntlet"), ("Storm Dragon", "Dragon scale"),
+]
+DEFEATS = [
+    {"id":"sword", "name":"Whirlwind sword", "icon":"sword"},
+    {"id":"shield", "name":"Shield bounce", "icon":"armour"},
+    {"id":"lightning", "name":"Lightning spell", "icon":"power"},
+]
+ENCOUNTERS = [
+    [count(n,k) for n,k in zip((11,12,13,14,15),("choice","number","match","number","choice"))],
+    [maths("add",a,b,k) for a,b,k in ((6,5,"choice"),(7,5,"number"),(8,4,"match"),(9,4,"choice"),(8,6,"number"))],
+    [maths("subtract",a,b,"choice") for a,b in ((12,2),(13,3),(14,2),(15,4),(15,6))],
+    [maths("missing",a,b,"match") for a,b in ((8,12),(9,14),(7,13),(10,15),(6,15))],
+    [maths("add",a,b,"number") for a,b in ((8,7),(9,7),(8,8),(9,8),(10,8))],
+    [maths("subtract",a,b,k) for a,b,k in ((16,5,"choice"),(17,6,"number"),(18,4,"match"),(18,9,"choice"),(19,7,"number"))],
+    [maths("add",a,b,"match") for a,b in ((9,9),(10,9),(11,8),(12,7),(13,7))],
+    [maths("subtract",a,b,"number") for a,b in ((20,5),(20,8),(19,9),(18,11),(20,12))],
+    [maths("bonds",a,20,"match") for a in (10,12,7,15,6)],
+    [count(20,"number"),maths("add",8,12,"choice"),maths("missing",7,19,"match"),maths("subtract",20,13,"number"),maths("bonds",9,20,"match")],
+]
+for index, ((name, trophy), questions) in enumerate(zip(VILLAINS, ENCOUNTERS), 11):
+    LEVELS.append({"id":index,"name":name,"icon":"trophy","questions":questions,
+                   "villain":{"name":name,"image":f"/ninja/enemies/{index}.svg",
+                              "trophy":trophy,"trophy_image":f"/ninja/enemies/{index}-trophy.svg"}})
+
+WORDS = ("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+         "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty")
 def count_words(n):
     return ", ".join(WORDS[1:n+1]) if n else "No crystals. That means zero."
 
@@ -101,8 +131,15 @@ def prompts():
     for item in UPGRADES:
         text["preview-"+item["id"]]=item["name"]+f". {item['branch']} power {item['rank']}. Tap the tick to choose this upgrade."
         text["earned-"+item["id"]]="You chose "+item["name"]+". Your ninja is more powerful!"
+    text.update({"battle":"You broke the villain's magic shield! Choose your finishing move. Tap the sword, shield or lightning.",
+                 "victory":"You won! Your trophy is safe in your trophy room. The next villain is waiting.",
+                 "trophies":"Your trophy room. Tap a trophy to hear who you defeated.",
+                 "campaign-complete":"You defeated all ten villains! Your trophy room is full. You are a mighty maths ninja!"})
     for level in LEVELS:
-        text[f"mission-{level['id']}"]=f"Mission {WORDS[level['id']]}. {level['name']}. Solve five puzzles to earn an upgrade."
+        ending="Solve five puzzles to break the villain's magic shield." if level.get('villain') else "Solve five puzzles to earn an upgrade."
+        text[f"mission-{level['id']}"]=f"Mission {WORDS[level['id']]}. {level['name']}. {ending}"
+        if level.get('villain'):
+            text[f"trophy-{level['id']}"]=f"You defeated the {level['name']}. Your trophy is {level['villain']['trophy']}."
         for index,q in enumerate(level["questions"]):
             key=f"l{level['id']}-q{index+1}"
             text[key]=spoken_question(q);text[key+"-help"]=spoken_help(q)

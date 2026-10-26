@@ -109,7 +109,7 @@ class StorybookTests(unittest.TestCase):
         self.assertEqual(self.book['pages'][4]['text'],'dad was the best fun.')
         self.assertTrue(self.book['completed'])
         self.assertEqual(self.books.book(original['id']),original)
-        self.assertEqual(len(self.books.library()['templates']),2)
+        self.assertEqual(len(self.books.library()['templates']),6)
         with self.assertRaises(Problem):self.books.save(original['id'],4,{'choice':'luciana-dad','text':'dad','version':0,'finished':False})
         with self.assertRaises(Problem):self.books.save(self.book['id'],0,{'choice':'cover','text':'the space cat.','version':self.book['pages'][0]['version'],'finished':False})
 
@@ -173,7 +173,9 @@ class StorybookTests(unittest.TestCase):
             if name.startswith('page-'):self.assertEqual(len(entry['words']),len(text.split()))
         for template in TEMPLATES.values():
             for choices in template['pages']:
-                for item in choices:self.assertEqual((folder/item['image'].removeprefix('/storybooks/')).read_bytes()[:8],b'\x89PNG\r\n\x1a\n')
+                for item in choices:
+                    raw=(folder/item['image'].removeprefix('/storybooks/')).read_bytes()
+                    self.assertTrue(raw.startswith((b'\x89PNG\r\n\x1a\n',b'\xff\xd8')),item['image'])
 
     def test_word_feedback_uses_natural_sentence_sources_without_runaway_duration(self):
         folder=Path(__file__).resolve().parents[1]/'app/static/storybooks/audio'
@@ -182,7 +184,7 @@ class StorybookTests(unittest.TestCase):
             if name.startswith('word-'):
                 source=manifest[entry['source_page']]
                 boundary=source['words'][entry['source_word']]
-                self.assertEqual(source['text'][boundary[0]:boundary[1]],entry['text'])
+                self.assertEqual(source['text'][boundary[0]:boundary[1]].lower(),entry['text'])
                 self.assertEqual(entry['recipe'],2)
                 with wave.open(str(folder/(name+'.wav'))) as audio:
                     duration=audio.getnframes()/audio.getframerate()

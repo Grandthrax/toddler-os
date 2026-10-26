@@ -8,12 +8,17 @@
   <link rel="icon" href="/the-book.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/desktop.css">
+  <link rel="stylesheet" href="/screen-lock.css">
   <link rel="stylesheet" href="/ninja-maths.css">
   <link rel="stylesheet" href="/storybooks.css">
+  <link rel="stylesheet" href="/mouse-missions.css">
   <script src="/audio-controls.js" defer></script>
   <script src="/ninja-visuals.js" defer></script>
   <script src="/ninja-maths.js" defer></script>
   <script src="/storybooks.js" defer></script>
+  <script src="/mouse-visuals.js" defer></script>
+  <script src="/mouse-missions.js" defer></script>
+  <script src="/screen-lock.js" defer></script>
   <script src="/app.js" defer></script>
 </head>
 <body>
@@ -46,6 +51,7 @@
     <button id="desktop-backgrounds" class="desktop-icon" aria-label="Backgrounds" aria-describedby="desktop-tip" aria-pressed="false"><img src="/backgrounds.svg" width="88" height="88" alt="" draggable="false"><span>Backgrounds</span></button>
     <button id="desktop-ninja" class="desktop-icon" aria-label="Ninja Maths" aria-describedby="desktop-tip" aria-pressed="false"><img src="/ninja-maths.svg" width="88" height="88" alt="" draggable="false"><span>Ninja Maths</span></button>
     <button id="desktop-storybooks" class="desktop-icon" aria-label="Storybooks" aria-describedby="desktop-tip" aria-pressed="false"><img src="/storybooks.svg" width="88" height="88" alt="" draggable="false"><span>Storybooks</span></button>
+    <button id="desktop-mouse" class="desktop-icon" aria-label="Mouse Missions" aria-describedby="desktop-tip" aria-pressed="false"><img src="/mouse-missions.svg" width="88" height="88" alt="" draggable="false"><span>Mouse Missions</span></button>
     <p id="desktop-tip" class="desktop-tip">Double-click an app to open it.</p>
     <span class="desktop-wordmark" aria-hidden="true">toddler os</span>
 
@@ -96,11 +102,15 @@
       <div id="ninja-root" class="ninja-root"><p class="ninja-loading">Getting your mission ready…</p></div>
     </section>
 
+    <section id="mouse-window" class="book-window mouse-window maximised" aria-labelledby="mouse-title" hidden>
+      <header id="mouse-titlebar" class="window-titlebar"><div class="window-app-title"><img src="/mouse-missions.svg" width="25" height="25" alt="" draggable="false"><span id="mouse-title">Mouse Missions</span></div><div class="window-controls"><button id="mouse-minimise" aria-label="Minimise Mouse Missions" title="Minimise"><svg aria-hidden="true"><use href="#icon-minimise"/></svg></button><button id="mouse-maximise" aria-label="Restore Mouse Missions window" title="Restore" aria-pressed="true"><svg aria-hidden="true"><use href="#icon-restore"/></svg></button><button id="mouse-close" aria-label="Close Mouse Missions" title="Close"><svg aria-hidden="true"><use href="#icon-close"/></svg></button></div></header>
+      <div id="mouse-root" class="mm-root"><p class="mm-loading">Opening the garden…</p></div>
+    </section>
     <section id="storybooks-window" class="book-window storybooks-window maximised" aria-labelledby="storybooks-title" hidden>
       <header id="storybooks-titlebar" class="window-titlebar"><div class="window-app-title"><img src="/storybooks.svg" width="25" height="25" alt="" draggable="false"><span id="storybooks-title">Storybooks</span></div><div class="window-controls"><button id="storybooks-minimise" aria-label="Minimise Storybooks" title="Minimise"><svg aria-hidden="true"><use href="#icon-minimise"/></svg></button><button id="storybooks-maximise" aria-label="Restore Storybooks window" title="Restore" aria-pressed="true"><svg aria-hidden="true"><use href="#icon-restore"/></svg></button><button id="storybooks-close" aria-label="Close Storybooks" title="Close"><svg aria-hidden="true"><use href="#icon-close"/></svg></button></div></header>
       <div id="storybooks-root" class="sb-root"><p class="sb-loading">Opening your bookshelf…</p></div>
     </section>
-    <section id="start-menu" class="start-menu" aria-labelledby="apps-heading" hidden><h2 id="apps-heading">Your apps</h2><button id="start-book" class="start-app"><img src="/the-book.svg" width="48" height="48" alt=""><span><strong>The Book</strong><small>Writing and stories</small></span></button><button id="start-backgrounds" class="start-app"><img src="/backgrounds.svg" width="48" height="48" alt=""><span><strong>Backgrounds</strong><small>Choose your desktop picture</small></span></button><button id="start-ninja" class="start-app"><img src="/ninja-maths.svg" width="48" height="48" alt=""><span><strong>Ninja Maths</strong><small>Maths missions and magic</small></span></button><button id="start-storybooks" class="start-app"><img src="/storybooks.svg" width="48" height="48" alt=""><span><strong>Storybooks</strong><small>Choose pictures. Write your book.</small></span></button></section>
+    <section id="start-menu" class="start-menu" aria-labelledby="apps-heading" hidden><h2 id="apps-heading">Your apps</h2><button id="start-book" class="start-app"><img src="/the-book.svg" width="48" height="48" alt=""><span><strong>The Book</strong><small>Writing and stories</small></span></button><button id="start-backgrounds" class="start-app"><img src="/backgrounds.svg" width="48" height="48" alt=""><span><strong>Backgrounds</strong><small>Choose your desktop picture</small></span></button><button id="start-ninja" class="start-app"><img src="/ninja-maths.svg" width="48" height="48" alt=""><span><strong>Ninja Maths</strong><small>Maths missions and magic</small></span></button><button id="start-storybooks" class="start-app"><img src="/storybooks.svg" width="48" height="48" alt=""><span><strong>Storybooks</strong><small>Choose pictures. Write your book.</small></span></button><button id="start-mouse" class="start-app"><img src="/mouse-missions.svg" width="48" height="48" alt=""><span><strong>Mouse Missions</strong><small>Arrows, questions and little adventures</small></span></button></section>
     <section id="volume-panel" class="volume-panel" aria-label="Speaker volume" hidden>
       <div class="volume-heading"><svg aria-hidden="true"><use href="#icon-sound"/></svg><output id="volume-percent" for="volume-slider">100%</output><button id="volume-close" type="button" aria-label="Close volume control"><svg aria-hidden="true"><use href="#icon-close"/></svg></button></div>
       <div class="volume-controls"><button id="volume-mute" type="button" aria-label="Mute sound" aria-pressed="false"><svg aria-hidden="true"><use href="#icon-sound"/></svg></button><input id="volume-slider" type="range" min="0" max="100" step="1" value="100" aria-label="Volume"><span aria-hidden="true">100</span></div>
@@ -112,6 +122,7 @@
       <button id="taskbar-backgrounds" class="taskbar-app" aria-label="Backgrounds on taskbar" aria-pressed="false" title="Backgrounds"><img src="/backgrounds.svg" width="39" height="39" alt=""><span>Backgrounds</span></button>
       <button id="taskbar-ninja" class="taskbar-app" aria-label="Ninja Maths on taskbar" aria-pressed="false" title="Ninja Maths"><img src="/ninja-maths.svg" width="39" height="39" alt=""><span>Ninja Maths</span></button>
       <button id="taskbar-storybooks" class="taskbar-app" aria-label="Storybooks on taskbar" aria-pressed="false" title="Storybooks"><img src="/storybooks.svg" width="39" height="39" alt=""><span>Storybooks</span></button>
+      <button id="taskbar-mouse" class="taskbar-app" aria-label="Mouse Missions on taskbar" aria-pressed="false" title="Mouse Missions"><img src="/mouse-missions.svg" width="39" height="39" alt=""><span>Mouse Missions</span></button>
       <span class="taskbar-spacer"></span>
       <button id="desktop-volume" class="taskbar-volume" type="button" aria-label="Speaker volume" aria-expanded="false" aria-controls="volume-panel"><svg aria-hidden="true"><use href="#icon-sound"/></svg></button>
       <div class="desktop-clock"><time id="desktop-time"></time><span id="desktop-date"></span></div>
@@ -121,5 +132,16 @@
   <div id="loading-view" class="desktop-loading"><p>Getting your desktop ready…</p><button class="button primary" id="retry">Try again</button></div>
   <div class="toast" id="toast" role="status" hidden></div>
   <dialog id="history-dialog" aria-labelledby="history-heading"><div class="dialog-heading"><div><p class="eyebrow">NOTHING LOST</p><h2 id="history-heading">Your earlier writing</h2></div><button id="close-history" class="icon-button" aria-label="Close earlier writing"><svg><use href="#icon-close"/></svg></button></div><p>Choose a page to bring it back. Your newer words stay safe too.</p><div id="revision-list"></div></dialog>
+  <dialog id="child-lock" aria-labelledby="child-lock-heading">
+    <div class="child-lock-stars" aria-hidden="true"></div>
+    <div class="child-saver-panel"><div class="child-lock-moon" aria-hidden="true">☾</div><button id="child-wake" type="button" aria-label="Wake the computer">☀</button></div>
+    <div class="child-lock-panel"><div class="child-lock-moon" aria-hidden="true">☾</div><h1 id="child-lock-heading">Type your password</h1>
+      <form id="child-unlock" autocomplete="off"><label class="sr-only" for="child-password">Your password</label>
+        <div class="child-password-line"><input id="child-password" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="64"><button id="child-lock-eye" type="button" aria-label="Show or hide your letters" aria-pressed="true">◉</button></div>
+        <p id="child-lock-message" role="status"></p><div id="child-lock-keys" aria-label="Password letter keys"></div>
+        <button id="child-lock-backspace" type="button" aria-label="Backspace">⌫</button><button id="child-unlock-button" type="submit" aria-label="Unlock your desktop">✓</button>
+      </form>
+    </div>
+  </dialog>
 </body>
 </html>

@@ -3,7 +3,7 @@ import json
 import uuid
 
 from core import Problem, now
-from ninja_content import BRANCHES, ITEMS, LEVELS, MAX_RANK, UPGRADES, expected, questions_for
+from ninja_content import BRANCHES, ITEMS, LEVELS, MAX_RANK, UPGRADES, DEFEATS, expected, questions_for
 
 
 class NinjaGame:
@@ -29,6 +29,10 @@ class NinjaGame:
                 );
                 CREATE TABLE IF NOT EXISTS ninja_rewards (
                     level INTEGER PRIMARY KEY REFERENCES ninja_completions(level), upgrade TEXT NOT NULL, created TEXT NOT NULL
+                );
+                CREATE TABLE IF NOT EXISTS ninja_trophies (
+                    level INTEGER PRIMARY KEY REFERENCES ninja_completions(level),
+                    method TEXT NOT NULL, created TEXT NOT NULL
                 );
                 CREATE TABLE IF NOT EXISTS ninja_loadout (
                     id INTEGER PRIMARY KEY CHECK(id=1), sword INTEGER NOT NULL DEFAULT 0,
@@ -74,8 +78,10 @@ class NinjaGame:
         completions = {row[0] for row in db.execute("SELECT level FROM ninja_completions")}
         rewards = {row[0]:row[1] for row in db.execute("SELECT level,upgrade FROM ninja_rewards ORDER BY level")}
         completed = max(completions,default=0)
-        pending = next((level for level in sorted(completions) if level not in rewards),None)
-        stage = "reward" if pending else "question" if run and not run["completed"] else "complete" if run else "home"
+        trophies = {row[0]:row[1] for row in db.execute("SELECT level,method FROM ninja_trophies ORDER BY level")}
+        pending = next((level for level in sorted(completions) if level <= 10 and level not in rewards),None)
+        battle = next((level for level in sorted(completions) if level > 10 and level not in trophies),None)
+        stage = "reward" if pending else "battle" if battle else "question" if run and not run["completed"] else "complete" if run else "home"
         question = None
         if run and not run["completed"]:
             question = json.loads(run["questions"])[run["position"]]
@@ -86,23 +92,25 @@ class NinjaGame:
         loadout = dict(db.execute("SELECT sword,armour,power FROM ninja_loadout WHERE id=1").fetchone())
         choices = [item | {"loadout":loadout | {item["branch"]:item["rank"]}} for item in UPGRADES if item["rank"] == earned[item["branch"]]+1]
         active_runs = {row[0]:row[1] for row in db.execute("SELECT level,max(position) FROM ninja_runs WHERE completed=0 GROUP BY level")}
-        level = pending or (run["level"] if run else min(10,completed+1))
+        level = pending or battle or (run["level"] if run else min(len(LEVELS),completed+1))
         return {"stage":stage,"level":level,"completed_level":completed,"pending_level":pending,
-                "max_rank":MAX_RANK,"maxed":[branch for branch in BRANCHES if earned[branch]==MAX_RANK],
-                "chapter_complete":len(rewards)==10,"next_level_unlocked":completed>0 and completed<10,"next_level_available":completed<10,
+                "battle_level":battle,"villain":LEVELS[level-1].get("villain"),"defeats":DEFEATS,
+                "trophies":[{"level":n,"method":method,**LEVELS[n-1]["villain"]} for n,method in trophies.items()],
+                "campaign_complete":len(trophies)==10,"max_rank":MAX_RANK,"maxed":[branch for branch in BRANCHES if earned[branch]==MAX_RANK],
+                "chapter_complete":len(rewards)==10,"next_level_unlocked":completed>0 and completed<len(LEVELS),"next_level_available":completed<len(LEVELS),
                 "reward":rewards.get(level),"equipped":profile["equipped"],"loadout":loadout,"earned":earned,"upgrades":choices,"catalog":UPGRADES,
                 "owned":["starter",*rewards.values()],"rewards":{str(k):v for k,v in rewards.items()},
                 "levels":[{k:v for k,v in entry.items() if k!="questions"} | {"status":"completed" if entry["id"] in completions else "locked" if entry["id"]>completed+1 else "active" if entry["id"] in active_runs else "ready","solved":active_runs.get(entry["id"],0)} for entry in LEVELS],
                 "run_id":run["id"] if run else None,"version":run["version"] if run else 0,"solved":run["position"] if run else 0,"total":5,"question":question}
 
     def start(self, level=None):
-        if level is not None and (type(level) is not int or not 1<=level<=10): raise Problem("Choose a mission number from one to ten.")
+        if level is not None and (type(level) is not int or not 1<=level<=len(LEVELS)): raise Problem("Choose a mission number from one to twenty.")
         with self.store.connect() as db:
             db.execute("BEGIN IMMEDIATE");current = self.state(db)
-            if current["stage"] == "reward": return current
+            if current["stage"] in ("reward", "battle"): return current
             if level is None:
                 if current["stage"] == "question": return current
-                level = min(10,current["completed_level"]+1)
+                level = min(len(LEVELS),current["completed_level"]+1)
             if level>current["completed_level"]+1: raise Problem("Finish the glowing mission to unlock this one.",409,state=current)
             previous = db.execute("SELECT id FROM ninja_runs WHERE level=? AND completed=0 ORDER BY created DESC LIMIT 1", (level,)).fetchone()
             if previous: identifier = previous[0]
@@ -120,7 +128,7 @@ class NinjaGame:
 
     def answer(self, body):
         if set(body)!={"run_id","question_id","version","answer","request_id"}: raise Problem("Choose one answer to check.")
-        if type(body["answer"]) is not int or not 0<=body["answer"]<=10: raise Problem("Choose a whole number from zero to ten.")
+        if type(body["answer"]) is not int or not 0<=body["answer"]<=20: raise Problem("Choose a whole number from zero to twenty.")
         try: uuid.UUID(body["request_id"])
         except (TypeError,ValueError,AttributeError): raise Problem("That answer could not be saved. Please try again.")
         with self.store.connect() as db:
@@ -129,7 +137,9 @@ class NinjaGame:
             if receipt:
                 if any(receipt[k]!=body[k] for k in ("run_id","question_id","answer")): raise Problem("That answer has already been checked.",409,state=self.state(db))
                 return {"state":self.state(db),"correct":bool(receipt["correct"]),"replayed":True}
-            current = self._current(db,body);correct = body["answer"]==expected(current["question"])
+            current = self._current(db,body)
+            if current["level"]<=10 and body["answer"]>10: raise Problem("Choose a whole number from zero to ten.")
+            correct = body["answer"]==expected(current["question"])
             db.execute("INSERT INTO ninja_answers VALUES(?,?,?,?,?,?)", (body["request_id"],body["run_id"],body["question_id"],body["answer"],int(correct),now()))
             position = current["solved"]+int(correct);completed = position==5
             db.execute("UPDATE ninja_runs SET position=?,version=version+1,completed=? WHERE id=?", (position,int(completed),current["run_id"]))
@@ -163,6 +173,21 @@ class NinjaGame:
             db.execute("INSERT INTO ninja_rewards VALUES(?,?,?)", (level,item["id"],now()))
             db.execute(f"UPDATE ninja_loadout SET {item['branch']}=? WHERE id=1", (item["rank"],))
             db.execute("UPDATE ninja_profile SET reward=?,equipped=? WHERE id=1", (item["id"],item["id"]))
+            return self.state(db)
+
+    def defeat(self, body):
+        if set(body)!={"level","method"} or type(body["level"]) is not int or not 11<=body["level"]<=len(LEVELS) or not isinstance(body["method"],str) or body["method"] not in {item["id"] for item in DEFEATS}:
+            raise Problem("Choose a finishing move for this villain.")
+        with self.store.connect() as db:
+            db.execute("BEGIN IMMEDIATE")
+            current=self.state(db)
+            previous=db.execute("SELECT method FROM ninja_trophies WHERE level=?",(body["level"],)).fetchone()
+            if previous:
+                if previous[0]!=body["method"]: raise Problem("Your trophy is already saved.",409,state=current)
+                return current
+            if current["battle_level"]!=body["level"]:
+                raise Problem("Finish this villain's maths shield first.",409,state=current)
+            db.execute("INSERT INTO ninja_trophies VALUES(?,?,?)",(body["level"],body["method"],now()))
             return self.state(db)
 
     def equip(self, body):

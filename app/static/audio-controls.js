@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const key='little-pages-audio',sounds=new Set();
-  let volume=100,muted=false,lastNonzero=100;
+  let volume=100,muted=false,lastNonzero=100,suspended=false;
   try {
     const saved=JSON.parse(localStorage.getItem(key)||'null');
     if(saved&&Number.isInteger(saved.volume)&&saved.volume>=0&&saved.volume<=100&&typeof saved.muted==='boolean') {
@@ -15,7 +15,7 @@
   const muteButton=document.getElementById('volume-mute');
   const silent=()=>muted||volume===0;
   function apply(save=false) {
-    for(const reference of sounds){const sound=reference.deref();if(sound)sound.volume=silent()?0:volume/100;else sounds.delete(reference);}
+    for(const reference of sounds){const sound=reference.deref();if(sound){sound.volume=silent()?0:volume/100;sound.muted=suspended;}else sounds.delete(reference);}
     slider.value=String(volume);slider.setAttribute('aria-valuetext',`${volume} percent${muted?', muted':''}`);
     document.getElementById('volume-percent').textContent=volume+'%';
     button.setAttribute('aria-label',`Speaker volume, ${silent()?'muted':volume+' percent'}`);
@@ -37,8 +37,10 @@
     try{const saved=JSON.parse(event.newValue);if(saved&&Number.isInteger(saved.volume)&&saved.volume>=0&&saved.volume<=100&&typeof saved.muted==='boolean'){volume=saved.volume;muted=saved.muted;apply();}}catch{}
   });
   window.LearningAudio={
-    create:source=>{const sound=new Audio(source);sound.volume=silent()?0:volume/100;sounds.add(new WeakRef(sound));return sound;},
-    state:()=>({volume,muted})
+    create:source=>{const sound=new Audio(source);sound.volume=silent()?0:volume/100;sound.muted=suspended;sounds.add(new WeakRef(sound));return sound;},
+    state:()=>({volume,muted}),
+    suspend:()=>{suspended=true;for(const reference of sounds){const sound=reference.deref();if(sound){sound.pause();sound.muted=true;}}},
+    resume:()=>{suspended=false;for(const reference of sounds){const sound=reference.deref();if(sound)sound.muted=false;}}
   };
   apply();
 })();

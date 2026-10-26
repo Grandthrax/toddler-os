@@ -3,7 +3,7 @@
 ```text
 Keyboard / mouse / speaker
            |
-Chrome or Chromium: pretend desktop and four web apps
+Chrome or Chromium: pretend desktop and five web apps
            | HTTP on 127.0.0.1 only
 Python server: stories, settings, missions and optional Piper reading
            |
@@ -16,7 +16,15 @@ Content Security Policy. This is a single-device app, not an internet server.
 
 `app/core.py` handles settings, versioned free writing and optional local speech.
 `app/ninja.py` and `ninja_content.py` handle maths missions and upgrades.
-`app/storybooks.py` defines the two sample branching books and versioned page progress.
+`app/storybooks.py` defines the sample branching books and versioned page progress.
+`app/bookdash_content.py` supplies the licensed Book Dash editions and attribution:
+two typed adaptations, one original narrated reader, and one wordless original.
+Picture-only pages have no story audio prompt. Contractions remain single spoken
+tokens so reading highlights and word-click feedback agree.
+`app/mouse.py` runs bounded picture-block programmes and stores drafts, completions
+and once-only equipment choices. `mouse_content.py` defines the 45 missions.
+`app/screen_lock.py` manages child unlock sessions; `admin_server.py` serves
+parent settings on a separate loopback port.
 `app/static/` contains the frontend and bundled assets. There is no npm build or
 external CDN. The server's only optional runtime dependencies are for speech.
 

@@ -13,7 +13,12 @@ licences or claim exclusive copyright in AI output.
 | Cori high British English voice | Optional external download, not bundled. [Model card](https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/cori/high/MODEL_CARD) describes a LibriVox public-domain training dataset. This is a statement about the dataset, not a separate explicit weight-licence grant. Review upstream terms for your use or redistribution. The downloader pins file hashes. |
 | Bundled maths and storybook audio | Synthesised locally using the Cori voice and project-authored text for The Space Cat and Luciana and Dad. Builders and text/hash/timing manifests are supplied, including the name pronunciation. No school phonics recordings are included. |
 | Ninja and storybook PNG illustrations | Made using OpenAI image generation, including The Space Cat and Luciana and Dad. Sanitised prompt manifests are supplied alongside the assets. Ninja art used a supplied fantasy character image as visual direction; that reference image is not included. |
+| Mouse Missions and villain/trophy SVGs | Original project-authored SVG artwork, distributed with the source. Mouse speech uses the same optional Cori voice described above. |
 | Icons, wallpapers and dojo SVG | Original project-authored SVG artwork, distributed with its source. |
+| Book Dash books and illustrations | Come Back, Cat! and Where’s That Cat?, CC BY 4.0. Original images are preserved byte-for-byte. Original reading/wordless editions and separately labelled typed-choice adaptations are included. See [full creator credits and changes](app/static/storybooks/bookdash/CREDITS.txt), [source hashes](app/static/storybooks/bookdash/download-manifest.json) and [licence](app/static/storybooks/bookdash/CC-BY-4.0.txt). |
+
+Book Dash content and the new adaptations/narration retain CC BY 4.0; they are
+not relicensed as GPL. The publisher's logo appears with each edition's credits.
 
 The project does not bundle the optional voice model, Python package binaries,
 privately licensed phonics packs, personal writing, saved books or user databases.

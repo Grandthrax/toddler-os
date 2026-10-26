@@ -1,0 +1,357 @@
+{
+  "voice": "en_GB-cori-high",
+  "prompts": {
+    "welcome": {
+      "text": "Welcome to Mouse Missions. Help your little mouse find the cheese.",
+      "sha256": "fb786c1c0eca606162c042f4721ef86c9d873f626da0d2132819ec25ec2a074e"
+    },
+    "forward": {
+      "text": "Move forward one square.",
+      "sha256": "3cde139d653e7e7d497cf19c76829a6d777e0c8deb812d77bd2539072d23e475"
+    },
+    "left": {
+      "text": "Turn left on the spot.",
+      "sha256": "e315e9de67aee2228fc9b340440bb4a5dbe51951b5e154359bb4d5ffed98d17d"
+    },
+    "right": {
+      "text": "Turn right on the spot.",
+      "sha256": "df6ae9cee072054d44e279f3febcfa5a8d9546d592e620f3bf74adadad7cdb2b"
+    },
+    "pick": {
+      "text": "Pick up the cheese or key on this square.",
+      "sha256": "3a3d73d02035bc5dc9db163922f48aaa62f2a56e6eabefde451c070285ad9d2b"
+    },
+    "open": {
+      "text": "Open the door in front of you with your key.",
+      "sha256": "56bc60625a2e21555456a3fb1c831bdad5e5a958b0268a8b0b7bab9ddfdb65b2"
+    },
+    "if-cheese": {
+      "text": "Is there cheese on this square?",
+      "sha256": "9e4cd71bda2a4d94b9be317e0a222196eb5509fb4395bffec4c2e92f4517db2c"
+    },
+    "if-path": {
+      "text": "Is the path ahead clear?",
+      "sha256": "38fb83e28d61db992273e997aae344ebee116fbe1611fe42e7215a3c72e9957a"
+    },
+    "if-key": {
+      "text": "Is there a key in my backpack?",
+      "sha256": "962a7c399796189cea5fe34238af2c1e111362c3622a9ce29e5d7fcfd83b4436"
+    },
+    "if-left": {
+      "text": "Is the path to my left clear?",
+      "sha256": "80ce73e8bc5e540e805f3b03302aaa7048b81489aa0b891cc09af0f64f9bef13"
+    },
+    "yes": {
+      "text": "If yes, do these steps.",
+      "sha256": "8efb5ee82bfda03568f79a2813b485bd6c4574ccde1433db897225c921bdef3f"
+    },
+    "no": {
+      "text": "Otherwise, do these steps.",
+      "sha256": "09be29d929a6be88a7b42d558dfe7450cb297fb97d73742c8d5b82cf2f51355b"
+    },
+    "slot": {
+      "text": "Add the next block here. Tap a block to remove it.",
+      "sha256": "c2be71550f3bbd5ece0538b587db93507533c728483c9960bc70fb9230fdc12a"
+    },
+    "run": {
+      "text": "Watch Mouse follow your programme.",
+      "sha256": "ee0925528fbe7da521fc69ea563b57fde0a64dde838c0be38a0aa71ee3167565"
+    },
+    "step": {
+      "text": "Show just the next step.",
+      "sha256": "9b2f52d64a9545bc5b141b16938f0a161110926885a6886addfb0fe5522fda4b"
+    },
+    "retry": {
+      "text": "Reset Mouse. Your programme stays here.",
+      "sha256": "aaaed68268dd17440b53a054ec23829cbdd1759167425bc6e5239319f0595716"
+    },
+    "clear": {
+      "text": "Start a fresh programme.",
+      "sha256": "e5fdb899b8d3250007709ae1bd6271e6660d496af391690b6ec1f025c8b2ec49"
+    },
+    "win": {
+      "text": "You did it! Your programme worked in every garden.",
+      "sha256": "3570f00d35785fcfe1fa49d9a3b3ce4845097ea7546a5ef759fa0a173e463b04"
+    },
+    "bump": {
+      "text": "A gentle bump! Check which way Mouse is looking. Change a block and try again.",
+      "sha256": "57f83b783d69409e333d8174f94a6c015e1ffd59e28a91787724dc2943316727"
+    },
+    "unfinished": {
+      "text": "Nearly there. Look at where Mouse stopped. You can change your programme and try again.",
+      "sha256": "324e97512661d992d15e1a29d5f88911dbbd2d1900d02a8bcad5e3c1c91903f2"
+    },
+    "empty": {
+      "text": "There is nothing to pick up here. Try the paw on a cheese or key square.",
+      "sha256": "a524d9e44c21efefbe8618c6a33bd46c28a7c432abedfcfc792eb3b3813f0f34"
+    },
+    "door": {
+      "text": "Mouse needs a key and a door just ahead to open it.",
+      "sha256": "9f19c9a3fa25e5547db7bd917cd290d9cf135c8f3fc288283bd3cfbd83cc4eaa"
+    },
+    "reward": {
+      "text": "Mouse has levelled up! Choose something new. Tap a picture to see it, then tap the tick.",
+      "sha256": "823b605474470f7e0269fc5fd4d86c368da8af1cfcef343b00fac6cbd1e16e22"
+    },
+    "wardrobe": {
+      "text": "Your mouse collection. Choose anything you have earned.",
+      "sha256": "c1bd8946b0ad0a1e0a35a599e964670df9dde8755c65c5b05db252aa937786ea"
+    },
+    "saved": {
+      "text": "Your programme is saved.",
+      "sha256": "89c00ac36c06db5d97d663673267cf7c404e491e95a28cd396f91e2082d8b30c"
+    },
+    "help": {
+      "text": "Follow the pale footprints. The arrow shows which way Mouse is looking.",
+      "sha256": "15d0bfe215ef018d015779f81c5b5e571aa87646378d7f619bec04789e8cb879"
+    },
+    "conditions": {
+      "text": "Use the pictured question in your programme. Watch the tick or cross to see what Mouse finds.",
+      "sha256": "7edda3145eb5d723d40606e8bd4f9f4a6ba6c309b4060e6fde16c00f5a6ab354"
+    },
+    "next-garden": {
+      "text": "Now let us try the same programme in the next garden.",
+      "sha256": "6c0eb4f1829d8f99048e28d264943b241822b51c9945dcefa391ac43ec8cc17f"
+    },
+    "locked": {
+      "text": "Finish the earlier mission first.",
+      "sha256": "cb6ea1a02e14d2b5786c0616ab60460fc0dc5a7fed58c0d24b199e71960e6a02"
+    },
+    "choose": {
+      "text": "Choose a numbered mission.",
+      "sha256": "52954fc007699385f546c68b21338136d038b86141f6a1bf7c495b491a9a1cd4"
+    },
+    "complete": {
+      "text": "You finished every mission! You are a magnificent mouse programmer.",
+      "sha256": "4a42d853815b331e709bb008ff0c577151a2c963cd561e1eb274cd0669aef9c0"
+    },
+    "level-1": {
+      "text": "Mission 1. Give Mouse one forward step to reach the cheese.",
+      "sha256": "9a7a1f52a58bbea49cc534985fb2c635cbefd696d04fec91fef59f93a3259e63"
+    },
+    "level-2": {
+      "text": "Mission 2. Put two forward steps in your programme.",
+      "sha256": "14fe3fc0fcbdff6e751438dd8879b23ea081745ff82a3b350a50d19fea78e66b"
+    },
+    "level-3": {
+      "text": "Mission 3. Three steps will cross the bridge.",
+      "sha256": "7b2a7aeafab18c05e8d7245f6d7cb63c611f3d03e441f826ec9f381ba4786853"
+    },
+    "level-4": {
+      "text": "Mission 4. Turn left on the spot. Then move forward.",
+      "sha256": "4778b83504db5ddd4e1d9079d9311d8404618eda431762e76aba55cda2b1291c"
+    },
+    "level-5": {
+      "text": "Mission 5. Turn right on the spot. Then move forward.",
+      "sha256": "ffb5b4a22797fd311d1b20ac739458b42e35e5b60bf3e436b1918abc6a0e084e"
+    },
+    "level-6": {
+      "text": "Mission 6. Walk forward, turn, and go around the flowerpot.",
+      "sha256": "021ba23c99abbbc250eec6a9c6b6790b6090560abfa5eeb62d6ae917545bc06b"
+    },
+    "level-7": {
+      "text": "Mission 7. Plan the two corners. The arrow shows where Mouse is looking.",
+      "sha256": "bbabc691740d5916c439c51de8d0417a660951383c758f4a60b56ab068e9a763"
+    },
+    "level-8": {
+      "text": "Mission 8. Left, then right, then left. Build a zigzag route.",
+      "sha256": "9e0bd59c9f209338211237ac65bba77224dc0e43b404ebd8732396e641792327"
+    },
+    "level-9": {
+      "text": "Mission 9. Plan the whole route to the picnic. You can take one step at a time.",
+      "sha256": "c2c96d41014dd1d5d038212e70ae4cce3439bdb393a028e729054f90f30a8093"
+    },
+    "level-10": {
+      "text": "Mission 10. One arrow is wrong. Tap it to remove it, then put a forward step in its place.",
+      "sha256": "d42dfa74a80e436d7167a17eb12179c2d235c78a00332d4dab2a817024bf4d1c"
+    },
+    "level-11": {
+      "text": "Mission 11. Walk two steps, turn left on the spot, then walk to the cheese.",
+      "sha256": "17690630385ee6c1ca1a7d24a2cadc5b1a471d4de2420c2eba33137bcd81d256"
+    },
+    "level-12": {
+      "text": "Mission 12. This time the corner turns right. Watch the arrow on Mouse.",
+      "sha256": "7b3486a884fec851613090452eca21235183f49ef93d250c4f50a3b0f29c5345"
+    },
+    "level-13": {
+      "text": "Mission 13. Plan a left turn and a right turn. Count the steps between the corners.",
+      "sha256": "f40dbc6f027ae7a76580ec9857a516512362f44516d78b3659b886b8530016fe"
+    },
+    "level-14": {
+      "text": "Mission 14. Follow the winding path. Turn right, then left, to reach the cheese.",
+      "sha256": "3fe42367a1025083604a2ad858f7ae22e76633fc425ecb046aa094e869f2a934"
+    },
+    "level-15": {
+      "text": "Mission 15. Mouse starts looking up. Forward means the way Mouse is looking.",
+      "sha256": "03d773566dbce88c22a858e320fe1c8be8ad46c582d88f2a08637e3aec3cd79d"
+    },
+    "level-16": {
+      "text": "Mission 16. Take your time with three corners. You can try one step at a time.",
+      "sha256": "51d84ae172d61a8c14d6b62aeed62102b6c039fdf8bc331130150bb1f0d3d1b4"
+    },
+    "level-17": {
+      "text": "Mission 17. One turn points the wrong way. Watch Mouse, then replace that turn.",
+      "sha256": "186667d64b936d695e4fa56c4a6f5c864e6b22763114939d10016165c0327e45"
+    },
+    "level-18": {
+      "text": "Mission 18. One forward step is missing before the corner. Choose a plus and add it.",
+      "sha256": "083d77f67674b8653ba24ac41dc8e1d51ea0991799b0e89cecb26f9b86928d8b"
+    },
+    "level-19": {
+      "text": "Mission 19. There is one forward step too many after the second turn. Remove it and try again.",
+      "sha256": "a031c6e3e9fe95c6dcf8e3d327ecebacd2a1a42f01e23b4e04e0c18f57166314"
+    },
+    "level-20": {
+      "text": "Mission 20. Mouse needs another forward step before the corner. Tap a plus to choose where it goes.",
+      "sha256": "6bc3cc21331f9451b7a30f212271ecdbddad11c3d2372b57916be2f59b90ce97"
+    },
+    "level-21": {
+      "text": "Mission 21. There is one step too many. Remove the last arrow.",
+      "sha256": "21817abd8780334becddda077e5472f7e5d259b336cc95beb8858e2a8c29ffe9"
+    },
+    "level-22": {
+      "text": "Mission 22. Find the wrong turn. Replace it with a left turn.",
+      "sha256": "38e2bb09c175ae6fc1585aeb23b94d13a219a00ee19cb07ac2bdd3dca11d9857"
+    },
+    "level-23": {
+      "text": "Mission 23. Try one step at a time. Find the extra forward step.",
+      "sha256": "b6bd352655354aa69e57500e67cb50b82aebec1d5480407a06ce466486e8c049"
+    },
+    "level-24": {
+      "text": "Mission 24. Stop on the key and use the little paw to pick it up. Then reach the cheese.",
+      "sha256": "529eb169f38299cb2783743e79e7d22c1c48bed5bd1d3c6251401a7b22c7415f"
+    },
+    "level-25": {
+      "text": "Mission 25. Pick up the key. Stop before the door and open it. Then walk through.",
+      "sha256": "98e73f9f9a9f7d7e1f0e77658b3ef41edb29bb8b1b8471793df581be2442c758"
+    },
+    "level-26": {
+      "text": "Mission 26. Pick up both little cheeses on your way to the picnic flag.",
+      "sha256": "1b6db46693c7f3a6707d0f6eb562d8911cd9cf0cdf018e675f9eca76d9158af4"
+    },
+    "level-27": {
+      "text": "Mission 27. Collect the key, open the door, and collect the cheese before the flag.",
+      "sha256": "6faad8b951ad2bfeb7a84aa574cadee2609a1745428e0435c753ccaf66c303bd"
+    },
+    "level-28": {
+      "text": "Mission 28. The question block looks for cheese here. Put a paw inside its tick side, then move forward.",
+      "sha256": "725c6edd9cb482b302ea85a00a209360608002c13db500e0c9c15228bdccee67"
+    },
+    "level-29": {
+      "text": "Mission 29. The same question works when there is no cheese. It skips the paw and carries on.",
+      "sha256": "3dfe8f2047d5cf94f1c6281ad943427db68c84eeadd0e9e2e4faf18b7b5ee260"
+    },
+    "level-30": {
+      "text": "Mission 30. Use one programme for both gardens. Pick up cheese only when it is there.",
+      "sha256": "7d6a9c58731fc7366b0795d81996c284a334b269c23b7e3306e69bd9fe9407ee"
+    },
+    "level-31": {
+      "text": "Mission 31. The open path picture asks if the square ahead is clear. Move only when it is.",
+      "sha256": "1e5ace8bf42b11def94f8bdf0cbf971eef75b55ca8d292296ca4880033535009"
+    },
+    "level-32": {
+      "text": "Mission 32. Check ahead first. If it is blocked, skip that step. Then turn right and walk.",
+      "sha256": "ec862cf438984dbfa0634bd142b13eb896fbcc853f04f5146d430fcedfe7d57c"
+    },
+    "level-33": {
+      "text": "Mission 33. Try both gardens. Sometimes there is an extra clear square before the right turn.",
+      "sha256": "37fced72e48cbe3b4056f5bd8edc8d9f76c0aabcb54d201ae14ae4d3b7a0ad50"
+    },
+    "level-34": {
+      "text": "Mission 34. Collect the key. The key question checks your backpack before opening the door.",
+      "sha256": "d99b3524ff19c77a8e9a24f15e3944c64989b3e5170d63ca48e2a19525218c01"
+    },
+    "level-35": {
+      "text": "Mission 35. Use a cheese question at the start, and a backpack key question at the door.",
+      "sha256": "9ae40eb29998c527b797bb00ab6301a0462aa6addc6a89b2779a6a5c01189675"
+    },
+    "level-36": {
+      "text": "Mission 36. Check for cheese. Check the path. Then turn right. Your programme must work in both gardens.",
+      "sha256": "5b8bb61ba58db9255d1b66b2b485775ef26cc624933b70cdfda72b0e2d5ceff4"
+    },
+    "level-37": {
+      "text": "Mission 37. The fork has two sides. Clear ahead? Follow the tick. Otherwise, follow the cross.",
+      "sha256": "bcbfb0b25e9d6a5d301c9d26a27c1b3d5569410a261eac7f5a3bec095eec0421"
+    },
+    "level-38": {
+      "text": "Mission 38. The same decision works even when Mouse starts facing a different way.",
+      "sha256": "9d691c7a1d0d685a361d823585fd2c596b6e0a0ec48f4084785f4d707ec7039a"
+    },
+    "level-39": {
+      "text": "Mission 39. Put two forward steps in the clear side. In the other side, turn right and walk.",
+      "sha256": "57e7e3602c2df7332387a56f51e05a4c00df96e58e3ede6169bc8c85ffcc98f4"
+    },
+    "level-40": {
+      "text": "Mission 40. Look to the left. If it is clear, turn left. Otherwise, turn right. Then walk.",
+      "sha256": "70831deca829dcdd278e5dbd30cbad51036865f2cf76887ebc508863c0ef048b"
+    },
+    "level-41": {
+      "text": "Mission 41. Choose the open side, then walk two squares to the picnic.",
+      "sha256": "1b12f100114f2e7b43869c8f029628107a9b5eb794565eabb3a003ccfd15eb64"
+    },
+    "level-42": {
+      "text": "Mission 42. If cheese is here, collect it. Otherwise, take a forward step. Then walk to the flag.",
+      "sha256": "4d94befc3206a5fc0a798d37d6432faef5502fec699174b8d5c901927ae1ce8e"
+    },
+    "level-43": {
+      "text": "Mission 43. The two sides of the decision are mixed up. Swap the actions to help Mouse.",
+      "sha256": "06131887fece78ba0c71debd5eed9f7e5151c053784e10bee065830a8a4288ba"
+    },
+    "level-44": {
+      "text": "Mission 44. First check for cheese. Then check the path. Watch each question light up in all three gardens.",
+      "sha256": "774c989639631b46e8d5c59e8804ec0b3dbbe74cfa7db717ec909dd170eaf3d0"
+    },
+    "level-45": {
+      "text": "Mission 45. Use all your skills. Check for cheese, collect the key, open the door, then choose the clear route.",
+      "sha256": "9d9eeae077bca8af536037197c8ffaed3d6d5d5984f575eb05df92f91d56ce4b"
+    },
+    "outfit-1": {
+      "text": "A little scarf",
+      "sha256": "f42d35c8f5f19c8f9815428c1319adaa52a4a0dae8113839fbf0398ffe32bee6"
+    },
+    "outfit-2": {
+      "text": "Explorer",
+      "sha256": "122cb983dffa37cf07760bc68342781e94025d483887447365d32e4f4a9b3b92"
+    },
+    "outfit-3": {
+      "text": "Captain",
+      "sha256": "cabe14d7b7e60be3efafce639f7b2e025ee339884aa88e65eb8ff789c24050f4"
+    },
+    "outfit-4": {
+      "text": "Royal adventurer",
+      "sha256": "3cf32423c29b4a042b4366bfc7ad4496a9ab37fe4fff80135c60616503f9d7b7"
+    },
+    "gadgets-1": {
+      "text": "Cheese backpack",
+      "sha256": "4925ba9c1ef94871e8c8f9fd111762071660d2eb47ac6fc94a90e0d366256d65"
+    },
+    "gadgets-2": {
+      "text": "Lantern pack",
+      "sha256": "ea7c78aa447f821764634b616bade4cff24bccf41fd6d994bc3f8acec611598d"
+    },
+    "gadgets-3": {
+      "text": "Clockwork wings",
+      "sha256": "12767a135a0dacfa0f29b4ea58bda87c84565617ce75c0215ee4ab668222bbe2"
+    },
+    "gadgets-4": {
+      "text": "Flying machine",
+      "sha256": "e59847bc97761b86b6ac28ed5290df0c0e120d678ede9a36edc04bce97fec347"
+    },
+    "magic-1": {
+      "text": "Sparkling paws",
+      "sha256": "9f8b066b02a93c30eefce9eadbfab4cc3c3194ae59977d0a6d5be8e8e17f05f5"
+    },
+    "magic-2": {
+      "text": "Glowing tail",
+      "sha256": "b60ed0205cdad3d9fc5fb1886ff54458b80bc533462bc226b271debc6f7de7ae"
+    },
+    "magic-3": {
+      "text": "Starry cape",
+      "sha256": "bd2110a49df5dfe9730f62fc505e20be8c9131e9621c8beef056a0ab7b4f5f56"
+    },
+    "magic-4": {
+      "text": "Mouse guardian",
+      "sha256": "91a277dc1ea5b7d6ec75ad7f694e911c84bfc402d7977838587cecce4d9ca24e"
+    }
+  }
+}

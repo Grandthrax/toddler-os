@@ -155,7 +155,7 @@ class NinjaTests(unittest.TestCase):
                 self.assertEqual(state['loadout'][item['branch']],item['rank'])
         self.assertTrue(state['chapter_complete'])
         self.assertEqual(state['earned'],{'sword':4,'armour':3,'power':3})
-        self.assertTrue(all(level['status']=='completed' for level in state['levels']))
+        self.assertTrue(all(level['status']=='completed' for level in state['levels'][:10]))
         rewards=state['rewards'].copy()
         for level in range(1,11):
             self.assertEqual(self.finish(level)['stage'],'complete')
@@ -282,7 +282,7 @@ class NinjaTests(unittest.TestCase):
         for level in LEVELS:
             for q in questions_for(level['id'],'test'):
                 tasks.add(q['task']);answer=expected(q)
-                self.assertTrue(0<=answer<=10)
+                self.assertTrue(0<=answer<=(10 if level['id']<=10 else 20))
                 if q['kind']=='groups': self.assertEqual(len(set(q['numbers'])),3)
                 else:
                     self.assertEqual(len(set(q['choices'])),3);self.assertIn(answer,q['choices'])

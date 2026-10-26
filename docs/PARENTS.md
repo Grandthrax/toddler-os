@@ -27,7 +27,8 @@ The first two commands are alternatives. `--letters` specifies the child's
 currently taught letters; `--first` uses the default teaching order. Physical
 keyboard A–Z remains available independently of these buttons. Reading on Space
 in Storybooks is part of that activity; `--auto-read-words` controls free writing.
-There is no parent settings page inside the child interface.
+The separate [parent screen-lock dashboard](SCREEN-LOCK.md) controls the child
+unlock word and idle delay; teaching-letter settings still use the commands above.
 
 ## Back up and restore
 
@@ -38,7 +39,8 @@ python app/manage.py --data-dir .local/data backup .local/backups/stories-backup
 ```
 
 This makes a consistent SQLite backup, including picture books and maths progress.
-Copy `settings.json` separately if it exists. Keep another copy on a separate
+Copy `settings.json` and `lock-settings.json` separately if they exist. Keep the
+parent access key private; it is separate from the child unlock word. Keep another copy on a separate
 drive; a backup on the same SD card will not survive a failed card.
 
 To restore, stop the app first. Preserve the entire current `.local/data/`
