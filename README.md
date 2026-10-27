@@ -1,5 +1,11 @@
 # Toddler OS
 
+## Watch Toddler OS in action
+
+A 30-second tour of the learning apps, phonics feedback, and familiar desktop controls.
+
+https://github.com/user-attachments/assets/e2ac0c64-aa14-4182-89bb-678ecce88361
+
 A small, offline learning desktop for children starting to read, write and count.
 Originally built for a five-year-old using a Raspberry Pi, a keyboard and a USB
 speaker. A grown-up can also try it on a Windows or Linux computer.
